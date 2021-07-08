@@ -9,7 +9,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=7c220ed7c5">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=500b9fa003">
 
     <link rel="canonical" href="index.html">
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -63,11 +63,77 @@
     }
 }
     </script>
-<style>:root {--ghost-accent-color: #3b3498;}</style>
+
     <meta name="generator" content="Ghost 4.7">
     <link rel="alternate" type="application/rss+xml" title="" href="../rss/index.rss">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.course::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f19c";
+  margin: 0 10px 0 0px;
+}
+    
+.tp::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f26c";
+  margin: 0 10px 0 0px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 18px;
+  display: none;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+</style><style>:root {--ghost-accent-color: #3b3498;}</style>
 
 </head>
 <body class="page-template page-about">
@@ -214,8 +280,8 @@
     </div>
 
 
-    <script src="../assets/built/swup.js?v=7c220ed7c5" data-swup-ignore-script></script>
-    <script src="../assets/built/infinitescroll.js?v=7c220ed7c5" data-swup-ignore-script></script>
+    <script src="../assets/built/swup.js?v=500b9fa003" data-swup-ignore-script></script>
+    <script src="../assets/built/infinitescroll.js?v=500b9fa003" data-swup-ignore-script></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
 

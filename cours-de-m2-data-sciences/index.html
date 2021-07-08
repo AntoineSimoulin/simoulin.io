@@ -9,21 +9,21 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=7c220ed7c5">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=500b9fa003">
 
     <link rel="canonical" href="index.html">
     <meta name="referrer" content="no-referrer-when-downgrade">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cours de M2 Data Sciences">
-    <meta property="og:description" content="Traitement Automatique de la Langue Naturelle. Le calendrier est décrit ci-dessous.  Séance Thèmes TP / Exercises Slides Quiz Cours #1 Modélisation statistique du langage, vectorisation de texte   TP #1 Classification de textes, modèles BoW TP #2 Détection de thèmes, LDA Cours #2 Représentations sémantiques lexicales et sémantique distributionnelle : Embeddings de mots">
+    <meta property="og:description" content="Cours 1 : Modélisation statistique du langage, vectorisation de texte   	Documents:  	   		Cours 1         Exercice 1  	 TP 1 : Classification de textes, modèles BoW   	Documents:  	         TP 1  	 TP 2 : Détection de thèmes, LDA   	Documents:  	         TP 2  	 Cours 2 : Représentations sémantiques distributionnelles : Embeddings de mots   	Documents:  	   		Cours 2         Exercice 2  	 TP 3 : Embeddings de">
     <meta property="og:url" content="AntoineSimoulin.github.io/cours-de-m2-data-sciences/">
     <meta property="og:image" content="https://static.ghost.org/v4.0.0/images/publication-cover.jpg">
     <meta property="article:published_time" content="2021-07-08T07:05:01.000Z">
-    <meta property="article:modified_time" content="2021-07-08T07:05:01.000Z">
+    <meta property="article:modified_time" content="2021-07-08T15:08:08.000Z">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cours de M2 Data Sciences">
-    <meta name="twitter:description" content="Traitement Automatique de la Langue Naturelle. Le calendrier est décrit ci-dessous.  Séance Thèmes TP / Exercises Slides Quiz Cours #1 Modélisation statistique du langage, vectorisation de texte   TP #1 Classification de textes, modèles BoW TP #2 Détection de thèmes, LDA Cours #2 Représentations sémantiques lexicales et sémantique distributionnelle : Embeddings de mots">
+    <meta name="twitter:description" content="Cours 1 : Modélisation statistique du langage, vectorisation de texte   	Documents:  	   		Cours 1         Exercice 1  	 TP 1 : Classification de textes, modèles BoW   	Documents:  	         TP 1  	 TP 2 : Détection de thèmes, LDA   	Documents:  	         TP 2  	 Cours 2 : Représentations sémantiques distributionnelles : Embeddings de mots   	Documents:  	   		Cours 2         Exercice 2  	 TP 3 : Embeddings de">
     <meta name="twitter:url" content="AntoineSimoulin.github.io/cours-de-m2-data-sciences/">
     <meta name="twitter:image" content="https://static.ghost.org/v4.0.0/images/publication-cover.jpg">
     <meta name="twitter:label1" content="Written by">
@@ -56,19 +56,85 @@
     "headline": "Cours de M2 Data Sciences",
     "url": "AntoineSimoulin.github.io/cours-de-m2-data-sciences/",
     "datePublished": "2021-07-08T07:05:01.000Z",
-    "dateModified": "2021-07-08T07:05:01.000Z",
-    "description": "Traitement Automatique de la Langue Naturelle. Le calendrier est décrit\nci-dessous.\n\nSéanceThèmesTP / ExercisesSlidesQuizCours #1Modélisation statistique du langage,\nvectorisation de texte \n[https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Fr%C3%A9quences%20des%20mots.ipynb] \n[https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20lan",
+    "dateModified": "2021-07-08T15:08:08.000Z",
+    "description": "Cours 1 : Modélisation statistique du langage, vectorisation de texteDocuments: * Cours 1\n   [https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Cours_1.pdf]\n * Exercice 1 \n   [https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Fr%C3%A9quences%20des%20mots.ipynb]\n\nTP 1 : Classification de textes, modèles BoWDocuments: * TP 1",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "AntoineSimoulin.github.io/"
     }
 }
     </script>
-<style>:root {--ghost-accent-color: #3b3498;}</style>
+
     <meta name="generator" content="Ghost 4.7">
     <link rel="alternate" type="application/rss+xml" title="" href="../rss/index.rss">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.course::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f19c";
+  margin: 0 10px 0 0px;
+}
+    
+.tp::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f26c";
+  margin: 0 10px 0 0px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 18px;
+  display: none;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+</style><style>:root {--ghost-accent-color: #3b3498;}</style>
 
 </head>
 <body class="page-template page-cours-de-m2-data-sciences">
@@ -166,70 +232,54 @@
 
 
     <div class="post-content-body">
-        <!--kg-card-begin: markdown--><p>Traitement Automatique de la Langue Naturelle. Le calendrier est décrit ci-dessous.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Séance</th>
-<th>Thèmes</th>
-<th style="text-align:center">TP / Exercises</th>
-<th style="text-align:center">Slides</th>
-<th style="text-align:center">Quiz</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Cours <strong>#1</strong></td>
-<td>Modélisation statistique du langage, vectorisation de texte</td>
-<td style="text-align:center"><a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Fr%C3%A9quences%20des%20mots.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" loading="lazy"></a></td>
-<td style="text-align:center"><a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Cours_1.pdf"> <img src="https://www.svgrepo.com/show/255820/ppt.svg" width="15" height="15"></a></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">TP <strong>#1</strong></td>
-<td>Classification de textes, modèles BoW</td>
-<td style="text-align:center"><a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP1%20-%20Apprentissage%20supervis%C3%A9%20pour%20le%20NLP/Classification.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" loading="lazy"></a></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">TP <strong>#2</strong></td>
-<td>Détection de thèmes, LDA</td>
-<td style="text-align:center"><a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP2%20-%20Text%20Mining/TP2%20-%20Exploration%20de%20topics%5BCOLAB%5D.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" loading="lazy"></a></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">Cours <strong>#2</strong></td>
-<td>Représentations sémantiques lexicales et sémantique distributionnelle : Embeddings de mots</td>
-<td style="text-align:center"><a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%202%20-%20Embeddings/Words%20Embeddings.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" loading="lazy"></a></td>
-<td style="text-align:center"><a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%202%20-%20Embeddings/Cours_2.pdf"> <img src="https://www.svgrepo.com/show/255820/ppt.svg" width="15" height="15"></a></td>
-<td style="text-align:center"><a href="https://github.com/AntoineSimoulin/m2-data-sciences/blob/master/Cours%202%20-%20Embeddings/quiz_1.pdf"> <img src="https://www.ailes-montpellieraines.fr/wp-content/uploads/2019/07/quiz.jpg" width="15" height="15"></a></td>
-</tr>
-<tr>
-<td style="text-align:center">TP <strong>#3</strong></td>
-<td>Embeddings de mots pour l'analyse de sentiments</td>
-<td style="text-align:center"><a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP3%20-%20Word%20Embeddings/EmojiFy%5BCOLAB%5D.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" loading="lazy"></a></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">Cours <strong>#3</strong></td>
-<td>Modélisation de séquences de mots : modèles de langue. Application à la génération de texte</td>
-<td style="text-align:center"><a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%203%20-%20Language%20Models/Mod%C3%A8les%20de%20langues.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" loading="lazy"></a></td>
-<td style="text-align:center"><a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%203%20-%20Language%20Models/Cours_3.pdf"> <img src="https://www.svgrepo.com/show/255820/ppt.svg" width="15" height="15"></a></td>
-<td style="text-align:center"><a href="https://github.com/AntoineSimoulin/m2-data-sciences/blob/master/Cours%203%20-%20Language%20Models/quiz_2.pdf"> <img src="https://www.ailes-montpellieraines.fr/wp-content/uploads/2019/07/quiz.jpg" width="15" height="15"></a></td>
-</tr>
-<tr>
-<td style="text-align:center">Cours <strong>#4</strong></td>
-<td>Ouverture sur les méthodes de Deep Learning pour le NLP (RNN, Seq2Seq, Attention, Bert) Application au systèmes de Q&amp;A</td>
-<td style="text-align:center"><a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/Bert_QA%5BCOLAB%5D.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" loading="lazy"></a></td>
-<td style="text-align:center"><a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/Cours_4.pdf"> <img src="https://www.svgrepo.com/show/255820/ppt.svg" width="15" height="15"></a></td>
-<td style="text-align:center"><a href="https://github.com/AntoineSimoulin/m2-data-sciences/blob/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/quiz_3.pdf"> <img src="https://www.ailes-montpellieraines.fr/wp-content/uploads/2019/07/quiz.jpg" width="15" height="15"></a></td>
-</tr>
-</tbody>
-</table>
-<!--kg-card-end: markdown-->
+        <!--kg-card-begin: html--><div class="collapsible course">Cours 1 : Modélisation statistique du langage, vectorisation de texte</div>
+<div class="content">
+  	Documents:
+ 	<ul class="fa-ul">
+  		<li><span class="fa-li"><i class="fas fa-file-powerpoint"></i></span><a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Cours_1.pdf">Cours 1</a></li>
+        <li><span class="fa-li"><i class="fab fa-python"></i></span>Exercice 1<a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Fr%C3%A9quences%20des%20mots.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg"></a></li>
+	</ul>
+</div>
+<!--kg-card-end: html--><!--kg-card-begin: html--><div class="collapsible tp">TP 1 : Classification de textes, modèles BoW</div>
+<div class="content">
+  	Documents:
+ 	<ul class="fa-ul">
+        <li><span class="fa-li"><i class="fab fa-python"></i></span>TP 1<a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP2%20-%20Text%20Mining/TP2%20-%20Exploration%20de%20topics%5BCOLAB%5D.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg"></a></li>
+	</ul>
+</div><!--kg-card-end: html--><!--kg-card-begin: html--><div class="collapsible tp">TP 2 : Détection de thèmes, LDA</div>
+<div class="content">
+  	Documents:
+ 	<ul class="fa-ul">
+        <li><span class="fa-li"><i class="fab fa-python"></i></span>TP 2<a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP2%20-%20Text%20Mining/TP2%20-%20Exploration%20de%20topics%5BCOLAB%5D.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg"></a></li>
+	</ul>
+</div><!--kg-card-end: html--><!--kg-card-begin: html--><div class="collapsible course">Cours 2 : Représentations sémantiques distributionnelles : Embeddings de mots</div>
+<div class="content">
+  	Documents:
+ 	<ul class="fa-ul">
+  		<li><span class="fa-li"><i class="fas fa-file-powerpoint"></i></span><a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%202%20-%20Embeddings/Cours_2.pdf">Cours 2</a></li>
+        <li><span class="fa-li"><i class="fab fa-python"></i></span>Exercice 2<a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%202%20-%20Embeddings/Words%20Embeddings.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg"></a></li>
+	</ul>
+</div><!--kg-card-end: html--><!--kg-card-begin: html--><div class="collapsible tp">TP 3 : Embeddings de mots pour l'analyse de sentiments	</div>
+<div class="content">
+  	Documents:
+ 	<ul class="fa-ul">
+        <li><span class="fa-li"><i class="fab fa-python"></i></span>TP 3<a href="https://colab.research.google.com/assets/colab-badge.svg)%5D(https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP3%20-%20Word%20Embeddings/EmojiFy%5BCOLAB%5D.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg"></a></li>
+	</ul>
+</div><!--kg-card-end: html--><!--kg-card-begin: html--><div class="collapsible course">Cours 3 : Modélisation de séquences de mots : modèles de langue. Application à la génération de texte</div>
+<div class="content">
+  	Documents:
+ 	<ul class="fa-ul">
+  		<li><span class="fa-li"><i class="fas fa-file-powerpoint"></i></span><a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%203%20-%20Language%20Models/Cours_3.pdf">Cours 3</a></li>
+        <li><span class="fa-li"><i class="fab fa-python"></i></span>Exercice 3<a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%203%20-%20Language%20Models/Mod%C3%A8les%20de%20langues.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg"></a></li>
+	</ul>
+</div><!--kg-card-end: html--><!--kg-card-begin: html--><div class="collapsible course">Cours 4 : Ouverture sur les méthodes de Deep Learning pour le NLP (RNN, Seq2Seq, Attention, Bert) Application au systèmes de Q&amp;A</div>
+<div class="content">
+  	Documents:
+ 	<ul class="fa-ul">
+  		<li><span class="fa-li"><i class="fas fa-file-powerpoint"></i></span><a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/Cours_4.pdf">Cours 4</a></li>
+        <li><span class="fa-li"><i class="fab fa-python"></i></span>Exercice 4<a href="https://colab.research.google.com/assets/colab-badge.svg)%5D(https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/Bert_QA%5BCOLAB%5D.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg"></a></li>
+	</ul>
+</div><!--kg-card-end: html-->
     </div>
 
 </article>
@@ -278,8 +328,8 @@
     </div>
 
 
-    <script src="../assets/built/swup.js?v=7c220ed7c5" data-swup-ignore-script></script>
-    <script src="../assets/built/infinitescroll.js?v=7c220ed7c5" data-swup-ignore-script></script>
+    <script src="../assets/built/swup.js?v=500b9fa003" data-swup-ignore-script></script>
+    <script src="../assets/built/infinitescroll.js?v=500b9fa003" data-swup-ignore-script></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
 
