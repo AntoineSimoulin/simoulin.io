@@ -94,8 +94,12 @@
   margin: 0 10px 0 0px;
 }
 
-.active, .collapsible:hover {
+.collapsible:hover {
   background-color: #555;
+}
+    
+.active {
+  background-color: #7E2039;
 }
 
 .content {
@@ -106,16 +110,18 @@
   margin-bottom: 10px;
 }
 
-.collapsible:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: white;
+.collapsible::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f067";
   float: right;
   margin-left: 5px;
+  font-size: 13px;
 }
-
+    
 .active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
+  font-family: "Font Awesome 5 Free";
+  content: "\f068";
 }
 </style><style>:root {--ghost-accent-color: #3b3498;}</style>
 
@@ -337,7 +343,6 @@
     for (i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
-        console.log('loaded')
         var content = this.nextElementSibling;
         if (content.style.display === "block") {
           content.style.display = "none";
