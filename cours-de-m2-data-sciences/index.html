@@ -16,14 +16,14 @@
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cours de M2 Data Sciences">
-    <meta property="og:description" content='var coll = document.getElementsByClassName("collapsible"); var i; for (i = 0; i  .collapsible {   background-color: #777;   color: white;   cursor: pointer;   padding: 18px;   width: 100%;   border: none;   text-align: left;   outline: none;   font-size: 15px;   margin-bottom: 10px; } .course::before {   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f19c";   margin: 0 10px 0 0px; }      .tp::before'>
+    <meta property="og:description" content="Cours 1 : Modélisation statistique du langage, vectorisation de texte   	Documents:  	   		Cours 1         Exercice 1  	 TP 1 : Classification de textes, modèles BoW   	Documents:  	         TP 1  	 TP 2 : Détection de thèmes, LDA   	Documents:  	         TP 2  	 Cours 2 : Représentations sémantiques distributionnelles : Embeddings de mots   	Documents:  	   		Cours 2         Exercice 2  	 TP 3 : Embeddings de">
     <meta property="og:url" content="AntoineSimoulin.github.io/cours-de-m2-data-sciences/">
     <meta property="og:image" content="https://static.ghost.org/v4.0.0/images/publication-cover.jpg">
     <meta property="article:published_time" content="2021-07-08T07:05:01.000Z">
-    <meta property="article:modified_time" content="2021-07-08T15:09:29.000Z">
+    <meta property="article:modified_time" content="2021-07-08T15:10:51.000Z">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cours de M2 Data Sciences">
-    <meta name="twitter:description" content='var coll = document.getElementsByClassName("collapsible"); var i; for (i = 0; i  .collapsible {   background-color: #777;   color: white;   cursor: pointer;   padding: 18px;   width: 100%;   border: none;   text-align: left;   outline: none;   font-size: 15px;   margin-bottom: 10px; } .course::before {   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f19c";   margin: 0 10px 0 0px; }      .tp::before'>
+    <meta name="twitter:description" content="Cours 1 : Modélisation statistique du langage, vectorisation de texte   	Documents:  	   		Cours 1         Exercice 1  	 TP 1 : Classification de textes, modèles BoW   	Documents:  	         TP 1  	 TP 2 : Détection de thèmes, LDA   	Documents:  	         TP 2  	 Cours 2 : Représentations sémantiques distributionnelles : Embeddings de mots   	Documents:  	   		Cours 2         Exercice 2  	 TP 3 : Embeddings de">
     <meta name="twitter:url" content="AntoineSimoulin.github.io/cours-de-m2-data-sciences/">
     <meta name="twitter:image" content="https://static.ghost.org/v4.0.0/images/publication-cover.jpg">
     <meta name="twitter:label1" content="Written by">
@@ -56,7 +56,7 @@
     "headline": "Cours de M2 Data Sciences",
     "url": "AntoineSimoulin.github.io/cours-de-m2-data-sciences/",
     "datePublished": "2021-07-08T07:05:01.000Z",
-    "dateModified": "2021-07-08T15:09:29.000Z",
+    "dateModified": "2021-07-08T15:10:51.000Z",
     "description": "Cours 1 : Modélisation statistique du langage, vectorisation de texteDocuments: * Cours 1\n   [https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Cours_1.pdf]\n * Exercice 1 \n   [https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Fr%C3%A9quences%20des%20mots.ipynb]\n\nTP 1 : Classification de textes, modèles BoWDocuments: * TP 1",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -76,6 +76,7 @@ var i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
     this.classList.toggle("active");
     var content = this.nextElementSibling;
     if (content.style.display === "block") {
@@ -232,71 +233,7 @@ for (i = 0; i < coll.length; i++) {
 
 
     <div class="post-content-body">
-        <!--kg-card-begin: html--><script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
-
-<style>
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-.course::before {
-  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f19c";
-  margin: 0 10px 0 0px;
-}
-    
-.tp::before {
-  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f26c";
-  margin: 0 10px 0 0px;
-}
-
-.active, .collapsible:hover {
-  background-color: #555;
-}
-
-.content {
-  padding: 18px;
-  display: none;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
-  margin-bottom: 10px;
-}
-
-.collapsible:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: white;
-  float: right;
-  margin-left: 5px;
-}
-
-.active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
-}
-</style><!--kg-card-end: html--><!--kg-card-begin: html--><div class="collapsible course">Cours 1 : Modélisation statistique du langage, vectorisation de texte</div>
+        <!--kg-card-begin: html--><div class="collapsible course">Cours 1 : Modélisation statistique du langage, vectorisation de texte</div>
 <div class="content">
   	Documents:
  	<ul class="fa-ul">
