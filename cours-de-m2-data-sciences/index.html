@@ -9,7 +9,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=9ccfaf2b49">
+    <link rel="stylesheet" type="text/css" href="../assets/built/screen.css?v=08252d91db">
 
     <link rel="canonical" href="index.html">
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -20,7 +20,7 @@
     <meta property="og:url" content="AntoineSimoulin.github.io/cours-de-m2-data-sciences/">
     <meta property="og:image" content="https://static.ghost.org/v4.0.0/images/publication-cover.jpg">
     <meta property="article:published_time" content="2021-07-08T07:05:01.000Z">
-    <meta property="article:modified_time" content="2021-10-11T11:54:56.000Z">
+    <meta property="article:modified_time" content="2021-10-12T06:48:03.000Z">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="M2 Data Sciences Learning Course">
     <meta name="twitter:description" content="I participate in the Master 2 Mathématiques et Informatique pour la Data Science (M2 MIDS) from Paris University.  The course introduces statistical methods for Natural Language Processing, including text vectorization, word embeddings, and sequence models. In addition, the course includes practical exercises that cover web scraping, regular expressions, and visualization.">
@@ -56,7 +56,7 @@
     "headline": "M2 Data Sciences Learning Course",
     "url": "AntoineSimoulin.github.io/cours-de-m2-data-sciences/",
     "datePublished": "2021-07-08T07:05:01.000Z",
-    "dateModified": "2021-10-11T11:54:56.000Z",
+    "dateModified": "2021-10-12T06:48:03.000Z",
     "description": "I participate in the Master 2 Mathématiques et Informatique pour la Data Science\n(M2 MIDS [https://m2mids.github.io/m2mids]) from Paris University. \n\nThe course introduces statistical methods for Natural Language Processing,\nincluding text vectorization, word embeddings, and sequence models. In addition,\nthe course includes practical exercises that cover web scraping, regular\nexpressions, and visualization. The practical exercises include common use cases\nsuch as text classification or topic min",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -103,6 +103,7 @@
 }
 
 .content {
+  font-size: 15px;
   padding: 18px;
   display: none;
   transition: max-height 0.2s ease-out;
@@ -224,6 +225,7 @@
 The course introduces statistical methods for Natural Language Processing, including text vectorization, word embeddings, and sequence models. In addition, the course includes practical exercises that cover web scraping, regular expressions, and visualization. The practical exercises include common use cases such as text classification or topic mining. Finally, the course gives an overview about open-source tools for nlp such as nlp libraries, intelligibility methods or deep learning frameworks.<!--kg-card-end: html--><!--kg-card-begin: markdown--><h2 id="lectures">Lectures</h2>
 <!--kg-card-end: markdown--><!--kg-card-begin: html--><div class="collapsible course">Cours 1 : Modélisation statistique du langage, vectorisation de texte</div>
 <div class="content">
+    <p>Ce cours introduit les approches statistiques de traitement automatique du langage et des problématiques associées : problème de grande dimension, distribution empirique de Zipf.</p> 
 	<div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start;">
          <a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Cours_1.pdf"><button class="btn" style="margin: 5px"><i class="fas fa-file-powerpoint"></i> Slides</button></a>
       <a href="https://raw.githubusercontent.com/AntoineSimoulin/m2-data-sciences/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Fr%C3%A9quences%20des%20mots.ipynb"><button class="btn" style="margin: 5px"><i class="fa fa-code"></i> Code</button></a>
@@ -269,7 +271,46 @@ The course introduces statistical methods for Natural Language Processing, inclu
   		<li><span class="fa-li"><i class="fas fa-file-powerpoint"></i></span><a href="https://github.com/AntoineSimoulin/m2-data-sciences/tree/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/Cours_4.pdf">Cours 4</a></li>
         <li><span class="fa-li"><i class="fab fa-python"></i></span>Exercice 4<a href="https://colab.research.google.com/assets/colab-badge.svg)%5D(https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/Bert_QA%5BCOLAB%5D.ipynb"> <img src="https://colab.research.google.com/assets/colab-badge.svg"></a></li>
 	</ul>
-</div><!--kg-card-end: html-->
+</div><!--kg-card-end: html--><!--kg-card-begin: markdown--><h2 id="comment-lutiliser">Comment l'utiliser ?</h2>
+<h3 id="%F0%9F%92%BB-en-local">💻 En local</h3>
+<p>Si vous souhaitez exécuter le TP sur votre ordinateur, voici une procédure rapide pour installer Python et les librairies requises. Ca évitera d’avoir des problèmes de version de librairies qui interfère avec d’autres cours ou projets. Pour installer Python, je vous conseille d’utiliser <a href="https://www.anaconda.com/products/individual">Anaconda</a> (~450 MB). Sélectionnez l’installation correspondent à votre système d’exploitation et “64-Bit Graphical Installer” puis suivez les instructions pour installer Anaconda.</p>
+<p>Pour les librairies, je vous conseille de créer un environnement virtuel python pour l’ensemble du cours. Ouvrez un terminal et tapez la commande suivante :</p>
+<pre><code class="language-bash">conda create -n nlp-101 python=3.6
+# Vous pouvez activer l’environnement avec la commande suivante
+conda activate nlp-101
+</code></pre>
+<p>Si vous utilisez <a href="https://jupyterlab.readthedocs.io/en/stable/">jupyter-lab</a>, vous pouvez répertorier l’environement :</p>
+<pre><code class="language-bash">conda install ipykernel
+ipython kernel install --user --name='nlp-101'
+</code></pre>
+<p>Nous allons installer les librairies avec le gestionnaire pip. Vérifiez que la version utilisée est bien celle associée à anaconda :</p>
+<pre><code class="language-bash">pip show pip
+</code></pre>
+<p>Puis mettez le à jour :</p>
+<pre><code class="language-bash">pip install --upgrade pip
+</code></pre>
+<p>Installez les librairies suivantes :</p>
+<pre><code class="language-bash">pip install scikit-learn==0.23.2 matplotlib==3.3.2 pandas==1.1.3 lime==0.2.0.1 unidecode==1.3.2 umap-learn==0.4.6 umap-learn[plot] nltk==3.5 spacy==2.3.2
+pip install --upgrade jupyter
+</code></pre>
+<p>Vous pouvez vérifier que chaque package est bien installé avec la commande :</p>
+<pre><code class="language-bash">python -c "import sklearn; print(sklearn.__version__)"
+</code></pre>
+<p>Finalement téléchargez le modèle Spacy français :</p>
+<pre><code class="language-bash">python3 -m spacy download fr_core_news_md
+</code></pre>
+<h3 id="%E2%98%81%EF%B8%8F-google-colab">☁️ Google Colab</h3>
+<p>Si vous disposez d'un compte Google, vous pouvez également éxécuter l'ensemble des TPs et exercices sur l'interface <a href="https://colab.research.google.com/">Google Colab</a>.</p>
+<h3 id="%F0%9F%90%B3-docker">🐳 Docker</h3>
+<p>Il est également possible de faire tourner un serveur jupyter dans un Docker. L'avantage est que ce dernier tournera dans un environnement virtuel en grande partie indépendant des contraintes de votre machine. Par exemple de votre installation python ou de votre système d'exploitation.</p>
+<p>Pour cela, installez <a href="https://www.docker.com/products/docker-desktop">Docker Desktop</a> (c'est gratuit pour les utilisation non professionnelles). Vous pouvez ensuite cloner le répertoire et construire l'image Docker. Pour cela ouvrez un terminal et exécuter les commandeds suivantes :</p>
+<pre><code class="language-bash">git clone git@github.com:AntoineSimoulin/m2-data-sciences.git
+cd m2-data-sciences
+git pull
+docker build -t m2-data-sciences .
+docker run -p 8888:8888 m2-data-sciences
+</code></pre>
+<!--kg-card-end: markdown-->
     </div>
 
 </article>
@@ -316,8 +357,8 @@ The course introduces statistical methods for Natural Language Processing, inclu
     </div>
 
 
-    <script src="../assets/built/swup.js?v=9ccfaf2b49" data-swup-ignore-script></script>
-    <script src="../assets/built/infinitescroll.js?v=9ccfaf2b49" data-swup-ignore-script></script>
+    <script src="../assets/built/swup.js?v=08252d91db" data-swup-ignore-script></script>
+    <script src="../assets/built/infinitescroll.js?v=08252d91db" data-swup-ignore-script></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
     </script>
 
