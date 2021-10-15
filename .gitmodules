@@ -2,5 +2,5 @@
 	path = slides/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
 [submodule "slides/cours-m2-data-sciences/lecture_1/reveal.js"]
-	path = slides/cours-m2-data-sciences/lecture_1/reveal.js
+	path = slides/lecture_1/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
