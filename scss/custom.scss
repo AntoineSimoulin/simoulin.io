@@ -1,0 +1,143 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// $font-family-sans-serif : 'Charter', sans-serif;
+// @font-face {
+//     font-family: "Charter regular";
+//     src: url("../assets/charter_regular-webfont.woff") format("woff");
+// }
+
+// @font-face {
+//     font-family: "Colfax AI";
+//     src: url("../assets/ColfaxAIBold.woff2") format("woff");
+// }
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+@media (min-width: 992px) {
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding-right: .5rem;
+            padding-left: 1rem;
+    }
+}
+
+// Negative margins are disabled by default,
+// but can be enabled in Sass.
+$enable-negative-margins: true;
+
+// Explicitly remove focus outline in Chromium when it shouldn't be
+// visible (e.g. as result of mouse click or touch tap). It already
+// should be doing this automatically, but seems to currently be
+// confused and applies its very visible two-tone outline anyway.
+// from: https://eduport.webestica.com/course-detail.html
+button:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+:root{
+    // --bs-font-sans-serif: "Colfax AI";
+    --bs-body-bg: #f8f9fa; //#f6f6f4;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospaceSFMono-Regular: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-body-font-family: Roboto, sans-serif;
+    --bs-body-font-size: 0.9375rem;
+    --bs-body-font-weight: 400;
+}
+
+.body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.accordion {
+    --bs-accordion-btn-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'/></svg>"))};
+    --bs-accordion-btn-active-icon: #{escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/></svg>"))};
+    --bs-accordion-btn-icon-transition: transform 0.4s linear;
+    --bs-accordion-btn-icon-transform: rotate(180deg);
+    --bs-accordion-active-bg: rgb(239, 238, 238);
+    --bs-accordion-bg: rgb(239, 238, 238);
+    --bs-accordion-btn-color: #212529;
+    --bs-accordion-active-color: #212529;
+    // --bs-accordion-btn-focus-border-color: #fff;
+    // --bs-accordion-border-color: #fff;
+    // --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.card {
+    --bs-card-cap-bg: rgb(255, 255, 255);
+    // --bs-card-border-color: #fff ;
+}
+
+.nav-pills.nav-tabs-line .nav-link.active {
+    color: #066ac9;
+    background-color: rgba(6, 106, 201, 0.1);
+}
+
+.navbar {
+  font-size: .9rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.socials:hover {
+    background: #938b8b21;
+    border-radius: 50%;
+}
+
+.btn-danger-soft {
+    color: #d6293e;
+    background-color: rgba(214, 41, 62, 0.1);
+}
+
+.btn-danger-soft:hover {
+    color: #fff;
+    background-color: #d6293e;
+}
+
+.btn-round {
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    padding: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s linear;
+}
+
+.btn-round .fa-play {
+    padding-left: 2px;
+}
+.fa, .fas {
+    font-weight: 900;
+}
+
+// .accordion-button {
+//     background: rgb(239, 238, 238);
+// }
+
+.accordion.accordion-bg-light .accordion-item {
+    border: none;
+    background-color: transparent;
+}
+
+.list-group-borderless .list-group-item {
+    border: none !important;
+    padding: 0.425rem 0;
+}
