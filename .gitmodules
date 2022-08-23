@@ -1,0 +1,12 @@
+[submodule "slides/lecture_1/reveal.js"]
+	path = slides/lecture_1/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
+[submodule "slides/lecture_2/reveal.js"]
+	path = slides/lecture_2/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
+[submodule "slides/lecture_3/reveal.js"]
+	path = slides/lecture_3/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
+[submodule "slides/lecture_4/reveal.js"]
+	path = slides/lecture_4/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
