@@ -7,17 +7,17 @@
     "prebuild": "npx rimraf build",
     "build": "rm -rf build && parcel build --public-url ./ ./src/index.html --dist-dir build",
     "start": "parcel ./src/index.html",
-    "predeploy": "rm -rf dist && parcel build ./src/index.html --public-url ./ && cp CNAME ./dist && cp README.md ./dist",
+    "predeploy": "rm -rf dist && parcel build ./src/index.html --public-url ./ && cp CNAME ./dist && cp README.md ./dist && cp -r slides ./dist && cp .gitmodules ./dist",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AntoineSimoulin/bootstrap.git"
+    "url": "git+https://github.com/AntoineSimoulin/simoulin.io.git"
   },
   "bugs": {
-    "url": "https://github.com/AntoineSimoulin/bootstrap.git/issues"
+    "url": "https://github.com/AntoineSimoulin/simoulin.io.git/issues"
   },
-  "homepage": "https://github.com/AntoineSimoulin/bootstrap.git#readme",
+  "homepage": "https://github.com/AntoineSimoulin/simoulin.io.git#readme",
   "keywords": [],
   "author": "Antoine Simoulin",
   "license": "ISC",
