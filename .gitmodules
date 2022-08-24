@@ -10,15 +10,3 @@
 [submodule "slides/lecture_4/reveal.js"]
 	path = slides/lecture_4/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
-[submodule ".cache/slides/lecture_1"]
-	path = .cache/slides/lecture_1
-	url = https://github.com/hakimel/reveal.js.git
-[submodule ".cache/slides/lecture_2"]
-	path = .cache/slides/lecture_2
-	url = https://github.com/hakimel/reveal.js.git
-[submodule ".cache/slides/lecture_3"]
-	path = .cache/slides/lecture_3
-	url = https://github.com/hakimel/reveal.js.git
-[submodule ".cache/slides/lecture_4"]
-	path = .cache/slides/lecture_4
-	url = https://github.com/hakimel/reveal.js.git
