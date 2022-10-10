@@ -22,9 +22,12 @@
   "author": "Antoine Simoulin",
   "license": "ISC",
   "dependencies": {
-    "@popperjs/core": "^2.11.5",
+    "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.0-beta1",
-    "gh-pages": "^4.0.0"
+    "bootstrap-icons": "^1.9.1",
+    "gh-pages": "^4.0.0",
+    "popper.js": "^1.16.1",
+    "prismjs": "^1.29.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0"
