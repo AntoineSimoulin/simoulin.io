@@ -23,15 +23,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- <script src="/Users/antoine/Documents/PhD/Code/bootstrap-test/node_modules/jquery/dist/jquery.js"></script>     -->
   <script>
+    function delay(milliseconds){
+    return new Promise(resolve => {
+        setTimeout(resolve, milliseconds);
+    });
+    }
+
     async function copyToClipboard() {
-      const button = event.srcElement;
-      console.log(button.parentElement);
-      button.classList.add("switch");
-      const pre = button.parentElement.parentElement;
+      var span = event.srcElement;
+      if (span.tagName == 'svg') {
+        // console.log(span.parentElement);
+        var a = span.parentElement;
+      } else {
+        var a = event.srcElement;
+      }
+      // console.log(a.tagName);
+      a.classList.add("switch");
+      // console.log(a.parentElement.classList);
+      document.getElementById(a.getAttribute('aria-describedby')).children[1].textContent = ''
+      const pre = a.parentElement.parentElement;
       let code = pre.querySelector("code");
       let text = code.innerText;
       await navigator.clipboard.writeText(text);
+      await delay(1000);
+      a.classList.remove("switch");
+      document.getElementById(a.getAttribute('aria-describedby')).children[1].textContent = 'copy'
     }
   </script>
   <style>
@@ -328,9 +346,9 @@
                                       After each loop, we garranted, the largest element of the unsorted
                                       portion is pushed at the most right position. We scan through the unsorted
                                       portion of the array and if the element is bigger than the next, we swap them.
-                                      We repeat the process n - 1 time until all elements are in the sorted portion.
+                                      We repeat the process <code>n - 1</code> time until all elements are in the sorted portion.
                                       If not swap was perform, list already sorted, no need to go through other iterations.
-                                      This reduce best time complexity to o(n). If the lisgt is already sorted.</p>
+                                      This reduce best time complexity to <code>o(n)</code> if the list is already sorted.</p>
 
                                     
                                     
@@ -347,33 +365,78 @@
                                               if not swapped: break
                                             return nums
                                           </code>
-                                          <a href="#" onclick="copyToClipboard()" class="copy bg-transparent text-wrap text-black d-inline-block position-absolute end-0 top-0 p-3" data-bs-placement="left" data-bs-toggle="tooltip" data-bs-title="copy">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard icon-expand" viewBox="0 0 16 16">
+                                          <a href="#" onclick="copyToClipboard()" class="copy bg-transparent text-wrap text-black d-inline-block position-absolute end-0 top-0 pe-3 py-3" data-bs-placement="left" data-bs-toggle="tooltip" data-bs-title="copy" data-bs-trigger="hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999999" class="bi bi-clipboard icon-expand" viewBox="0 0 16 16">
                                               <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
                                               <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
                                             </svg>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg icon-contract" viewBox="0 0 16 16">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999999" class="bi bi-check-lg icon-contract mt-1" viewBox="0 0 16 16">
                                               <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
                                             </svg>
-                                          </a>
-                                          <!-- <button class="copy-button text-wrap">copy 
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="copy" class="bi bi-sticky" viewBox="0 0 16 16">
-                                              <path d="M2.5 1A1.5 1.5 0 0 0 1 2.5v11A1.5 1.5 0 0 0 2.5 15h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 15 8.586V2.5A1.5 1.5 0 0 0 13.5 1h-11zM2 2.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V8H9.5A1.5 1.5 0 0 0 8 9.5V14H2.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V9.5a.5.5 0 0 1 .5-.5h4.293L9 13.793z"/>
-                                            </svg>
-                                          </button> -->
-                                            <!-- class="opacity-50"
-                                            margin-left: 0.25em;
-                                            opacity: .5;
-                                            transition: opacity .3s;
-                                            width: 1em; -->
-                                        </pre>
-                                  </div>
+                                          </a>               
+                                      </pre>
+                                    </div>
 
                                     <h6 class="mb-3">Selection Sort</h6>
 
                                     <img src="../assets/img/bubble-sort.svg">
-                                    
+
+                                    <p>We divide the array into two sections, sorted and unsorted. At each loop, we iterate through the unsorted portion to
+                                      find the minimum and place it at the leftmost position. We repeat that until all elements are in the sorted section.
+                                    </p>
+
+                                    <div class="line-numbers">
+                                      <pre class="rounded-2 position-relative">
+                                        <code class="language-python">
+                                          def selectionSort(array: list) -> list:
+                                            for i in range(len(array)):
+                                              m = i
+                                              for j in range(i + 1, len(array)):
+                                                if array[j] < array[m]: m = j
+                                              array[i], array[m] = array[m], array[i]
+                                            return array
+                                          </code>
+                                          <a href="#" onclick="copyToClipboard()" class="copy bg-transparent text-wrap text-black d-inline-block position-absolute end-0 top-0 pe-3 py-3" data-bs-placement="left" data-bs-toggle="tooltip" data-bs-title="copy" data-bs-trigger="hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999999" class="bi bi-clipboard icon-expand" viewBox="0 0 16 16">
+                                              <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                              <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999999" class="bi bi-check-lg icon-contract mt-1" viewBox="0 0 16 16">
+                                              <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                            </svg>
+                                          </a>               
+                                      </pre>
+                                    </div>
+
                                     <h6 class="mb-3">Insertion Sort</h6>
+
+                                    <p>We divide the array into two sections, sorted and unsorted. At each step
+                                      we consider the rightmost element from the unsorted portion of the array and
+                                      while its greater that the current element to its right, we swap the two.</p>
+
+                                    <div class="line-numbers">
+                                      <pre class="rounded-2 position-relative">
+                                        <code class="language-python">
+                                          def insertionSort(array: list) -> list:
+                                            for i in range(len(array)):
+                                              j = i
+                                              while j > 0 and array[j] < array[j - 1]:
+                                                array[j], array[j - 1] = array[j - 1], array[j]
+                                                j -= 1
+                                            return array
+                                          </code>
+                                          <a href="#" onclick="copyToClipboard()" class="copy bg-transparent text-wrap text-black d-inline-block position-absolute end-0 top-0 pe-3 py-3" data-bs-placement="left" data-bs-toggle="tooltip" data-bs-title="copy" data-bs-trigger="hover">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999999" class="bi bi-clipboard icon-expand" viewBox="0 0 16 16">
+                                              <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                              <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#999999" class="bi bi-check-lg icon-contract mt-1" viewBox="0 0 16 16">
+                                              <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                            </svg>
+                                          </a>               
+                                      </pre>
+                                    </div>
+
                                     <h6 class="mb-3">Merge Sort</h6>
                                     <h6 class="mb-3">Quick Sort</h6>
                                     <h6 class="mb-3">Count Sort</h6>
@@ -745,114 +808,6 @@
                                     </div>
                                   </a>
                                 </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>What Is a Variable?</span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 11s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Declaring Variables </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 30s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Using let to Declare Variables </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 28s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Naming Variables </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 14s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Common Errors Using Variables </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 30s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Changing Variable Values </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 4s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Constants </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 15s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>The var Keyword </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 20s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Summary</span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>1m 49s</span>
-                                    </div>
-                                  </a>
-                                </li>
                               </ul>
                             </div>
                           </li>
@@ -893,89 +848,7 @@
                                   </a>
                                 </li>
                                 <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Function Basics </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 46s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Function Expressions </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 32s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Passing Information to Functions</span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 19s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Function Return Values </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 13s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Function Scope </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>4m 20s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Using Functions to Modify Web Pages </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 42s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item">
-                                  <a class="mb-0 d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Summary </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 3s</span>
-                                    </div>
-                                  </a>
-                                </li>
+                                
                               </ul>
                             
                           </li>
@@ -1014,116 +887,9 @@
                                   </a>
                                 </li>
                                 <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Object Properties </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>4m 28s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Object Methods </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 3s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Passing Objects to Functions</span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 27s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Standard Built-in Objects </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>6m 55s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>The Document Object Model (DOM) </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>3m 29s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Styling DOM Elements </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 42s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Detecting Button Clicks </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 3s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Showing and Hiding DOM Elements </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>4m 37s</span>
-                                    </div>
-                                  </a>
-                                </li>
-                                <!-- List group item -->
-                                <li class="list-group-item border-0 disabled" aria-disabled="true">
-                                  <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
-                                    <div class="text-truncate">
-                                      <span class="icon-shape bg-light text-secondary icon-sm rounded-circle me-2"><i class="fe fe-lock fs-4"></i></span>
-                                      <span>Summary </span>
-                                    </div>
-                                    <div class="text-truncate">
-                                      <span>2m 47s</span>
-                                    </div>
-                                  </a>
-                                </li>
+                                
                               </ul>
                            
-                          </li>
                           
                         </ul>
                       </div>

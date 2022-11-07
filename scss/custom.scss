@@ -24,8 +24,8 @@ $font-sizes: (
   6: .9375rem,
 );
 
-// $tooltip-arrow-width:               .8rem;
-// $tooltip-arrow-height:              0rem;
+$tooltip-bg: #F4F2F0;
+$tooltip-color: #999999;
 
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/utilities";
@@ -156,20 +156,37 @@ button:focus:not(:focus-visible) {
     color: #066ac9;
 }
 
-.copy .icon-contract {
-    display: none;
-}
+// .icon-expand {
+//     display: none;
+// }
 
 // .copy.switch .icon-contract{
 //     display: block;
+//     color: #066ac9;
 // }
+
+pre:not(:hover) .icon-expand {
+    display: none;
+    transition-timing-function: ease;
+    transition: 0.2s;
+}
+
+.copy .icon-contract {
+    display: none;
+    transition-timing-function: ease;
+    transition: 0.2s;
+}
 
 .copy.switch:focus .icon-expand {
     display: none;
+    transition-timing-function: ease;
+    transition: 0.2s;
 }
 
-.copy.switch:focus .icon-contract {
+.copy.switch:focus:hover .icon-contract {
     display: block;
+    transition-timing-function: ease;
+    transition: 0.2s;
 }
  
 .btn-danger-soft {
