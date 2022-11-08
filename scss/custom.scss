@@ -15,14 +15,14 @@
 //     src: url("../assets/ColfaxAIBold.woff2") format("woff");
 // }
 
-$font-sizes: (
-//   1: 12rem,
-//   2: 10rem,
-//   3: 7rem,
-  4: .5rem,
-  5: .85rem,
-  6: .9375rem,
-);
+// $font-sizes: (
+// //   1: 12rem,
+// //   2: 10rem,
+// //   3: 7rem,
+//   4: .5rem,
+//   5: .85rem,
+//   6: .9375rem,
+// );
 
 $tooltip-bg: #F4F2F0;
 $tooltip-color: #999999;
@@ -74,19 +74,19 @@ button:focus:not(:focus-visible) {
     display: none !important;
 }
 
+// --bs-font-sans-serif: "Colfax AI";
+// --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+// --bs-font-monospaceSFMono-Regular: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+// --bs-body-font-family: Roboto, sans-serif;
 :root{
-    // --bs-font-sans-serif: "Colfax AI";
     --bs-body-bg: #f8f9fa; //#f6f6f4;
-    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --bs-font-monospaceSFMono-Regular: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --bs-body-font-family: Roboto, sans-serif;
     --bs-body-font-size: 0.9375rem;
     --bs-body-font-weight: 400;
 }
 
 .body {
     margin: 0;
-    font-family: var(--bs-body-font-family);
+    // font-family: var(--bs-body-font-family);
     font-size: var(--bs-body-font-size);
     font-weight: var(--bs-body-font-weight);
     line-height: var(--bs-body-line-height);
