@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3HGJDFD2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-CN3HGJDFD2');
@@ -17,7 +17,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap">
   <link rel="stylesheet" href="../scss/custom.scss">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -30,23 +31,26 @@
     .btn-download {
       color: black !important;
     }
+
     .btn-download:hover {
-        opacity: .75 !important;
+      opacity: .75 !important;
     }
+
     body {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
     }
 
     main {
-        flex: 1;
+      flex: 1;
     }
+
     .article:hover {
-        opacity: 0.7;
+      opacity: 0.7;
     }
   </style>
-    <!-- <style>
+  <!-- <style>
       /* Custom style */
         .accordion-button::after {
           background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
@@ -275,51 +279,53 @@
   </div> -->
   <header>
     <div class="container sticky-top">
-        <nav class="navbar navbar-expand-lg bg-light text-uppercase justify-content-between">
-            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- <li class="nav-item">
+      <nav class="navbar navbar-expand-lg bg-light text-uppercase justify-content-between">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <!-- <li class="nav-item">
               <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li> -->
-                    <li class="nav-item rounded-3">
-                        <a class="nav-link" href="index.html">About</a>
-                    </li>
-                    <li class="nav-item rounded-3">
-                        <a class="nav-link active" href="projects.html">Projects</a>
-                    </li>
-                    <li class="nav-item rounded-3">
-                        <a class="nav-link" href="communications.html">Communications</a>
-                    </li>
-                    <!-- <li class="nav-item">
+            <li class="nav-item rounded-3">
+              <a class="nav-link" href="index.html">About</a>
+            </li>
+            <li class="nav-item rounded-3">
+              <a class="nav-link active" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item rounded-3">
+              <a class="nav-link" href="communications.html">Communications</a>
+            </li>
+            <!-- <li class="nav-item">
               <a class="nav-link" href="teaching.html">Teaching</a>
             </li> -->
-                    <li class="nav-item rounded-3 dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDocumentation" data-bs-toggle="dropdown" href="#"
-                            aria-haspopup="true" aria-expanded="false">
-                            Teaching
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end border-0 py-0"
-                            aria-labelledby="navbarDocumentation" style="min-width: 250px;">
-                            <div class="list-group list-group-flush px-3">
-                                <a class="list-group-item d-flex align-items-center py-2" href="./teaching.html">
+            <li class="nav-item rounded-3 dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDocumentation" data-bs-toggle="dropdown" href="#"
+                aria-haspopup="true" aria-expanded="false">
+                Teaching
+              </a>
+              <div class="dropdown-menu dropdown-menu-end border-0 py-0" aria-labelledby="navbarDocumentation"
+                style="min-width: 250px;">
+                <div class="list-group list-group-flush px-3">
+                  <a class="list-group-item d-flex align-items-center py-2" href="./teaching.html">
 
-                                    <!-- Icon -->
-                                    <div class="icon icon-sm text-primary pb-1">
-                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    <!-- Icon -->
+                    <div class="icon icon-sm text-primary pb-1">
+                      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             fill="currentColor" class="bi bi-file-earmark-text-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z" />
                                         </svg> -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-text-paragraph" viewBox="0 0 16 16">
-                                          <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
-                                        </svg>
-                                        <!-- <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-text-paragraph" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                          d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z" />
+                      </svg>
+                      <!-- <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <g fill="none" fill-rule="evenodd">
                           <path d="M0 0h24v24H0z"></path>
                           <path
@@ -332,39 +338,42 @@
                           <rect fill="#335EEA" opacity=".3" x="7" y="14" width="9" height="2" rx="1"></rect>
                         </g>
                       </svg> -->
-                                    </div>
+                    </div>
 
-                                    <!-- Content -->
-                                    <div class="ms-3">
+                    <!-- Content -->
+                    <div class="ms-3">
 
-                                        <!-- Heading -->
-                                        <h6 class="fs-5 text-capitalize text-grey mb-0">
-                                            NLP 101
-                                        </h6>
+                      <!-- Heading -->
+                      <h6 class="fs-5 text-capitalize text-grey mb-0">
+                        NLP 101
+                      </h6>
 
-                                        <!-- Text -->
-                                        <!-- <p class="fs-6 text-gray-700 mb-0">
+                      <!-- Text -->
+                      <!-- <p class="fs-6 text-gray-700 mb-0">
                         Customizing and building
                       </p> -->
 
-                                    </div>
+                    </div>
 
-                                </a>
-                                <a class="list-group-item d-flex align-items-center py-2" href="./code.html">
+                  </a>
+                  <a class="list-group-item d-flex align-items-center py-2" href="./code.html">
 
-                                    <!-- Icon -->
-                                    <div class="icon icon-sm text-primary pb-1">
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-square" viewBox="0 0 16 16">
-                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                                        <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"/>
-                                      </svg>
-                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    <!-- Icon -->
+                    <div class="icon icon-sm text-primary pb-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-code-square" viewBox="0 0 16 16">
+                        <path
+                          d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                        <path
+                          d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z" />
+                      </svg>
+                      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             fill="currentColor" class="bi bi-file-earmark-code-fill"
                                             viewBox="0 0 16 16">
                                             <path
                                                 d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM6.646 7.646a.5.5 0 1 1 .708.708L5.707 10l1.647 1.646a.5.5 0 0 1-.708.708l-2-2a.5.5 0 0 1 0-.708l2-2zm2.708 0 2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 10 8.646 8.354a.5.5 0 1 1 .708-.708z" />
                                         </svg> -->
-                                        <!-- <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <!-- <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <g fill="none" fill-rule="evenodd">
                           <path d="M0 0h24v24H0z"></path>
                           <rect fill="#335EEA" x="4" y="4" width="7" height="7" rx="1.5"></rect>
@@ -373,39 +382,41 @@
                             fill="#335EEA" opacity=".3"></path>
                         </g>
                       </svg> -->
-                                    </div>
+                    </div>
 
-                                    <!-- Content -->
-                                    <div class="ms-3">
+                    <!-- Content -->
+                    <div class="ms-3">
 
-                                        <!-- Heading -->
-                                        <h6 class="fs-5 text-capitalize text-grey mb-0">
-                                            Cracking the Coding Interview
-                                        </h6>
+                      <!-- Heading -->
+                      <h6 class="fs-5 text-capitalize text-grey mb-0">
+                        Cracking the Coding Interview
+                      </h6>
 
-                                        <!-- Text -->
-                                        <!-- <p class="fs-sm text-gray-700 mb-0">
+                      <!-- Text -->
+                      <!-- <p class="fs-sm text-gray-700 mb-0">
                         Full list of components
                       </p> -->
 
-                                    </div>
+                    </div>
 
-                                </a>
-                                <a class="list-group-item d-flex align-items-center py-2" href="./ml.html">
+                  </a>
+                  <a class="list-group-item d-flex align-items-center py-2" href="./ml.html">
 
-                                    <!-- Icon -->
-                                    <div class="icon icon-sm text-primary pb-1">
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-laptop" viewBox="0 0 16 16">
-                                        <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z"/>
-                                      </svg>
-                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    <!-- Icon -->
+                    <div class="icon icon-sm text-primary pb-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-laptop" viewBox="0 0 16 16">
+                        <path
+                          d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z" />
+                      </svg>
+                      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16">
                                             <path
                                                 d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z" />
                                             <path
                                                 d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
                                         </svg> -->
-                                        <!-- <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <!-- <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <g fill="none" fill-rule="evenodd">
                           <path d="M0 0h24v24H0z"></path>
                           <path
@@ -415,47 +426,53 @@
                           <rect fill="#335EEA" x="6" y="15" width="5" height="2" rx="1"></rect>
                         </g>
                       </svg> -->
-                                    </div>
+                    </div>
 
-                                    <!-- Content -->
-                                    <div class="ms-3">
+                    <!-- Content -->
+                    <div class="ms-3">
 
-                                        <!-- Heading -->
-                                        <h6 class="fs-5 text-capitalize text-grey mb-0">
-                                            Cracking the ML Interview
-                                        </h6>
+                      <!-- Heading -->
+                      <h6 class="fs-5 text-capitalize text-grey mb-0">
+                        Cracking the ML Interview
+                      </h6>
 
-                                        <!-- Text -->
-                                        <!-- <p class="fs-sm text-gray-700 mb-0">
+                      <!-- Text -->
+                      <!-- <p class="fs-sm text-gray-700 mb-0">
                         Keep track of changes
                       </p> -->
 
-                                    </div>
+                    </div>
 
-                                    <!-- Badge -->
-                                    <!-- <span class="badge rounded-pill bg-primary-soft ms-auto">
+                    <!-- Badge -->
+                    <!-- <span class="badge rounded-pill bg-primary-soft ms-auto">
                                         2.1.0
                                     </span> -->
 
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item rounded-3">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item rounded-3">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
-</header>
+  </header>
 
   <main>
     <section class="pb-0 py-lg-5">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-md-6 col-lg-4 d-flex aos-init aos-animate article" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card mb-3 shadow border-0 rounded-2">
+      <div class="container p-3">
+        <div class="col-xl-8 col-lg-8 col-md-12 col-12">
+          <h1 class="fw-bold pb-4">Stuff I’ve created to leave my mark on the world.</h1>
+          <p class="fs-6  pb-4 lh-md fw-light">
+            Here are some of the projects I'm proudest of. Many are open-source, so if you see something that catches your eye, feel free to investigate and contribute!
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 d-flex pb-4">
+            <!-- <div class="card mb-3 shadow border-0 rounded-2">
                         <a target="_blank" href="https://github.com/AntoineSimoulin/gpt-fr">
                             <img src="../assets/img/gpt-fr.png" alt="Image"
                                 class="card-img-top">
@@ -469,69 +486,209 @@
                             <p class="flex-grow-1">
                                 French large pre-trained language model for French. The base version, equivalent to OpenAI GPT in English, includes above one billion parameters.
                             </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 d-flex aos-init aos-animate article" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card mb-3 shadow border-0 rounded-2">
-                        <a target="_blank" href="https://github.com/AntoineSimoulin/pytree">
-                            <img src="../assets/img/pytree.png" alt="Image"
-                                class="card-img-top">
-                        </a>
-                        <div class="card-body d-flex flex-column text-center">
-                            <div class="d-flex justify-content-between mb-3">
+                            <div class="px-4 py-2">
+                              <a href="../assets/SIMOULIN_Antoine_CV_2.pdf" rel="noopener noreferrer" target="_blank" class="text-decoration-none text-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                  <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                                  <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+                                </svg>
+                                <span class="text-secondary">https://huggingface.co/asi/gpt-fr-cased-small</span>
+                              </a>
                             </div>
-                            <a class="text-decoration-none" target="_blank" href="https://github.com/AntoineSimoulin/pytree">
-                                <h4 class="text-dark">PyTree</h4>
-                            </a>
-                            <p class="flex-grow-1">
-                                PyTree implements tree-structured neural networks in PyTorch. The package provides highly generic implementations as well as efficient batching methods.
-                            </p>
+                            
+                            
                         </div>
-                    </div>
+                    </div> -->
+            <div class="rounded-3 cursor-pointer-hover gray p-2">
+              <a target="_blank" href="https://github.com/AntoineSimoulin/gpt-fr">
+                <img src="../assets/img/gpt-fr.png" alt="Image"
+                  class="img-thumbnail img-fluid rounded-circle img-thumbnail" width="72">
+              </a>
+              <div class="d-flex flex-column text-left">
+                <div class="d-flex justify-content-between mb-3">
                 </div>
-                <div class="col-md-6 col-lg-4 d-flex aos-init aos-animate article" data-aos="fade-up" data-aos-delay="700">
-                    <div class="card mb-3 shadow border-0 rounded-2">
-                        <a target="_blank"
-                            href="https://huggingface.co/flax-sentence-embeddings/all_datasets_v4_MiniLM-L12">
-                            <img src="../assets/img/sbert.png"
-                                alt="Image" class="card-img-top">
-                        </a>
-                        <div class="card-body d-flex flex-column text-center">
-                            <div class="d-flex justify-content-between mb-3">
-                            </div>
-                            <a class="text-decoration-none" target="_blank" href="https://huggingface.co/flax-sentence-embeddings/all_datasets_v4_MiniLM-L12">
-                                <h4 class="text-dark">Sentence embedding model</h4>
-                            </a>
-                            <p class="flex-grow-1">
-                                Sentence embedding pre-trained model trained on 1B sentence pairs during the Community week using JAX/Flax for NLP & CV, organized by Hugging Face.
-                            </p>
-                        </div>
-                    </div>
+                <a class="text-decoration-none" target="_blank" href="https://github.com/AntoineSimoulin/gpt-fr">
+                  <h4 class="text-dark">GPT-fr</h4>
+                </a>
+                <p>
+                  Large pre-trained language model for French. The base version, equivalent to OpenAI GPT in
+                  English, includes above one billion parameters.
+                </p>
+                <div class="d-flex py-2">
+                  <a href="https://github.com/AntoineSimoulin/gpt-fr" target="_blank"
+                    class="text-decoration-none text-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="grey" class="bi bi-link-45deg"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z">
+                      </path>
+                      <path
+                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z">
+                      </path>
+                    </svg>
+                    <span class="text-secondary">huggingface.co/asi/gpt-fr-cased-small</span>
+                  </a>
                 </div>
-                <div class="col-md-6 col-lg-4 d-flex aos-init aos-animate article" data-aos="fade-up" data-aos-delay="700">
-                    <div class="card mb-3 shadow border-0 rounded-2">
-                        <a target="_blank"
-                            href="https://github.com/MAIF/melusine">
-                            <img src="https://github.com/MAIF/melusine/raw/master/docs/_static/melusine.png"
-                                alt="Image" class="card-img-top">
-                        </a>
-                        <div class="card-body d-flex flex-column text-center">
-                            <div class="d-flex justify-content-between mb-3">
-                            </div>
-                            <a class="text-decoration-none" target="_blank" href="https://github.com/MAIF/melusine">
-                                <h4 class="text-dark">Melusine</h4>
-                            </a>
-                            <p class="flex-grow-1">
-                                Melusine is a high-level Python library for email classification and feature extraction developed by Quantmetry and MAIF.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex pb-4">
+            <div class="rounded-3 cursor-pointer-hover gray p-2">
+              <a target="_blank" href="https://github.com/AntoineSimoulin/pytree">
+                <img src="../assets/img/pytree.png" alt="Image"
+                  class="img-thumbnail img-fluid rounded-circle img-thumbnail" width="72">
+              </a>
+              <div class="d-flex flex-column text-left">
+                <div class="d-flex justify-content-between mb-3">
+                </div>
+                <a class="text-decoration-none" target="_blank" href="https://github.com/AntoineSimoulin/gpt-fr">
+                  <h4 class="text-dark">Pytree</h4>
+                </a>
+                <p>
+                  PyTree implements tree-structured neural networks in PyTorch. The package provides highly generic
+                  implementations as well as efficient batching methods.
+                </p>
+                <div class="d-flex py-2">
+                  <a href="https://github.com/AntoineSimoulin/pytree" rel="noopener noreferrer" target="_blank"
+                    class="text-decoration-none text-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="grey" class="bi bi-link-45deg"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z">
+                      </path>
+                      <path
+                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z">
+                      </path>
+                    </svg>
+                    <span class="text-secondary">github.com/AntoineSimoulin/pytree</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="card mb-3 shadow border-0 rounded-2">
+              <a target="_blank" href="https://github.com/AntoineSimoulin/pytree">
+                <img src="../assets/img/pytree.png" alt="Image" class="card-img-top">
+              </a>
+              <div class="card-body d-flex flex-column text-center">
+                <div class="d-flex justify-content-between mb-3">
+                </div>
+                <a class="text-decoration-none" target="_blank" href="https://github.com/AntoineSimoulin/pytree">
+                  <h4 class="text-dark">PyTree</h4>
+                </a>
+                <p class="flex-grow-1">
+                  PyTree implements tree-structured neural networks in PyTorch. The package provides highly generic
+                  implementations as well as efficient batching methods.
+                </p>
+              </div>
+            </div> -->
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex pb-4">
+            <!-- <div class="card mb-3 shadow border-0 rounded-2">
+              <a target="_blank" href="https://huggingface.co/flax-sentence-embeddings/all_datasets_v4_MiniLM-L12">
+                <img src="../assets/img/sbert.png" alt="Image" class="card-img-top">
+              </a>
+              <div class="card-body d-flex flex-column text-center">
+                <div class="d-flex justify-content-between mb-3">
+                </div>
+                <a class="text-decoration-none" target="_blank"
+                  href="https://huggingface.co/flax-sentence-embeddings/all_datasets_v4_MiniLM-L12">
+                  <h4 class="text-dark">Sentence embedding model</h4>
+                </a>
+                <p class="flex-grow-1">
+                  Sentence embedding pre-trained model trained on 1B sentence pairs during the Community week using
+                  JAX/Flax for NLP & CV, organized by Hugging Face.
+                </p>
+              </div>
+            </div> -->
+            <div class="rounded-3 cursor-pointer-hover gray p-2">
+              <a target="_blank" href="https://github.com/AntoineSimoulin/pytree">
+                <img src="../assets/img/sbert.png" alt="Image"
+                  class="img-thumbnail img-fluid rounded-circle img-thumbnail" width="72">
+              </a>
+              <div class="d-flex flex-column text-left">
+                <div class="d-flex justify-content-between mb-3">
+                </div>
+                <a class="text-decoration-none" target="_blank"
+                  href="https://huggingface.co/flax-sentence-embeddings/all_datasets_v4_MiniLM-L12">
+                  <h4 class="text-dark">Sentence embedding model</h4>
+                </a>
+                <p>
+                  Sentence embedding pre-trained model trained on 1B sentence pairs during the Community week using
+                  JAX/Flax for NLP & CV, organized by Hugging Face.
+                </p>
+                <div class="d-flex py-2">
+                  <a href="https://huggingface.co/flax-sentence-embeddings/all_datasets_v4_MiniLM-L12"
+                    rel="noopener noreferrer" target="_blank" class="text-decoration-none text-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="grey" class="bi bi-link-45deg"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z">
+                      </path>
+                      <path
+                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z">
+                      </path>
+                    </svg>
+                    <span class="text-secondary">huggingface.co/flax-sentence-embeddings</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>     
         </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 d-flex pb-4">
+            <div class="rounded-3 cursor-pointer-hover gray p-2">
+              <a target="_blank" href="https://github.com/AntoineSimoulin/pytree">
+                <img src="https://github.com/MAIF/melusine/raw/master/docs/_static/melusine.png" alt="Image"
+                  class="img-thumbnail img-fluid rounded-circle img-thumbnail" width="72">
+              </a>
+              <div class="d-flex flex-column text-left">
+                <div class="d-flex justify-content-between mb-3">
+                </div>
+                <a class="text-decoration-none" target="_blank" href="https://github.com/MAIF/melusine">
+                  <h4 class="text-dark">Melusine</h4>
+                </a>
+                <p>
+                  Melusine is a high-level Python library for email classification and feature extraction developed by
+                  Quantmetry and MAIF.
+                </p>
+                <div class="d-flex py-2">
+                  <a href="https://github.com/MAIF/melusine" rel="noopener noreferrer" target="_blank"
+                    class="text-decoration-none text-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="grey"
+                      class="bi bi-link-45deg" viewBox="0 0 16 16">
+                      <path
+                        d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z">
+                      </path>
+                      <path
+                        d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z">
+                      </path>
+                    </svg>
+                    <span class="text-secondary">github.com/MAIF/melusine</span>
+                  </a>
+                </div>
+              </div>
+              <!-- <div class="card mb-3 shadow border-0 rounded-2">
+            <a target="_blank" href="https://github.com/MAIF/melusine">
+              <img src="https://github.com/MAIF/melusine/raw/master/docs/_static/melusine.png" alt="Image"
+                class="card-img-top">
+            </a>
+            <div class="card-body d-flex flex-column text-center">
+              <div class="d-flex justify-content-between mb-3">
+              </div>
+              <a class="text-decoration-none" target="_blank" href="https://github.com/MAIF/melusine">
+                <h4 class="text-dark">Melusine</h4>
+              </a>
+              <p class="flex-grow-1">
+                Melusine is a high-level Python library for email classification and feature extraction developed by
+                Quantmetry and MAIF.
+              </p>
+            </div>
+          </div> -->
+            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </section>
   </main>
 
@@ -772,7 +929,7 @@
   </footer>
 
   <script type="module" src="./index.js"></script>
-  
+
 </body>
 
 </html>

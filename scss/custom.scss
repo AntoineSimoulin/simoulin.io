@@ -3,7 +3,8 @@
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/maps";
-
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
 // $font-family-sans-serif : 'Charter', sans-serif;
 // @font-face {
 //     font-family: "Charter regular";
@@ -24,16 +25,50 @@
 //   6: .9375rem,
 // );
 
+
+
+// $utilities: (
+//   "pointer": (
+//     property: cursor,
+//     class: cursor,
+//     state: hover,
+//     values: (
+//       1: pointer,
+//     )
+//   )
+// );
+
 $tooltip-bg: #F4F2F0;
 $tooltip-color: #999999;
 
-@import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/utilities";
+$secondary: #FECF4B;
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+//
+// Custom styles
+//
+
+@import "./variables_overrides";
+@import "./utilities";
+
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap/scss/tooltip";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import "../node_modules/prismjs/themes/prism.css";
 @import "../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css";
+
+
+
 
 .navbar-collapse {
     justify-content: flex-end;
@@ -109,6 +144,10 @@ button:focus:not(:focus-visible) {
     // --bs-accordion-btn-focus-border-color: #fff;
     // --bs-accordion-border-color: #fff;
     // --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.gray:hover {
+    background: #938b8b21;
 }
 
 .card {
