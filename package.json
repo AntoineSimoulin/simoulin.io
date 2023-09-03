@@ -1,36 +1,33 @@
 {
-  "name": "simoulin.io",
-  "version": "1.0.0",
-  "description": "",
+  "name": "simoulin.io.vuejs",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "dev": "parcel ./src/index.html",
-    "prebuild": "npx rimraf build",
-    "build": "rm -rf build && parcel build --public-url ./ ./src/index.html --dist-dir dist",
-    "start": "parcel ./src/index.html",
-    "predeploy": "rm -rf dist && parcel build ./src/index.html --public-url ./ && cp CNAME ./dist && cp README.md ./dist && cp -r slides ./dist && cp .gitmodules ./dist",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "deploy": "gh-pages -d dist --dotfiles"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AntoineSimoulin/simoulin.io.git"
-  },
-  "bugs": {
-    "url": "https://github.com/AntoineSimoulin/simoulin.io.git/issues"
-  },
-  "homepage": "https://github.com/AntoineSimoulin/simoulin.io.git#readme",
-  "keywords": [],
-  "author": "Antoine Simoulin",
-  "license": "ISC",
   "dependencies": {
     "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.0-beta1",
-    "bootstrap-icons": "^1.9.1",
-    "gh-pages": "^4.0.0",
-    "jquery": "^3.6.1",
-    "popper.js": "^1.16.1",
-    "prismjs": "^1.29.0"
+    "@retorquere/bibtex-parser": "^6.4.7",
+    "bootstrap": "^5.2.3",
+    "citation-js": "^0.6.5",
+    "font-awesome": "^4.7.0",
+    "gh-pages": "^5.0.0",
+    "i": "^0.3.7",
+    "markdown-it": "^13.0.1",
+    "markdown-it-table-of-contents": "^0.6.0",
+    "marked": "^4.2.12",
+    "prismjs": "^1.29.0",
+    "u": "^0.1.0",
+    "vue": "^3.2.45",
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0"
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "parcel": "^2.8.3",
+    "vite": "^4.0.0"
   }
 }
