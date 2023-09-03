@@ -1,12 +1,12 @@
 {
-  "name": "simoulin.io.vuejs",
+  "name": "simoulin.io",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy": "rm -rf dist && vite build && cp CNAME ./dist && cp README.md ./dist",
+    "predeploy": "rm -rf dist && vite build && cp CNAME ./dist && cp README.md ./dist && cp ./dist/index.html ./dist/404.html",
     "deploy": "gh-pages -d dist --dotfiles"
   },
   "dependencies": {

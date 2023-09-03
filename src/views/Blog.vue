@@ -1,6 +1,6 @@
 <script>
 import BlogPost from "../components/BlogPost.vue"
-import blogPostsString from '../../assets/blog.bib?raw';
+import blogPostsString from '@/assets/blog.bib?raw';
 // import Cite from "citation-js";
 import { parse } from "@retorquere/bibtex-parser";
 

@@ -12,19 +12,19 @@ export default {
             title: 'GPT-fr',
             abstract: 'Large pre-trained language model for French. The base version, equivalent to OpenAI GPT in English, includes above one billion parameters.',
             href: 'https://huggingface.co/asi/gpt-fr-cased-small',
-            image: '../assets/img/gpt-fr.png',
+            image: '/gpt-fr.png',
         },
         {
             title: 'Pytree',
             abstract: 'PyTree implements tree-structured neural networks in PyTorch. The package provides highly generic implementations as well as efficient batching methods.',
             href: 'https://github.com/AntoineSimoulin/pytree',
-            image: '../assets/img/pytree.png',
+            image: '/pytree.png',
         },
         {
             title: 'Sentence embedding model',
             abstract: 'Sentence embedding pre-trained model trained on 1B sentence pairs during the Community week using JAX/Flax for NLP & CV, organized by Hugging Face.',
             href: 'https://huggingface.co/flax-sentence-embeddings',
-            image: '../assets/img/sbert.png',
+            image: '/sbert.png',
         },
         {
             title: 'Melusine',

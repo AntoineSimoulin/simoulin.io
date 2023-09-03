@@ -1331,7 +1331,7 @@ async function copyToClipboard() {
                   <!-- <img src="../assets/img/bubble-sort.svg"> -->
                   <object
                     type="image/svg+xml"
-                    data="../../../assets/img/bubble-sort.svg"
+                    data="@/assets/img/bubble-sort.svg"
                   ></object>
 
                   <div class="line-numbers pb-4">
@@ -1371,7 +1371,7 @@ async function copyToClipboard() {
                   <!-- <img src="../../assets/img/selection-sort.svg"> -->
                   <object
                     type="image/svg+xml"
-                    data="../../../assets/img/selection-sort.svg"
+                    data="@/assets/img/selection-sort.svg"
                   ></object>
 
                   <div class="line-numbers pb-4">
@@ -1408,7 +1408,7 @@ async function copyToClipboard() {
 
                   <object
                     type="image/svg+xml"
-                    data="../../../assets/img/insertion-sort.svg"
+                    data="@/assets/img/insertion-sort.svg"
                   ></object>
 
                   <!-- <img src="../../assets/img/insertion-sort.svg"> -->
@@ -1450,7 +1450,7 @@ async function copyToClipboard() {
                     <code>O(n)</code>.
                   </p>
 
-                  <img src="../../../assets/img/merge-sort.svg" />
+                  <img src="@/assets/img/merge-sort.svg" />
 
                   <div class="line-numbers pb-4">
                     <pre class="rounded-2 position-relative">

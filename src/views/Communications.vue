@@ -3,8 +3,8 @@ import { parse } from "@retorquere/bibtex-parser";
 import Cite from "citation-js";
 import Citation from "../components/Citation.vue";
 import Talk from "../components/Talk.vue";
-import bibString from '../../assets/simoulin.bib?raw';
-import talksString from '../../assets/talks.bib?raw';
+import bibString from '@/assets/simoulin.bib?raw';
+import talksString from '@/assets/talks.bib?raw';
 
 export default {
   components: {

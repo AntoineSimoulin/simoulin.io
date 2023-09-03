@@ -95,7 +95,7 @@
                                       This reduce best time complexity to <code>O(n)</code> if the list is already sorted.</p>
 
                                     <!-- <img src="../../assets/img/bubble-sort.svg"> -->
-                                    <object type="image/svg+xml" data="../../assets/img/bubble-sort.svg"></object>
+                                    <object type="image/svg+xml" data="@/assets/img/bubble-sort.svg"></object>
                                     
                                    
 
@@ -106,7 +106,7 @@
                                     </p>
 
                                     <!-- <img src="../../assets/img/selection-sort.svg"> -->
-                                    <object type="image/svg+xml" data="../../assets/img/selection-sort.svg"></object>
+                                    <object type="image/svg+xml" data="@/assets/img/selection-sort.svg"></object>
 
                                     
                                     <h4 class="mb-3">Insertion Sort</h4>
@@ -115,7 +115,7 @@
                                       we consider the rightmost element from the unsorted portion of the array and
                                       while its greater that the current element to its right, we swap the two.</p>
 
-                                    <object type="image/svg+xml" data="../../assets/img/insertion-sort.svg"></object>
+                                    <object type="image/svg+xml" data="@/assets/img/insertion-sort.svg"></object>
 
                                     <!-- <img src="../../assets/img/insertion-sort.svg"> -->
 
@@ -130,7 +130,7 @@
                                       The best, average and worst time complexity is <code>O(n*log n)</code> and space complexity is  <code>O(n)</code>.
                                     </p>
 
-                                    <img src="../../assets/img/merge-sort.svg">
+                                    <img src="@/assets/img/merge-sort.svg">
 
                                     
 
