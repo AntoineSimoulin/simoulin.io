@@ -117,9 +117,9 @@
   
 
               <div class="py-2 mt-4 d-flex flex-lg-row flex-md-row flex-xl-row flex-column justify-content-around">
-                <a class="btn btn-primary lift" href="../assets/SIMOULIN_Antoine_CV_2.pdf" download rel="noopener noreferrer"
+                <a class="btn btn-primary lift" href="/CV_SIMOULIN_V6.pdf" download rel="noopener noreferrer"
                   target="_blank"><i class="fa-solid fa-circle-arrow-down pe-2"></i>Download my CV</a>
-                <a class="btn btn-white text-dark" href="../assets/Research_Statement.pdf" download rel="noopener noreferrer"
+                <a class="btn btn-white text-dark" href="/Research_Statement.pdf" download rel="noopener noreferrer"
                   target="_blank"><i class="fa-solid text-primary fa-circle-arrow-down pe-2"></i>Research Statement</a>
               </div>
 
