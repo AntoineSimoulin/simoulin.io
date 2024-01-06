@@ -5,8 +5,11 @@ import Code from "../../components/Code.vue";
 import Toc from "../../components/Toc.vue";
 import PageCourse from "../../components/PageCourse.vue";
 import tocPlugin from "markdown-it-table-of-contents";
+// import { preWrapperPlugin } from '../../markdown/plugins/preWrapper'
 
 import sortingString from '../../../courses/code-101/sorting.md?raw';
+import { h } from 'vue'
+
 
 const md = MarkdownIt();
 md.use(tocPlugin);
@@ -97,38 +100,40 @@ function findExistingIdAttr(token) {
 
 
 // Override function
-const renderer = {
-  code(code, infostring, escaped) {
-    const lang = (infostring || '').match(/\S*/)[0];
-    console.log(lang);
-    console.log(this.options.highlight);
-    if (this.options.highlight) {
-      const out = this.options.highlight(code, lang);
-      if (out != null && out !== code) {
-        escaped = true;
-        code = out;
-      }
-    }
+// const renderer = {
+//   code(code, infostring, escaped) {
+//     const lang = (infostring || '').match(/\S*/)[0];
+//     console.log(lang);
+//     console.log(this.options.highlight);
+//     if (this.options.highlight) {
+//       const out = this.options.highlight(code, lang);
+//       if (out != null && out !== code) {
+//         escaped = true;
+//         code = out;
+//       }
+//     }
 
-    code = code.replace(/\n$/, '') + '\n';
+//     code = code.replace(/\n$/, '') + '\n';
 
-    // if (!lang) {
-    //   return '<pre><code>'
-    //     + (escaped ? code : escape(code, true))
-    //     + '</code></pre>\n';
-    // }
+//     // if (!lang) {
+//     //   return '<pre><code>'
+//     //     + (escaped ? code : escape(code, true))
+//     //     + '</code></pre>\n';
+//     // }
 
-    return `<Code :code=\"${code}\" \/>\n`;
-    // return '<pre><code class="'
-    //   + this.options.langPrefix
-    //   + escape(lang)
-    //   + '">'
-    //   + (escaped ? code : escape(code, true))
-    //   + '</code></pre>\n';
-  }
-};
+//     return `<Code :code=\"${code}\" \/>\n`;
+//     // return '<pre><code class="'
+//     //   + this.options.langPrefix
+//     //   + escape(lang)
+//     //   + '">'
+//     //   + (escaped ? code : escape(code, true))
+//     //   + '</code></pre>\n';
+//   }
+// };
 
 // marked.use({ renderer });
+
+// md.use(preWrapperPlugin)
 
 export default {
   data() {
@@ -163,8 +168,9 @@ export default {
     const tokens = this.lexerMarkdown(sortingString);
     console.log(tokens);
     this.toc = this.getToc(tokens);
-    console.log(this.toc);
-    this.dfdfd = this.parserMarkdown(sortingString);
+    // console.log(this.toc);
+    // this.dfdfd = this.parserMarkdown(sortingString);
+    console.log(this.dfdfd);
     // this.structuredToc  = this.strcutreHeadings(toc);
     // console.log(structuredToc);
   }
@@ -176,7 +182,9 @@ export default {
         <div class="container">
             <div class="row">
   <Toc :headlines="this.toc" />
-  <PageCourse/>
+ 
+
+  <PageCourse :content="this.dfdfd"/>
   </div>
         </div>
     </section>

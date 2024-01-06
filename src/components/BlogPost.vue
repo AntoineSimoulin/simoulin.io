@@ -31,7 +31,7 @@ export default {
                     <span class="text-muted">{{ this.citation.fields.month[0] }} {{ this.citation.fields.year[0] }}</span>
                 </div>
             </div>
-            <a class="text-decoration-none" target="_blank" href="https://huggingface.co/blog/1b-sentence-embeddings">
+            <a class="text-decoration-none" target="_blank" :href="this.citation.fields.url[0]">
                 <h4 class="text-dark">{{ this.citation.fields.title[0] }}</h4>
             </a>
             <p v-if="'abstract' in this.citation.fields" class="flex-grow-1">

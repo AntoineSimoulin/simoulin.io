@@ -1,7 +1,5 @@
 # Sorting and Searchings
 
-[[toc]]
-
 ## Bubble Sort
 
 This a comparison based algorithm. We divide the array into two sections, unsorted and sorted. After each loop, we garranted, the largest element of the unsorted portion is pushed at the most right position. We scan through the unsorted portion of the array and if the element is bigger than the next, we swap them. We repeat the process `n - 1` time until all elements are in the sorted portion. If not swap was perform, list already sorted, no need to go through other iterations. This reduce best time complexity to `O(n)` if the list is already sorted.

@@ -1,4 +1,7 @@
 <script>
+export default {
+  props: ["content"],
+};
 </script>
 
 <template>
@@ -8,58 +11,9 @@
                             <div class="tab-content pt-2" id="course-pills-tabContent">
                                 <div class="tab-pane fade show active" id="course-pills-1" role="tabpanel"
                                     aria-labelledby="course-pills-tab-1">
-                                    <h5 class="mb-3">Course Description</h5>
-                                    <p class="mb-3">Welcome to the <strong> Master 2 Mathématiques et Informatique
-                                            pour la Data Science (M2 MIDS) from Paris University.</strong></p>
-                                    <p>The course is part of the <a class="text-decoration-none text-capitalize"
-                                            href="https://m2mids.github.io/m2mids/">M2 MIDS</a> cursus.</p>
-                                    <p>It introduces statistical methods for Natural Language Processing, including
-                                        text vectorization, word embeddings, and sequence models.
-                                        In addition, the course includes practical exercises that cover web
-                                        scraping, regular expressions, and
-                                        visualization.
-                                        The labs include common use cases such as text classification or topic
-                                        mining.
-                                        Finally, the course gives an overview about open-source tools for nlp such
-                                        as nlp libraries,
-                                        intelligibility methods or deep learning frameworks.</p>
-
-                                    <h5 class="mt-4">What you’ll learn</h5>
-                                    <ul class="list-group text-capitalize list-group-borderless mb-3">
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Text vectorization
-                                        </li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>word embeddings
-                                        </li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>sequence models
-                                        </li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>web scraping</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>regular
-                                            expressions</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>data vizualization
-                                            for text</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>text
-                                            classification</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>topic mining</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>open-source tools
-                                        </li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>NLP libraries</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>intelligibility
-                                            methods</li>
-                                        <li class="list-group-item h6 fw-light d-flex mb-0"><i
-                                                class="fas fa-check-circle text-success me-2"></i>deep learning
-                                            frameworks</li>
-                                    </ul>
+                                    <div v-html="this.content" />
+                                    
+                                    
                                 </div>
                                 <div class="tab-pane fade show" id="course-pills-2" role="tabpanel"
                                     aria-labelledby="course-pills-tab-2">

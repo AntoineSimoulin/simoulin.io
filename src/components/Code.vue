@@ -51,7 +51,7 @@ export default {
         <a href="#" onclick="copyToClipboard()" class="copy bg-transparent text-wrap text-black d-inline-block position-absolute end-0 top-0 pe-3 py-3" data-bs-placement="left" data-bs-toggle="tooltip" data-bs-title="copy" data-bs-trigger="hover">
         <CopyIcon />
         <CheckIcon />
-        </a>               
+        </a>
     </pre>
   </div>
 </template>

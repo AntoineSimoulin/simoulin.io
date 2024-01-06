@@ -74,9 +74,9 @@ export default {
                     ></span>
                     <span>{{ subheading.text }}</span>
                   </div>
-                  <div class="text-truncate">
+                  <!-- <div class="text-truncate">
                     <span>1m 7s</span>
-                  </div>
+                  </div> -->
                 </a>
               </li>
             </ul>

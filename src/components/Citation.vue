@@ -49,7 +49,7 @@ export default {
   <a v-if="'youtube' in this.citation.fields" :href="this.citation.fields.youtube" class="text-decoration-none" target="_blank"><i class="fa-brands fa-youtube text-danger ms-2" aria-hidden="true"></i></a>
   <a v-if="'github' in this.citation.fields" :href="this.citation.fields.github" class="text-decoration-none" target="_blank"><i class="fa-brands fa-github text-dark ms-2" aria-hidden="true"></i></a>
   <i v-if="'award' in this.citation.fields" class="fa-solid fa-star text-warning mx-1" aria-hidden="true">Best Paper Award</i>
-  
+  <!-- <a v-if="'slides' in this.citation.fields" :href="this.citation.fields.slides" class="text-decoration-none" target="_blank"><i class="fa-solid fa-file-powerpoint text-danger ms-2" aria-hidden="true"></i></a> -->
 
   <!-- <div>{{ this.getAuthorsList(this.citation.fields.author) }}</div> -->
   <div v-html="this.getAuthorsList(this.citation.creators.author)"></div>
