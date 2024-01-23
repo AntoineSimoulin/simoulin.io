@@ -79,3 +79,64 @@ export default {
     </div>
   </div>
 </template>
+
+
+<style>
+pre:not(:hover) .icon-expand {
+  display: none;
+  transition-timing-function: ease;
+  transition: 0.2s;
+}
+
+.copy .icon-contract {
+  display: none;
+  transition-timing-function: ease;
+  transition: 0.2s;
+}
+
+.copy.switch:focus .icon-expand {
+  display: none;
+  transition-timing-function: ease;
+  transition: 0.2s;
+}
+
+.copy.switch:focus:hover .icon-contract {
+  display: block;
+  transition-timing-function: ease;
+  transition: 0.2s;
+}
+
+.hover:hover {
+  background: #938b8b21;
+  border-radius: 50%;
+}
+
+.hover.active {
+  color: #066ac9;
+  background-color: #066ac91a;
+}
+
+.list-group-borderless .list-group-item {
+  border: none !important;
+  padding: 0.425rem 0;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+  color: var(--bs-heading-color);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+</style>
