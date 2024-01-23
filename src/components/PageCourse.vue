@@ -1,7 +1,11 @@
 <script>
 export default {
   props: ["content"],
+  created() {
+    console.log("this.content", this.content);
+  }
 };
+
 </script>
 
 <template>

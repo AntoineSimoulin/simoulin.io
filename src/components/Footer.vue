@@ -25,7 +25,7 @@ export default {
     <div class="container sticky-bottom">
       <div class="row">
         <div class="d-flex flex-column flex-sm-row justify-content-between">
-          <p class="py-3">Simoulin &copy; 2022. All rights reserved.</p>
+          <p class="py-3">Simoulin &copy; 2024. All rights reserved.</p>
           <ul class="list-unstyled d-flex">
             <li class="socials p-3">
               <a

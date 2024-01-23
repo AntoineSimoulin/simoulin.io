@@ -17,9 +17,10 @@
     "font-awesome": "^4.7.0",
     "gh-pages": "^5.0.0",
     "i": "^0.3.7",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^14.0.0",
     "markdown-it-table-of-contents": "^0.6.0",
     "marked": "^4.2.12",
+    "npm": "^10.3.0",
     "prismjs": "^1.29.0",
     "u": "^0.1.0",
     "vue": "^3.2.45",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
     "@vitejs/plugin-vue": "^4.0.0",
+    "markdown-it-shikiji": "^0.9.19",
     "parcel": "^2.8.3",
     "vite": "^4.0.0"
   }
