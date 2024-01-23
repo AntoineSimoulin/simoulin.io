@@ -400,7 +400,7 @@ export default {
         <Toc :headlines="this.toc" />
         <div class="col-xl-8 col-lg-8 col-md-12 col-12 mb-4 mb-xl-0">
           <div class="card shadow-sm border-0 rounded-2 p-0">
-            <div class="card-body p-4">
+            <div class="card-body p-4 bg-white">
               <PageCourse v-for="(p, index) in this.posts" :content="p" :id="collapse_id('course-pills-', index)"
                 :labelledby="collapse_id('course-pills-tab-', index)"
                 :class="collapse_first_id('tab-pane fade show', index)" />

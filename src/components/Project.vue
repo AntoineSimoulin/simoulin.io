@@ -21,7 +21,7 @@ export default {
         <img
           :src="image"
           alt="Image"
-          class="img-thumbnail img-fluid rounded-circle img-thumbnail"
+          class="img-thumbnail img-fluid rounded-circle img-thumbnail bg-white"
           width="72"
         />
       </a>

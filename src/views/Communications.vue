@@ -74,7 +74,7 @@ export default {
       <div class="row">
         <div class="col-lg-12">
           <div class="card shadow-sm border-0 rounded-2 p-0">
-            <div class="card-header px-4 py-3">
+            <div class="card-header px-4 py-3 bg-white">
               <ul
                 class="nav nav-pills nav-tabs-line py-0"
                 id="course-pills-tab"
@@ -123,7 +123,7 @@ export default {
                 </li>
               </ul>
             </div>
-            <div class="card-body p-4">
+            <div class="card-body p-4 bg-white">
               <div class="tab-content pt-2" id="course-pills-tabContent">
                 <div
                   class="tab-pane fade show active"

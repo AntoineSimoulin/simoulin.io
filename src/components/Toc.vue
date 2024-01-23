@@ -42,7 +42,7 @@ export default {
     <div class="card border-0 shadow-sm rounded-2 p-0" id="courseAccordion">
       <ul class="list-group list-group-flush flex-column nav-pills bg-white border-0 rounded-2 p-2" id="course-pills-tab"
         role="tablist">
-        <li class="list-group-item p-0 border-0" role="presentation" v-for="(heading, index) in this.headlines">
+        <li class="list-group-item p-0 bg-white border-0" role="presentation" v-for="(heading, index) in this.headlines">
           <div :class="collapse_first_id('hover px-0 container-fluid rounded-3 my-1', index)" :id="collapse_id('course-pills-tab-', index)" data-bs-toggle="pill"
             :data-bs-target="collapse_id('#course-pills-', index)" type="button" role="tab" :aria-controls="collapse_id('course-pills-', index)" aria-selected="true">
             <a class="h5 mb-0 d-flex align-items-center text-inherit text-decoration-none py-3 px-4"
@@ -63,7 +63,7 @@ export default {
           </div>
           <div :class="show_first_id('collapse', index)" :id="collapse_id('course', index)" data-bs-parent="#courseAccordion" style="">
             <ul class="list-group list-group-flush ps-4 ms-2">
-              <li class="list-group-item border-0" v-for="subheading in heading.subheadings">
+              <li class="list-group-item bg-white border-0" v-for="subheading in heading.subheadings">
                 <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">
                   <div class="text-truncate">
                     <span class="icon-shape bg-success text-white icon-sm rounded-circle me-2"><i
