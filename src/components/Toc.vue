@@ -1,13 +1,38 @@
 <script>
 export default {
-  data() {
-    return {
-      items: [{ text: 'Foo' }, { text: 'Bar' }]
-    }
-  },
   props: ["headlines"],
   beforeMount() {
     console.log("this.headlines", this.headlines)
+  },
+  methods:{
+    collapse_id(prefix, thread_ref){
+      const i = thread_ref + 1
+      return prefix + i
+    },
+    collapse_first_id(prefix, thread_ref) {
+      if (thread_ref == 0) {
+        //  block of code to be executed if the condition is true
+        return prefix + " active"
+      } else {
+        return prefix
+      }
+    },
+    show_first_id(prefix, thread_ref) {
+      if (thread_ref == 0) {
+        //  block of code to be executed if the condition is true
+        return prefix + " show"
+      } else {
+        return prefix
+      }
+    },
+    is_first(thread_ref){
+      if (thread_ref == 0) {
+        //  block of code to be executed if the condition is true
+        return true
+      } else {
+        return false
+      }
+    },
   }
 };
 </script>
@@ -17,12 +42,12 @@ export default {
     <div class="card border-0 shadow-sm rounded-2 p-0" id="courseAccordion">
       <ul class="list-group list-group-flush flex-column nav-pills bg-white border-0 rounded-2 p-2" id="course-pills-tab"
         role="tablist">
-        <li class="list-group-item p-0 border-0" role="presentation" v-for="heading in this.headlines">
-          <div class="hover px-0 container-fluid rounded-3 my-1 active" id="course-pills-tab-1" data-bs-toggle="pill"
-            data-bs-target="#course-pills-1" type="button" role="tab" aria-controls="course-pills-1" aria-selected="true">
+        <li class="list-group-item p-0 border-0" role="presentation" v-for="(heading, index) in this.headlines">
+          <div :class="collapse_first_id('hover px-0 container-fluid rounded-3 my-1', index)" :id="collapse_id('course-pills-tab-', index)" data-bs-toggle="pill"
+            :data-bs-target="collapse_id('#course-pills-', index)" type="button" role="tab" :aria-controls="collapse_id('course-pills-', index)" aria-selected="true">
             <a class="h5 mb-0 d-flex align-items-center text-inherit text-decoration-none py-3 px-4"
-              data-bs-toggle="collapse" href="#courseTwo" role="button" aria-expanded="false" aria-selected="true"
-              aria-controls="courseTwo">
+              data-bs-toggle="collapse" :href="collapse_id('#course', index)" role="button" :aria-expanded="is_first(index)" aria-selected="true"
+              :aria-controls="collapse_id('course', index)">
               <div class="pe-3 pb-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-mortarboard-fill" viewBox="0 0 16 16">
@@ -36,7 +61,7 @@ export default {
               <i class="bi bi-chevron-down"></i>
             </a>
           </div>
-          <div class="collapse" id="courseTwo" data-bs-parent="#courseAccordion" style="">
+          <div :class="show_first_id('collapse', index)" :id="collapse_id('course', index)" data-bs-parent="#courseAccordion" style="">
             <ul class="list-group list-group-flush ps-4 ms-2">
               <li class="list-group-item border-0" v-for="subheading in heading.subheadings">
                 <a href="#" class="d-flex justify-content-between align-items-center text-inherit text-decoration-none">

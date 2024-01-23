@@ -18,7 +18,7 @@ import { defineAsyncComponent } from 'vue'
 
 // import sortingString from '../../../courses/code-101/sorting.md?raw';
 // import { h } from 'vue';
-// import Shikiji from 'markdown-it-shikiji';
+import Shikiji from 'markdown-it-shikiji';
 
 // const testFolder = '../../../courses/code-101/';
 // import fs from 'fs'
@@ -31,7 +31,7 @@ import { defineAsyncComponent } from 'vue'
 // const posts = await Astro.glob('../../../courses/code-101/*.md');
 // console.log(posts);
 
-const posts = await import.meta.glob('../../../courses/code-101/*.md', { as: 'raw' });
+const posts = import.meta.glob('../../../courses/code-101/*.md', { as: 'raw' });
 console.log("posts", posts);
 // for (const path in posts) {
 //   posts[path]().then((mod) => {
@@ -40,12 +40,12 @@ console.log("posts", posts);
 // }
 
 const md = MarkdownIt();
-// md.use(await Shikiji({
-//   themes: {
-//     light: 'vitesse-light',
-//     dark: 'vitesse-dark',
-//   }
-// }))
+md.use(await Shikiji({
+  themes: {
+    light: 'vitesse-light',
+    dark: 'vitesse-dark',
+  }
+}))
 md.use(tocPlugin);
 
 // function getToc(tokens) {
@@ -69,7 +69,7 @@ md.use(tocPlugin);
 function findHeadlineElements(levels, tokens) {
   const headings = [];
   let currentHeading = null;
-  
+
   tokens.forEach(token => {
     if (token.type === 'heading_open') {
       const id = findExistingIdAttr(token);
@@ -114,11 +114,11 @@ function structureHeadings(headings) {
       currentHeading = heading;
       currentHeading.subheadings = []
       // console.log('first');
-    } 
+    }
     else if (heading.level >= currentHeadingLevel) {
       currentHeading.subheadings.push(heading);
       // console.log('second');
-    } 
+    }
     else if (heading.level < currentHeadingLevel) {
       structuredHeadings.push(heading);
       currentHeading = heading;
@@ -136,7 +136,7 @@ function structureHeadings(headings) {
 
 function findExistingIdAttr(token) {
   if (token && token.attrs && token.attrs.length > 0) {
-    const idAttr = token.attrs.find( (attr) => {
+    const idAttr = token.attrs.find((attr) => {
       if (Array.isArray(attr) && attr.length >= 2) {
         return attr[0] === 'id';
       }
@@ -164,18 +164,18 @@ function getToc(tokens) {
 }
 
 async function getPostContent(posts) {
-    let arr = [];
-    // // let idx = 0;
-    for (const path in posts) {
-      posts[path]().then((mod) => {
-        const tokens_parsed = parserMarkdown(mod);
-        const tokens = lexerMarkdown(mod);
-        const toc_a = getToc(tokens);
-        arr.push({"content": tokens_parsed, "toc": toc_a});
-      })
-    }
-    return arr;
+  let arr = [];
+  // // let idx = 0;
+  for (const path in posts) {
+    posts[path]().then((mod) => {
+      const tokens_parsed = parserMarkdown(mod);
+      const tokens = lexerMarkdown(mod);
+      const toc_a = getToc(tokens);
+      arr.push({ "content": tokens_parsed, "toc": toc_a });
+    })
   }
+  return arr;
+}
 
 const a = await posts[Object.keys(posts)[0]]();
 console.log(a);
@@ -194,15 +194,27 @@ async function youhou(b) {
   const tokens_parsed = parserMarkdown(post);
   const tokens = lexerMarkdown(post);
   const toc_a = getToc(tokens);
-  return {"content": tokens_parsed, "toc": toc_a};
+  return tokens_parsed;
+}
+
+async function youhou2(b) {
+  const post = await posts[b]();
+  const tokens = lexerMarkdown(post);
+  const toc_a = getToc(tokens);
+  return toc_a[0];
 }
 
 // arr.map(youhou)
 const asyncarr = await Promise.all(arr.map(async (i) => {
-	return youhou(i);
+  return youhou(i);
 }));
 
-console.log(asyncarr)
+const asynctoc = await Promise.all(arr.map(async (i) => {
+  return youhou2(i);
+}));
+
+console.log(asyncarr);
+console.log(asynctoc);
 
 // const popo = await getPostContent(posts)
 // console.log(popo);
@@ -248,7 +260,8 @@ console.log(asyncarr)
 export default {
   data() {
     return {
-      posts: asyncarr
+      posts: asyncarr,
+      toc: asynctoc
       // posts: this.getPostContent(posts),
       // toc: this.getPostToc(posts)
       // bib: sortingString,
@@ -284,32 +297,44 @@ export default {
           toc.push(toc_a[0]);
         })
       }
-    return toc;
-  },
-  getPostContent(posts) {
-    // const arr = Object.keys(posts);
-    
-    // arr = arr.map(youhou)
-    // const arr = Promise.all(Object.keys(posts).map((x) => posts[x]())).then((mod) => {
-    //   console.log("promise", mod);
-    //   var a = mod;
-    // })
-    // console.log("arrrrr", a);
-    let arr = [];
-    // // let idx = 0;
-    for (const path in posts) {
-      posts[path]().then((mod) => {
-        const tokens_parsed = this.parserMarkdown(mod);
-        const tokens = this.lexerMarkdown(mod);
-        const toc_a = this.getToc(tokens);
-        arr.push({"content": tokens_parsed, "toc": toc_a});
-    // //     // arr[idx] = {"content": tokens_parsed, "toc": toc_a};
-    // //     // idx += 1;
-      })
+      return toc;
+    },
+    collapse_id(prefix, thread_ref) {
+      const i = thread_ref + 1
+      return prefix + i
+    },
+    collapse_first_id(prefix, thread_ref) {
+      if (thread_ref == 0) {
+        //  block of code to be executed if the condition is true
+        return prefix + " active"
+      } else {
+        return prefix
+      }
+    },
+    getPostContent(posts) {
+      // const arr = Object.keys(posts);
+
+      // arr = arr.map(youhou)
+      // const arr = Promise.all(Object.keys(posts).map((x) => posts[x]())).then((mod) => {
+      //   console.log("promise", mod);
+      //   var a = mod;
+      // })
+      // console.log("arrrrr", a);
+      let arr = [];
+      // // let idx = 0;
+      for (const path in posts) {
+        posts[path]().then((mod) => {
+          const tokens_parsed = this.parserMarkdown(mod);
+          const tokens = this.lexerMarkdown(mod);
+          const toc_a = this.getToc(tokens);
+          arr.push({ "content": tokens_parsed, "toc": toc_a });
+          // //     // arr[idx] = {"content": tokens_parsed, "toc": toc_a};
+          // //     // idx += 1;
+        })
+      }
+      console.log("arrrrr", arr);
+      return arr;
     }
-    console.log("arrrrr", arr);
-    return arr;
-  }
   },
   // async created(){
   //   // this.posts = await getPostContent(this.posts);
@@ -317,8 +342,8 @@ export default {
   //   // this.users = await this.getUsers();
   //   // this.toc = await this.getPostToc(this.posts);
   // },
-  beforeMount () {
-    this.toc = this.getPostToc(this.posts);
+  beforeMount() {
+    // this.toc = this.getPostToc(this.posts);
     // console.log(typeof this.posts);
     // console.log(this.posts.keys());
 
@@ -330,7 +355,8 @@ export default {
     // this.posts = getPostContent(this.posts);
     // this.posts = this.posts
     console.log(this.posts);
-    
+    console.log("this.posts  %O", this.posts);
+
     // console.log("this.posts", this.posts);
     console.log("this.toc  %O", this.toc);
     console.log(this.toc.length);
@@ -349,35 +375,40 @@ export default {
     //     this.toc.push(toc[0]);
     //     this.arr.push({"content": tokens_parsed, "toc": toc});
     //   })
-    }
+  }
 
-    
-    // console.log(this.arr);
-    // console.log(this.toc);
-    // // console.log(sortingString);
-    // const tokens = this.lexerMarkdown(sortingString);
-    // console.log(tokens);
-    
-    // // console.log(this.toc);
-    // this.dfdfd = this.parserMarkdown(sortingString);
-    // console.log(this.dfdfd);
-    // // this.structuredToc  = this.strcutreHeadings(toc);
-    // // console.log(structuredToc);
+
+  // console.log(this.arr);
+  // console.log(this.toc);
+  // // console.log(sortingString);
+  // const tokens = this.lexerMarkdown(sortingString);
+  // console.log(tokens);
+
+  // // console.log(this.toc);
+  // this.dfdfd = this.parserMarkdown(sortingString);
+  // console.log(this.dfdfd);
+  // // this.structuredToc  = this.strcutreHeadings(toc);
+  // // console.log(structuredToc);
   // }
 }
 </script>
 
 <template>
-<section class="pb-0 py-lg-5">
-        <div class="container">
-            <div class="row">
-  <Toc :headlines="this.toc" />
- 
-  <Suspense> 
-    <PageCourse v-for="p in this.posts" :content="p.content"/>
-  </Suspense> 
-  <!-- <PageCourse :content="this.dfdfd"/> -->
-  </div>
+  <section class="pb-0 py-lg-5">
+    <div class="container">
+      <div class="row">
+        <Toc :headlines="this.toc" />
+        <div class="col-xl-8 col-lg-8 col-md-12 col-12 mb-4 mb-xl-0">
+          <div class="card shadow-sm border-0 rounded-2 p-0">
+            <div class="card-body p-4">
+              <PageCourse v-for="(p, index) in this.posts" :content="p" :id="collapse_id('course-pills-', index)"
+                :labelledby="collapse_id('course-pills-tab-', index)"
+                :class="collapse_first_id('tab-pane fade show', index)" />
+            </div>
+          </div>
         </div>
-    </section>
+          <!-- <PageCourse :content="this.dfdfd"/> -->
+        </div>
+      </div>
+  </section>
 </template>
