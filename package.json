@@ -23,15 +23,18 @@
     "npm": "^10.3.0",
     "prismjs": "^1.29.0",
     "u": "^0.1.0",
+    "unplugin-vue-markdown": "^0.25.2",
     "vue": "^3.2.45",
     "vue-gtag": "^2.0.1",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
+    "@iconify/json": "^2.2.172",
     "@vitejs/plugin-vue": "^4.0.0",
     "markdown-it-shikiji": "^0.9.19",
     "parcel": "^2.8.3",
+    "unplugin-icons": "^0.18.2",
     "vite": "^4.0.0"
   }
 }

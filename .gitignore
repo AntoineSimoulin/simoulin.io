@@ -14,6 +14,8 @@ dist-ssr
 coverage
 *.local
 
+src/assets/blogposts/*
+
 /cypress/videos/
 /cypress/screenshots/
 

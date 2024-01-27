@@ -16,7 +16,11 @@ import { defineAsyncComponent } from 'vue'
 //   import('../../components/PageCourse.vue')
 // )
 
-// import sortingString from '../../../courses/code-101/sorting.md?raw';
+import MdiStore24Hour from 'virtual:icons/mdi/store-24-hour'
+// import sortingString from '../../../courses/code-101/sorting.md';
+// console.log(sortingString)
+
+
 // import { h } from 'vue';
 import Shikiji from 'markdown-it-shikiji';
 
@@ -270,7 +274,8 @@ export default {
   components: {
     Code,
     Toc,
-    PageCourse
+    PageCourse,
+    MdiStore24Hour
   },
   methods: {
     markdowntoHtml(mdString) {
@@ -394,9 +399,11 @@ export default {
 </script>
 
 <template>
+  <p>Home icon: <MdiStore24Hour /></p>
   <section class="pb-0 py-lg-5">
     <div class="container">
       <div class="row">
+        
         <Toc :headlines="this.toc" />
         <div class="col-xl-8 col-lg-8 col-md-12 col-12 mb-4 mb-xl-0">
           <div class="card shadow-sm border-0 rounded-2 p-0">

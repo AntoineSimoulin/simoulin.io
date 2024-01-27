@@ -22,7 +22,12 @@ export default {
             title: 'Cracking the ML interview',
             abstract: 'Introduciton to machine learning.',
             href: '/ml-101',
-        }
+        },
+        {
+            title: 'NLP 102',
+            abstract: 'Introduction to statistical methods for Natural Language Processing.',
+            href: '/nlp-102',
+        },
       ]
     }
   },
