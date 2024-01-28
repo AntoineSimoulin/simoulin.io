@@ -1,6 +1,6 @@
 <script>
 import { parse } from "@retorquere/bibtex-parser";
-import Cite from "citation-js";
+// import Cite from "citation-js";
 import Citation from "../components/Citation.vue";
 import Talk from "../components/Talk.vue";
 import bibString from '@/assets/simoulin.bib?raw';

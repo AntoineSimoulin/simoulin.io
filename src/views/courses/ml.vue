@@ -1,5 +1,5 @@
 <script>
-import { marked } from 'marked';
+// import { marked } from 'marked';
 import MarkdownIt from 'markdown-it';
 import Code from "../../components/Code.vue";
 import Toc from "../../components/Toc.vue";
