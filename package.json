@@ -10,6 +10,8 @@
     "deploy": "gh-pages -d dist --dotfiles"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@nuxt/content": "^2.11.0",
     "@retorquere/bibtex-parser": "^6.4.7",
     "bootstrap": "^5.2.3",
     "gh-pages": "^5.0.0",
@@ -22,9 +24,8 @@
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.11.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "markdown-it-shikiji": "^0.9.19",
-    "vite": "^4.0.0"
+    "vite": "^4.5.2"
   }
 }

@@ -5,9 +5,10 @@ import Code from "../../components/Code.vue";
 import Toc from "../../components/Toc.vue";
 import PageCourse from "../../components/PageCourse.vue";
 import tocPlugin from "markdown-it-table-of-contents";
+
 // import { preWrapperPlugin } from '../../markdown/plugins/preWrapper'
-import { isProxy, toRaw } from 'vue';
-import { defineAsyncComponent } from 'vue'
+// import { isProxy, toRaw } from 'vue';
+// import { defineAsyncComponent } from 'vue'
 
 // const Toc = defineAsyncComponent(() =>
 //   import('../../components/Toc.vue')
@@ -16,7 +17,7 @@ import { defineAsyncComponent } from 'vue'
 //   import('../../components/PageCourse.vue')
 // )
 
-import MdiStore24Hour from 'virtual:icons/mdi/store-24-hour'
+// import MdiStore24Hour from 'virtual:icons/mdi/store-24-hour'
 // import sortingString from '../../../courses/code-101/sorting.md';
 // console.log(sortingString)
 
@@ -35,7 +36,7 @@ import Shikiji from 'markdown-it-shikiji';
 // const posts = await Astro.glob('../../../courses/code-101/*.md');
 // console.log(posts);
 
-const posts = import.meta.glob('../../../courses/code-101/*.md', { as: 'raw' });
+const posts = import.meta.glob('../../content/courses/1.code-101/*.md', { as: 'raw' });
 console.log("posts", posts);
 // for (const path in posts) {
 //   posts[path]().then((mod) => {
@@ -275,7 +276,7 @@ export default {
     Code,
     Toc,
     PageCourse,
-    MdiStore24Hour
+    // MdiStore24Hour
   },
   methods: {
     markdowntoHtml(mdString) {
@@ -399,7 +400,7 @@ export default {
 </script>
 
 <template>
-  <p>Home icon: <MdiStore24Hour /></p>
+  <!-- <p>Home icon: <MdiStore24Hour /></p> -->
   <section class="pb-0 py-lg-5">
     <div class="container">
       <div class="row">

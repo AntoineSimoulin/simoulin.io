@@ -1,6 +1,6 @@
 import type MarkdownIt from 'markdown-it'
 import { h } from 'vue'
-import Code from "../../components/Code.vue";
+// import Code from "../../components/Code.vue";
 
 
 export function preWrapperPlugin(md: MarkdownIt) {
