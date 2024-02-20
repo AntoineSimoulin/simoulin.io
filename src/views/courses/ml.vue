@@ -6,8 +6,8 @@ import Toc from "../../components/Toc.vue";
 import PageCourse from "../../components/PageCourse.vue";
 import tocPlugin from "markdown-it-table-of-contents";
 // import { preWrapperPlugin } from '../../markdown/plugins/preWrapper'
-import { isProxy, toRaw } from 'vue';
-import { defineAsyncComponent } from 'vue'
+// import { isProxy, toRaw } from 'vue';
+// import { defineAsyncComponent } from 'vue'
 
 // const Toc = defineAsyncComponent(() =>
 //   import('../../components/Toc.vue')
@@ -16,13 +16,13 @@ import { defineAsyncComponent } from 'vue'
 //   import('../../components/PageCourse.vue')
 // )
 
-import MdiStore24Hour from 'virtual:icons/mdi/store-24-hour'
+// import MdiStore24Hour from 'virtual:icons/mdi/store-24-hour'
 // import sortingString from '../../../courses/code-101/sorting.md';
 // console.log(sortingString)
 
 
 // import { h } from 'vue';
-import Shikiji from 'markdown-it-shikiji';
+// import Shikiji from 'markdown-it-shikiji';
 
 // const testFolder = '../../../courses/code-101/';
 // import fs from 'fs'
@@ -43,14 +43,14 @@ console.log("posts", posts);
 //   })
 // }
 
-const md = MarkdownIt();
-md.use(await Shikiji({
-  themes: {
-    light: 'vitesse-light',
-    dark: 'vitesse-dark',
-  }
-}))
-md.use(tocPlugin);
+// const md = MarkdownIt();
+// md.use(await Shikiji({
+//   themes: {
+//     light: 'vitesse-light',
+//     dark: 'vitesse-dark',
+//   }
+// }))
+// md.use(tocPlugin);
 
 // function getToc(tokens) {
 //   const toc = findHeadlineElements([1, 2], tokens);
@@ -399,7 +399,7 @@ export default {
 </script>
 
 <template>
-  <p>Home icon: <MdiStore24Hour /></p>
+  <!-- <p>Home icon: <MdiStore24Hour /></p> -->
   <section class="pb-0 py-lg-5">
     <div class="container">
       <div class="row">
