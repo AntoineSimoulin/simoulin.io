@@ -35,7 +35,14 @@ export default {
       }
       if (authorsList.length > 1) {
         authorslistStr += "<span class=\"text-lowercase\"> and </span>"
-        authorslistStr += authorsList[authorsList.length - 1]
+        if (authorsList[authorsList.length - 1] == "Antoine Simoulin") {
+          authorslistStr += '<strong>'
+          authorslistStr += authorsList[authorsList.length - 1]
+          authorslistStr += '</strong>'
+        } else {
+          authorslistStr += authorsList[authorsList.length - 1]
+        }
+        // authorslistStr += authorsList[authorsList.length - 1]
       }
       return authorslistStr
     }

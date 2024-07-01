@@ -155,9 +155,20 @@ export default {
                   role="tabpanel"
                   aria-labelledby="course-pills-tab-3">
                   <ul>
-                    <li>Reviewer ACL’24</li>
-                    <li>Reviewer Neurips Datasets and Benchmarks’23</li>
-                    <li>Reviewer ACL’20, EMNLP’20</li>
+                    <li>Reviewer ENLP 2024 (<a class="text-decoration-none text-capitalize"
+                        href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/June"
+                        >ACL June 2024 ARR</a>);</li>
+                    <li>Reviewer <a class="text-decoration-none text-capitalize"
+                        href="https://openreview.net/group?id=ICML.cc/2024/Workshop/ES-FoMo-II"
+                        >ES-FOMO-II 2024</a>;</li>
+                    <li>Reviewer ACL 2024 (<a class="text-decoration-none text-capitalize"
+                        href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/February"
+                        >ACL February 2024 ARR</a>);</li>
+                    <li>Reviewer <a class="text-decoration-none text-capitalize"
+                        href="https://openreview.net/group?id=NeurIPS.cc/2023/Track/Datasets_and_Benchmarks"
+                        >Neurips Datasets and Benchmarks 2023</a>;</li>
+                    <li>Reviewer ACL 2020;</li>
+                    <li>Reviewer EMNLP 2020;</li>
                     <li>
                       Hackathon Winner. PyTree, a PyTorch package for recursive
                       neural networks.
