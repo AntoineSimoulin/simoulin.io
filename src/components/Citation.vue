@@ -66,20 +66,14 @@ export default {
       "booktitle" in this.citation.fields
         ? this.citation.fields.booktitle[0].split(",").length >= 4
           ? `${this.citation.fields.booktitle[0].split(",")[1]}${
-              `${this.citation.fields.booktitle[0].toLowerCase().includes("student") ? " (Student)" : ""}${"pages" in this.citation.fields ? ": " + this.citation.fields.pages[0] : ""}`
+              `${this.citation.fields.booktitle[0].toLowerCase().includes("student") ? " (Student)" : ""}`
             }`
-          : `${this.citation.fields.booktitle[0]}, ${this.citation.fields.year[0]}${
-              "pages" in this.citation.fields ? ": " + this.citation.fields.pages[0] : ""
-            }`
+          : `${this.citation.fields.booktitle[0]}, ${this.citation.fields.year[0]}`
         : "journal" in this.citation.fields
-        ? `${this.citation.fields.journal[0]}, ${this.citation.fields.year[0]}${
-            "pages" in this.citation.fields ? ": " + this.citation.fields.pages[0] : ""
-          }`
+        ? `${this.citation.fields.journal[0]}, ${this.citation.fields.year[0]}`
         : this.citation.type == "phdthesis"
         ? `PhD Thesis, ${this.citation.fields.school[0]}, ${this.citation.fields.year[0]}`
-        : `Undefined, ${this.citation.fields.year[0]}${
-            "pages" in this.citation.fields ? ":" + this.citation.fields.pages[0] : ""
-          }`
+        : `Undefined, ${this.citation.fields.year[0]}`
     }}
   </div>
   
