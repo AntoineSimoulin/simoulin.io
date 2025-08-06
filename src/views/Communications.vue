@@ -155,10 +155,12 @@ export default {
                   role="tabpanel"
                   aria-labelledby="course-pills-tab-3">
                   <ul>
-                    
-                    <li>Reviewer ACL-SRW 2025 (<a class="text-decoration-none text-capitalize"
+                    <li>Reviewer <a class="text-decoration-none text-capitalize"
+                        href="https://openreview.net/group?id=NeurIPS.cc/2025/Conference#tab-your-consoles"
+                        >Neurips 2025</a>;</li>
+                    <li>Reviewer <a class="text-decoration-none text-capitalize"
                         href="https://openreview.net/group?id=aclweb.org/ACL/2025/SRW"
-                        >ACL-SRW 2025</a>);</li>
+                        >ACL-SRW 2025</a>;</li>
                     <li>Reviewer EMNLP 2024 (<a class="text-decoration-none text-capitalize"
                         href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/June"
                         >ACL June 2024 ARR</a>);</li>
