@@ -1,8 +1,14 @@
-<script>
-import "prismjs";
-import "prismjs/components/prism-python.js";
-import "prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js";
-import "prismjs/plugins/line-numbers/prism-line-numbers.js";
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(async () => {
+  if (import.meta.client) {
+    await import("prismjs");
+    await import("prismjs/components/prism-python.js");
+    await import("prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js");
+    await import("prismjs/plugins/line-numbers/prism-line-numbers.js");
+  }
+});
 
 function delay(milliseconds) {
   return new Promise((resolve) => {

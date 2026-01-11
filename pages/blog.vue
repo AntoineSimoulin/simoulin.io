@@ -22,7 +22,7 @@ export default {
       return bib
     },
   },
-  beforeMount () {
+  created () {
     this.blogPosts = this.getBibEntries(this.blogPosts);
     // console.log(this.blogPosts);
   }
@@ -33,7 +33,7 @@ export default {
   <section class="pb-0 py-lg-5">
     <div class="container">
       <div class="row mb-4">
-        <BlogPost v-for="ref in this.blogPosts.entries"  :citation="ref"/>
+        <BlogPost v-for="ref in blogPosts.entries"  :citation="ref"/>
       </div>
     </div>
   </section>

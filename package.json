@@ -1,40 +1,37 @@
 {
-  "name": "simoulin.io",
-  "version": "0.0.0",
+  "name": "simoulin-io",
+  "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "rm -rf dist && vite build && cp CNAME ./dist && cp README.md ./dist && cp ./dist/index.html ./dist/404.html",
-    "deploy": "gh-pages -d dist --dotfiles"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "deploy": "gh-pages -d .output/public",
+    "build-and-deploy": "npm run generate && npm run deploy"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "@retorquere/bibtex-parser": "^6.4.7",
-    "bootstrap": "^5.2.3",
-    "citation-js": "^0.6.9",
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "@iconify/json": "^2.2.426",
+    "@popperjs/core": "^2.11.8",
+    "@retorquere/bibtex-parser": "^9.0.26",
+    "bootstrap": "^5.3.8",
+    "citation-js": "^0.7.22",
     "font-awesome": "^4.7.0",
-    "gh-pages": "^5.0.0",
-    "i": "^0.3.7",
-    "markdown-it": "^14.0.0",
-    "markdown-it-table-of-contents": "^0.6.0",
-    "marked": "^4.2.12",
-    "npm": "^10.3.0",
-    "prismjs": "^1.29.0",
-    "u": "^0.1.0",
-    "unplugin-vue-markdown": "^0.25.2",
-    "vue": "^3.2.45",
-    "vue-gtag": "^2.0.1",
-    "vue-router": "^4.0.13"
+    "gh-pages": "^6.3.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-table-of-contents": "^1.1.0",
+    "marked": "^17.0.1",
+    "nuxt": "^4.2.2",
+    "prismjs": "^1.30.0",
+    "unplugin-icons": "^22.5.0",
+    "unplugin-vue-markdown": "^29.2.0",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^6.2.1",
-    "@iconify/json": "^2.2.172",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "markdown-it-shikiji": "^0.9.19",
-    "parcel": "^2.8.3",
-    "unplugin-icons": "^0.18.2",
-    "vite": "^4.0.0"
+    "markdown-it-shikiji": "^0.10.2",
+    "nuxt-gtag": "^4.1.0"
   }
 }

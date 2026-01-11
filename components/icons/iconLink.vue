@@ -14,7 +14,7 @@ export default {
     xmlns="http://www.w3.org/2000/svg"
     width="20"
     height="20"
-    :fill="this.fill"
+    :fill="fill"
     class="bi bi-link-45deg"
     viewBox="0 0 16 16"
   >

@@ -40,7 +40,7 @@ export default {
             class="text-decoration-none text-dark"
           >
             <LinkIcon />
-            <span class="text-secondary">{{ this.getCleanUrl() }}</span>
+            <span class="text-secondary">{{ getCleanUrl() }}</span>
           </a>
         </div>
       </div>

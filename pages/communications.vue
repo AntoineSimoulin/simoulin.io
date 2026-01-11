@@ -32,7 +32,7 @@ export default {
     groupByYear(bib) {
       // console.log(bib);
       let groupByYear = bib.entries.reduce((group, ref) => {
-        const year = ref['fields']['year'][0];
+        const year = ref['fields']['year'];
         group[year] = group[year] ?? [];
         group[year].push(ref);
         return group;
@@ -56,14 +56,12 @@ export default {
 
     }
   },
-  beforeMount () {
+  created () {
     this.bib = this.getBibEntries(this.bib);
     this.bib = this.groupByYear(this.bib);
 
     this.talks = this.getBibEntries(this.talks);
     this.talks = this.groupByYear(this.talks);
-    // console.log(this.bib);
-    // this.citeBibEntry('DBLP:phd/hal/Simoulin22');
   }
 };
 </script>
@@ -130,9 +128,9 @@ export default {
                   id="course-pills-1"
                   role="tabpanel"
                   aria-labelledby="course-pills-tab-1">
-                  <div class="mb-3" v-for="year in Object.keys(this.bib).reverse()">
+                  <div class="mb-3" v-for="year in Object.keys(bib).reverse()">
                     <h5 class="mb-3">{{ year }}</h5>
-                    <div class="text-sm font-weight-bold text-capitalize mb-4" v-for="ref in this.bib[year]">
+                    <div class="text-sm font-weight-bold text-capitalize mb-4" v-for="ref in bib[year]">
                       <Citation :citation="ref"/>
                     </div>
                   </div>  
@@ -142,9 +140,9 @@ export default {
                   id="course-pills-2"
                   role="tabpanel"
                   aria-labelledby="course-pills-tab-2">
-                  <div class="mb-3" v-for="year in Object.keys(this.talks).reverse()">
+                  <div class="mb-3" v-for="year in Object.keys(talks).reverse()">
                     <h5 class="mb-3">{{ year }}</h5>
-                    <div class="text-sm font-weight-bold text-capitalize mb-4" v-for="ref in this.talks[year]">
+                    <div class="text-sm font-weight-bold text-capitalize mb-4" v-for="ref in talks[year]">
                       <Talk :citation="ref"/> 
                     </div>
                   </div>

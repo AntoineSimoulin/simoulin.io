@@ -22,7 +22,7 @@ import tocPlugin from "markdown-it-table-of-contents";
 
 
 // import { h } from 'vue';
-// import Shikiji from 'markdown-it-shikiji';
+import Shikiji from 'markdown-it-shikiji';
 
 // const testFolder = '../../../courses/code-101/';
 // import fs from 'fs'
@@ -35,7 +35,7 @@ import tocPlugin from "markdown-it-table-of-contents";
 // const posts = await Astro.glob('../../../courses/code-101/*.md');
 // console.log(posts);
 
-const posts = import.meta.glob('../../../courses/code-101/*.md', { as: 'raw' });
+const posts = import.meta.glob('../courses/code-101/*.md', { query: '?raw', import: 'default' });
 console.log("posts", posts);
 // for (const path in posts) {
 //   posts[path]().then((mod) => {
@@ -43,14 +43,14 @@ console.log("posts", posts);
 //   })
 // }
 
-// const md = MarkdownIt();
-// md.use(await Shikiji({
-//   themes: {
-//     light: 'vitesse-light',
-//     dark: 'vitesse-dark',
-//   }
-// }))
-// md.use(tocPlugin);
+const md = MarkdownIt();
+md.use(await Shikiji({
+  themes: {
+    light: 'vitesse-light',
+    dark: 'vitesse-dark',
+  }
+}))
+md.use(tocPlugin);
 
 // function getToc(tokens) {
 //   const toc = findHeadlineElements([1, 2], tokens);
@@ -275,7 +275,6 @@ export default {
     Code,
     Toc,
     PageCourse,
-    MdiStore24Hour
   },
   methods: {
     markdowntoHtml(mdString) {
@@ -404,11 +403,11 @@ export default {
     <div class="container">
       <div class="row">
         
-        <Toc :headlines="this.toc" />
+        <Toc :headlines="toc" />
         <div class="col-xl-8 col-lg-8 col-md-12 col-12 mb-4 mb-xl-0">
           <div class="card shadow-sm border-0 rounded-2 p-0">
             <div class="card-body p-4 bg-white">
-              <PageCourse v-for="(p, index) in this.posts" :content="p" :id="collapse_id('course-pills-', index)"
+              <PageCourse v-for="(p, index) in posts" :content="p" :id="collapse_id('course-pills-', index)"
                 :labelledby="collapse_id('course-pills-tab-', index)"
                 :class="collapse_first_id('tab-pane fade show', index)" />
             </div>

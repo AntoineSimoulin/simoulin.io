@@ -30,26 +30,26 @@
               <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li> -->
             <li class="nav-item rounded-3">
-              <RouterLink class="nav-link" to="/">About</RouterLink>
+              <NuxtLink class="nav-link" to="/">About</NuxtLink>
             </li>
             <li class="nav-item rounded-3">
-              <RouterLink class="nav-link" to="/Projects">Projects</RouterLink>
+              <NuxtLink class="nav-link" to="/projects">Projects</NuxtLink>
             </li>
             <li class="nav-item rounded-3">
-              <RouterLink class="nav-link" to="/Communications"
-                >Communications</RouterLink
+              <NuxtLink class="nav-link" to="/communications"
+                >Communications</NuxtLink
               >
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="teaching.html">Teaching</a>
             </li> -->
            <li class="nav-item rounded-3">
-              <RouterLink class="nav-link" to="/Teaching"
-                >Teaching</RouterLink
+              <NuxtLink class="nav-link" to="/teaching"
+                >Teaching</NuxtLink
               >
             </li>
             <li class="nav-item rounded-3">
-              <RouterLink class="nav-link" to="/Blog">Blog</RouterLink>
+              <NuxtLink class="nav-link" to="/blog">Blog</NuxtLink>
             </li>
           </ul>
         </div>
