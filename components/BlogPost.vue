@@ -21,48 +21,46 @@ export default {
 </script>
 
 <template>
-  <div v-if="'thumbnail' in citation.fields" class="col-md-6 col-lg-4 d-flex aos-init aos-animate article" data-aos="fade-up" data-aos-delay="400">
-    <div class="card mb-3 shadow border-0 rounded-2">
-        <a target="_blank" :href="citation.fields.url">
+  <div v-if="'thumbnail' in citation.fields" class="w-full md:w-1/2 lg:w-1/3 flex p-4" data-aos="fade-up" data-aos-delay="400">
+    <div class="w-full flex flex-col bg-white mb-3 shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-100">
+        <a target="_blank" :href="citation.fields.url" class="block group">
             <img :src="citation.fields.thumbnail" alt="Image"
-                class="card-img-top">
+                class="w-full h-48 object-cover group-hover:opacity-95 transition-opacity">
         </a>
-        <div class="card-body d-flex flex-column">
-            <div class="d-flex justify-content-between mb-3">
-                <div class="text-small d-flex">
-                    <span class="text-muted">{{ formatMonth(citation.fields.month) }} {{ citation.fields.year }}</span>
+        <div class="p-6 flex flex-col flex-grow">
+            <div class="flex justify-between mb-3">
+                <div class="text-sm flex">
+                    <span class="text-gray-500">{{ formatMonth(citation.fields.month) }} {{ citation.fields.year }}</span>
                 </div>
             </div>
-            <a class="text-decoration-none" target="_blank" :href="citation.fields.url">
-                <h4 class="text-dark">{{ citation.fields.title }}</h4>
+            <a class="no-underline block mb-3" target="_blank" :href="citation.fields.url">
+                <h4 class="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">{{ citation.fields.title }}</h4>
             </a>
-            <p v-if="'abstract' in citation.fields" class="flex-grow-1">
+            <p v-if="'abstract' in citation.fields" class="flex-grow text-gray-600 mb-4 line-clamp-3 text-sm">
                 {{ citation.fields.abstract }}
             </p>
-            <div>
-              <LinkIcon/> <span class="text-small opacity-70">{{ getCleanUrl(citation.fields.url) }}</span>
+            <div class="mt-auto flex items-center gap-2">
+              <LinkIcon class="w-4 h-4 text-gray-400"/> <span class="text-xs text-gray-500">{{ getCleanUrl(citation.fields.url) }}</span>
             </div>
 
         </div>
         
     </div>
   </div>
-  <div v-else class="col-md-6 col-lg-4 d-flex aos-init aos-animate article" data-aos="fade-up" data-aos-delay="400">
+  <div v-else class="w-full md:w-1/2 lg:w-1/3 flex p-4" data-aos="fade-up" data-aos-delay="400">
     <a target="_blank" :href="citation.fields.url"
-    class="text-decoration-none card card-body justify-content-between bg-primary text-light mb-3 shadow border-0 rounded-2">
-      <div class="d-flex justify-content-between mb-3">
-        <div class="text-small d-flex">
-            <span class="opacity-70">{{ formatMonth(citation.fields.month) }} {{ citation.fields.year }}</span>
+    class="no-underline w-full p-6 flex flex-col justify-between bg-blue-600 text-white mb-3 shadow-md rounded-lg hover:shadow-xl transition-shadow">
+      <div class="flex justify-between mb-3">
+        <div class="text-sm flex">
+            <span class="opacity-80">{{ formatMonth(citation.fields.month) }} {{ citation.fields.year }}</span>
         </div>
       </div>
       <div>
-        <h2>{{ citation.fields.title }}</h2>
-        <LinkIcon fill="white"/> <span class="text-small opacity-70">{{ getCleanUrl(citation.fields.url) }}</span>
+        <h2 class="text-2xl font-bold mb-2">{{ citation.fields.title }}</h2>
+        <div class="flex items-center gap-2">
+            <LinkIcon fill="white" class="w-4 h-4"/> <span class="text-sm opacity-80">{{ getCleanUrl(citation.fields.url) }}</span>
+        </div>
       </div>
     </a>
   </div>
-
-
-  
-
 </template>

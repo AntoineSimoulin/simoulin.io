@@ -14,10 +14,10 @@ export default {
 </script>
 
 <template>
-  <div class="col-md-6 col-lg-4 d-flex aos-init aos-animate article" data-aos="fade-up" data-aos-delay="400">
-    <NuxtLink class="text-decoration-none card card-body justify-content-between bg-primary text-light mb-3 shadow border-0 rounded-2" :to="href">
+  <div class="w-full md:w-1/2 lg:w-1/3 flex p-2" data-aos="fade-up" data-aos-delay="400">
+    <NuxtLink class="no-underline block w-full p-6 flex flex-col justify-between bg-blue-600 text-white mb-3 shadow-md rounded-lg hover:shadow-xl transition-shadow" :to="href">
       <div>
-        <h2>{{ title }}</h2>
+        <h2 class="text-2xl font-bold">{{ title }}</h2>
       </div>
     </NuxtLink>
   </div>

@@ -51,12 +51,12 @@ export default {
 </script>
 
 <template>
-  <a :href="citation.fields.url" class="text-decoration-none" target="_blank">{{ citation.fields.title }}</a>
-  <a v-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="text-decoration-none" target="_blank"><i class="fas fa-file-alt text-primary ms-2" aria-hidden="true"></i></a>
-  <a v-if="'youtube' in citation.fields" :href="citation.fields.youtube" class="text-decoration-none" target="_blank"><i class="fa-brands fa-youtube text-danger ms-2" aria-hidden="true"></i></a>
-  <a v-if="'github' in citation.fields" :href="citation.fields.github" class="text-decoration-none" target="_blank"><i class="fa-brands fa-github text-dark ms-2" aria-hidden="true"></i></a>
-  <i v-if="'award' in citation.fields" class="fa-solid fa-star text-warning mx-1" aria-hidden="true">Best Paper Award</i>
-  <!-- <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="text-decoration-none" target="_blank"><i class="fa-solid fa-file-powerpoint text-danger ms-2" aria-hidden="true"></i></a> -->
+  <a :href="citation.fields.url" class="no-underline text-blue-600 hover:text-blue-800" target="_blank">{{ citation.fields.title }}</a>
+  <a v-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="no-underline" target="_blank"><i class="fas fa-file-alt text-blue-600 ms-2" aria-hidden="true"></i></a>
+  <a v-if="'youtube' in citation.fields" :href="citation.fields.youtube" class="no-underline" target="_blank"><i class="fa-brands fa-youtube text-red-600 ms-2" aria-hidden="true"></i></a>
+  <a v-if="'github' in citation.fields" :href="citation.fields.github" class="no-underline" target="_blank"><i class="fa-brands fa-github text-gray-900 ms-2" aria-hidden="true"></i></a>
+  <i v-if="'award' in citation.fields" class="fa-solid fa-star text-yellow-500 mx-1" aria-hidden="true" title="Best Paper Award"></i>
+  <!-- <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="no-underline" target="_blank"><i class="fa-solid fa-file-powerpoint text-red-600 ms-2" aria-hidden="true"></i></a> -->
 
   <!-- <div>{{ this.getAuthorsList(citation.fields.author) }}</div> -->
   <div v-html="getAuthorsList(citation.fields.author)"></div>

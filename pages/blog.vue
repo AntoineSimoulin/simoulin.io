@@ -30,10 +30,10 @@ export default {
 </script>
 
 <template>
-  <section class="pb-0 py-lg-5">
-    <div class="container">
-      <div class="row mb-4">
-        <BlogPost v-for="ref in blogPosts.entries"  :citation="ref"/>
+  <section class="pb-0 lg:py-6">
+    <div class="container mx-auto px-8 lg:px-32">
+      <div class="flex flex-wrap -mx-2 mb-4">
+        <BlogPost v-for="ref in blogPosts.entries" :key="ref.id" :citation="ref"/>
       </div>
     </div>
   </section>

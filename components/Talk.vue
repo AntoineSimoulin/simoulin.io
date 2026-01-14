@@ -10,8 +10,8 @@ export default {
 </script>
 
 <template>
-  <a :href="citation.fields.url" class="text-decoration-none text-capitalize">{{ citation.fields.title }}</a> ({{ formatMonth(citation.fields.month) }}. {{ citation.fields.year }})
-  <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="text-decoration-none" target="_blank"><i class="fas fa-file-alt text-primary ms-1" aria-hidden="true"></i></a>
+  <a :href="citation.fields.url" class="no-underline capitalize text-blue-600 hover:text-blue-800">{{ citation.fields.title }}</a> ({{ formatMonth(citation.fields.month) }}. {{ citation.fields.year }})
+  <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="no-underline" target="_blank"><i class="fas fa-file-alt text-blue-600 ms-1" aria-hidden="true"></i></a>
   <div>
     <strong>{{ citation.fields.venue }}, {{ citation.fields.address }}</strong>
   </div>

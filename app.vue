@@ -8,9 +8,9 @@ useHead({
 </script>
 
 <template>
-  <div id="app-layout">
+  <div id="app-layout" class="flex flex-col min-h-screen">
     <Header/>
-    <main>
+    <main class="flex-1 pt-16">
       <NuxtPage />
     </main>
     <Footer/>
@@ -18,14 +18,4 @@ useHead({
 </template>
 
 <style scoped>
-#app-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-  padding-top: 50px;
-}
 </style>

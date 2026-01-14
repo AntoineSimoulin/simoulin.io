@@ -22,14 +22,14 @@ export default {
 
 <template>
   <footer>
-    <div class="container sticky-bottom">
-      <div class="row">
-        <div class="d-flex flex-column flex-sm-row justify-content-between">
+    <div class="container mx-auto px-8 lg:px-32 pb-4 sticky bottom-0 z-10 w-full">
+      <div class="w-full">
+        <div class="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
           <p class="py-3">Simoulin &copy; 2026. All rights reserved.</p>
-          <ul class="list-unstyled d-flex">
+          <ul class="list-none flex justify-center sm:justify-end flex-wrap">
             <li class="socials p-3">
               <a
-                class="link-dark"
+                class="text-gray-900 hover:text-gray-700"
                 href="https://twitter.com/antoinesimoulin/"
                 target="_blank"
               >
@@ -38,7 +38,7 @@ export default {
             </li>
             <li class="socials p-3">
               <a
-                class="link-dark"
+                class="text-gray-900 hover:text-gray-700"
                 href="https://github.com/AntoineSimoulin"
                 target="_blank"
               >
@@ -47,7 +47,7 @@ export default {
             </li>
             <li class="socials p-3">
               <a
-                class="link-dark"
+                class="text-gray-900 hover:text-gray-700"
                 href="https://www.linkedin.com/in/antoine-simoulin-phd-a00960b1/"
                 target="_blank"
               >
@@ -56,7 +56,7 @@ export default {
             </li>
             <li class="socials p-3">
               <a
-                class="link-dark"
+                class="text-gray-900 hover:text-gray-700"
                 href="https://scholar.google.fr/citations?hl=en&user=yZ-jUHAAAAAJ"
                 target="_blank"
               >
@@ -65,7 +65,7 @@ export default {
             </li>
             <li class="socials p-3">
               <a
-                class="link-dark"
+                class="text-gray-900 hover:text-gray-700"
                 href="https://dblp.org/pid/211/7662.html"
                 target="_blank"
               >
@@ -74,7 +74,7 @@ export default {
             </li>
             <li class="socials p-3">
               <a
-                class="link-dark"
+                class="text-gray-900 hover:text-gray-700"
                 href="https://aclanthology.org/people/a/antoine-simoulin/"
                 target="_blank"
               >
@@ -83,7 +83,7 @@ export default {
             </li>
             <li class="socials p-3">
               <a
-                class="link-dark"
+                class="text-gray-900 hover:text-gray-700"
                 href="https://huggingface.co/asi"
                 target="_blank"
               >

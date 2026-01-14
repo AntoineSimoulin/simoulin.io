@@ -15,32 +15,32 @@ export default {
 </script>
 
 <template>
-  <div class="col-md-6 col-lg-4 d-flex pb-4">
-    <div class="rounded-3 cursor-pointer-hover gray p-2">
+  <div class="w-full md:w-1/2 lg:w-1/3 flex pb-4">
+    <div class="w-full rounded-xl hover:bg-gray-100 p-4 transition-colors duration-200">
       <a target="_blank" :href="href">
         <img
           :src="image"
           alt="Image"
-          class="img-thumbnail img-fluid rounded-circle img-thumbnail bg-white"
+          class="p-1 rounded-full bg-white border border-gray-200 shadow-sm max-w-full h-auto mb-4"
           width="72"
         />
       </a>
-      <div class="d-flex flex-column text-left">
-        <div class="d-flex justify-content-between mb-3"></div>
-        <a class="text-decoration-none" target="_blank" :href="href">
-          <h4 class="text-dark">{{ title }}</h4>
+      <div class="flex flex-col text-left">
+        <div class="flex justify-between mb-3"></div>
+        <a class="no-underline" target="_blank" :href="href">
+          <h4 class="text-gray-900 font-bold text-xl mb-2">{{ title }}</h4>
         </a>
-        <p>
+        <p class="text-gray-600 mb-4">
           {{ abstract }}
         </p>
-        <div class="d-flex py-2">
+        <div class="flex py-2">
           <a
             :href="href"
             target="_blank"
-            class="text-decoration-none text-dark"
+            class="no-underline text-gray-500 flex items-center gap-2 hover:text-blue-600 transition-colors"
           >
             <LinkIcon />
-            <span class="text-secondary">{{ getCleanUrl() }}</span>
+            <span class="text-gray-500">{{ getCleanUrl() }}</span>
           </a>
         </div>
       </div>
@@ -49,7 +49,4 @@ export default {
 </template>
 
 <style scoped>
-.gray:hover {
-  background: #938b8b21;
-}
 </style>>

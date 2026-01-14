@@ -11,49 +11,29 @@ export default {
     Citation,
     Talk
   },
-  // created() {
-  //   console.log(bibString);
-  // },
   data() {
     return {
       bib: bibString,
       talks: talksString,
+      activeTab: 'publications', // 'publications' | 'talks' | 'awards'
     };
   },
   methods: {
     getBibEntries(bibFile) {
-      // this.bib = new Cite(bibFile, { forceType: "@bibtex/text" })
-      // console.log(example.getIds());
-      // console.log(example);
       let bib = parse(bibFile);
-      // console.log(this.bib);
       return bib
     },
     groupByYear(bib) {
-      // console.log(bib);
       let groupByYear = bib.entries.reduce((group, ref) => {
         const year = ref['fields']['year'];
         group[year] = group[year] ?? [];
         group[year].push(ref);
         return group;
       }, {});
-      // this.bib = groupByYear
       return groupByYear
     },
-    // this is working with Cite
-    //   citeBibEntry (bibEntry) {
-    //     console.log(bibEntry);
-    //     let citation = this.bib.format('bibliography', {
-    //       format: 'html',
-    //       template: 'apa',
-    //       lang: 'en-US',
-    //       entry: bibEntry 
-    //     })
-    //     console.log(citation);
-    //     return citation
-    //   }
-    citeBibEntry () {
-
+    setActiveTab(tab) {
+        this.activeTab = tab;
     }
   },
   created () {
@@ -67,132 +47,85 @@ export default {
 </script>
 
 <template>
-  <section class="pb-0 py-lg-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="card shadow-sm border-0 rounded-2 p-0">
-            <div class="card-header px-4 py-3 bg-white">
-              <ul
-                class="nav nav-pills nav-tabs-line py-0"
-                id="course-pills-tab"
-                role="tablist">
-                <!-- Tab item -->
-                <li class="nav-item me-2 me-sm-4" role="presentation">
-                  <button
-                    class="nav-link mb-2 mb-md-0 active"
-                    id="course-pills-tab-1"
-                    data-bs-toggle="pill"
-                    data-bs-target="#course-pills-1"
-                    type="button"
-                    role="tab"
-                    aria-controls="course-pills-1"
-                    aria-selected="true">
-                    Publications
-                  </button>
-                </li>
-                <!-- Tab item -->
-                <li class="nav-item me-2 me-sm-4" role="presentation">
-                  <button
-                    class="nav-link mb-2 mb-md-0"
-                    id="course-pills-tab-2"
-                    data-bs-toggle="pill"
-                    data-bs-target="#course-pills-2"
-                    type="button"
-                    role="tab"
-                    aria-controls="course-pills-2"
-                    aria-selected="false">
-                    Talks and Presentations
-                  </button>
-                </li>
-                <!-- Tab item -->
-                <li class="nav-item me-2 me-sm-4" role="presentation">
-                  <button
-                    class="nav-link mb-2 mb-md-0"
-                    id="course-pills-tab-3"
-                    data-bs-toggle="pill"
-                    data-bs-target="#course-pills-3"
-                    type="button"
-                    role="tab"
-                    aria-controls="course-pills-3"
-                    aria-selected="false">
-                    Awards and Services
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body p-4 bg-white">
-              <div class="tab-content pt-2" id="course-pills-tabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="course-pills-1"
-                  role="tabpanel"
-                  aria-labelledby="course-pills-tab-1">
-                  <div class="mb-3" v-for="year in Object.keys(bib).reverse()">
-                    <h5 class="mb-3">{{ year }}</h5>
-                    <div class="text-sm font-weight-bold text-capitalize mb-4" v-for="ref in bib[year]">
-                      <Citation :citation="ref"/>
-                    </div>
-                  </div>  
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="course-pills-2"
-                  role="tabpanel"
-                  aria-labelledby="course-pills-tab-2">
-                  <div class="mb-3" v-for="year in Object.keys(talks).reverse()">
-                    <h5 class="mb-3">{{ year }}</h5>
-                    <div class="text-sm font-weight-bold text-capitalize mb-4" v-for="ref in talks[year]">
-                      <Talk :citation="ref"/> 
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="course-pills-3"
-                  role="tabpanel"
-                  aria-labelledby="course-pills-tab-3">
-                  <ul>
-                    <li>Reviewer <a class="text-decoration-none text-capitalize"
-                        href="https://openreview.net/group?id=NeurIPS.cc/2025/Conference#tab-your-consoles"
-                        >Neurips 2025</a>;</li>
-                    <li>Reviewer <a class="text-decoration-none text-capitalize"
-                        href="https://openreview.net/group?id=aclweb.org/ACL/2025/SRW"
-                        >ACL-SRW 2025</a>;</li>
-                    <li>Reviewer EMNLP 2024 (<a class="text-decoration-none text-capitalize"
-                        href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/June"
-                        >ACL June 2024 ARR</a>);</li>
-                    <li>Reviewer <a class="text-decoration-none text-capitalize"
-                        href="https://openreview.net/group?id=ICML.cc/2024/Workshop/ES-FoMo-II"
-                        >ES-FOMO-II 2024</a>;</li>
-                    <li>Reviewer ACL 2024 (<a class="text-decoration-none text-capitalize"
-                        href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/February"
-                        >ACL February 2024 ARR</a>);</li>
-                    <li>Reviewer <a class="text-decoration-none text-capitalize"
-                        href="https://openreview.net/group?id=NeurIPS.cc/2023/Track/Datasets_and_Benchmarks"
-                        >Neurips Datasets and Benchmarks 2023</a>;</li>
-                    <li>Reviewer ACL 2020;</li>
-                    <li>Reviewer EMNLP 2020;</li>
+  <section class="pb-0 lg:py-6">
+    <div class="container mx-auto px-8 lg:px-32">
+      <div class="w-full">
+        <div class="bg-white shadow-sm rounded-lg overflow-hidden border border-gray-100">
+            <!-- Tabs -->
+            <div class="px-4 py-3 bg-white border-b border-gray-100">
+                <ul class="flex flex-wrap gap-2 text-sm font-medium text-center text-gray-500">
                     <li>
-                      Hackathon Winner. PyTree, a PyTorch package for recursive
-                      neural networks.
-                      <a class="text-decoration-none text-capitalize"
-                        href="https://devpost.com/software/pytree"
-                        >PyTorch Annual Hackathon 2021</a>
+                        <button 
+                            @click="setActiveTab('publications')"
+                            :class="['inline-block px-4 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors', activeTab === 'publications' ? 'text-blue-600 bg-blue-50' : '']"
+                        >
+                            Publications
+                        </button>
                     </li>
                     <li>
-                      Hackathon Winner. Train the Best Sentence Embedding Model
-                      Ever with 1B Training Pairs.
-                      <a class="text-decoration-none text-capitalize"
-                        href="https://discuss.huggingface.co/t/train-the-best-sentence-embedding-model-ever-with-1b-training-pairs/7354"
-                        >Hugging Face Community week using JAX/Flax for NLP & CV
-                        2021</a>
+                        <button 
+                            @click="setActiveTab('talks')"
+                            :class="['inline-block px-4 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors', activeTab === 'talks' ? 'text-blue-600 bg-blue-50' : '']"
+                        >
+                            Talks and Presentations
+                        </button>
                     </li>
-                  </ul>
-                </div>
-              </div>
+                    <li>
+                        <button 
+                            @click="setActiveTab('awards')"
+                            :class="['inline-block px-4 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors', activeTab === 'awards' ? 'text-blue-600 bg-blue-50' : '']"
+                        >
+                            Awards and Services
+                        </button>
+                    </li>
+                </ul>
             </div>
-          </div>
+
+            <!-- Content -->
+            <div class="p-6 bg-white min-h-[400px]">
+                <!-- Publications -->
+                <div v-if="activeTab === 'publications'">
+                    <div class="mb-6" v-for="year in Object.keys(bib).reverse()" :key="year">
+                        <h5 class="mb-3 text-lg font-bold text-gray-900">{{ year }}</h5>
+                        <div class="text-sm text-gray-700 capitalize mb-4" v-for="ref in bib[year]" :key="ref.key">
+                            <Citation :citation="ref"/>
+                        </div>
+                    </div>  
+                </div>
+
+                <!-- Talks -->
+                <div v-if="activeTab === 'talks'">
+                    <div class="mb-6" v-for="year in Object.keys(talks).reverse()" :key="year">
+                        <h5 class="mb-3 text-lg font-bold text-gray-900">{{ year }}</h5>
+                        <div class="text-sm text-gray-700 capitalize mb-4" v-for="ref in talks[year]" :key="ref.key">
+                             <Talk :citation="ref"/> 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div v-if="activeTab === 'awards'">
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=NeurIPS.cc/2025/Conference#tab-your-consoles">Neurips 2025</a>;</li>
+                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=aclweb.org/ACL/2025/SRW">ACL-SRW 2025</a>;</li>
+                        <li>Reviewer EMNLP 2024 (<a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/June">ACL June 2024 ARR</a>);</li>
+                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=ICML.cc/2024/Workshop/ES-FoMo-II">ES-FOMO-II 2024</a>;</li>
+                        <li>Reviewer ACL 2024 (<a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/February">ACL February 2024 ARR</a>);</li>
+                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=NeurIPS.cc/2023/Track/Datasets_and_Benchmarks">Neurips Datasets and Benchmarks 2023</a>;</li>
+                        <li>Reviewer ACL 2020;</li>
+                        <li>Reviewer EMNLP 2020;</li>
+                        <li>
+                            Hackathon Winner. PyTree, a PyTorch package for recursive neural networks.
+                            <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://devpost.com/software/pytree">PyTorch Annual Hackathon 2021</a>
+                        </li>
+                        <li>
+                            Hackathon Winner. Train the Best Sentence Embedding Model Ever with 1B Training Pairs.
+                            <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://discuss.huggingface.co/t/train-the-best-sentence-embedding-model-ever-with-1b-training-pairs/7354">Hugging Face Community week using JAX/Flax for NLP & CV 2021</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
       </div>
     </div>
@@ -200,15 +133,4 @@ export default {
 </template>
 
 <style scoped>
-.card {
-  --bs-card-cap-bg: rgb(255, 255, 255);
-}
-.nav-item:hover {
-  background: #938b8b21;
-}
-
-.nav-pills.nav-tabs-line .nav-link.active {
-    color: #066ac9;
-    background-color: rgba(6, 106, 201, 0.1);
-}
 </style>
