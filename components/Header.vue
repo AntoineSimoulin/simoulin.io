@@ -1,62 +1,48 @@
 <script setup>
-const isMenuOpen = ref(false)
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
+// No script needed for basic interaction if relying on CSS focus/hover for dropdowns in pure CSS,
+// but for better mobile experience, we might want to keep some state or use the details/summary pattern for mobile menu.
+// However, DaisyUI dropdown works well with :focus-within or details/summary.
+// Let's use the details/summary pattern for mobile menu which is cleaner or just the standard dropdown.
+// The existing code used a button toggle. DaisyUI dropdown is easier.
 </script>
 
 <template>
   <header>
-    <div class="fixed top-0 left-0 right-0 z-50 bg-[#f8f9fa]/95 backdrop-blur-sm">
-      <nav class="container mx-auto px-8 lg:px-32 py-3 flex flex-wrap justify-between items-center">
-        <button
-          class="lg:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none ml-auto"
-          type="button"
-          @click="toggleMenu"
-          aria-label="Toggle navigation"
-        >
-          <span class="block w-6 h-0.5 bg-current mb-1"></span>
-          <span class="block w-6 h-0.5 bg-current mb-1"></span>
-          <span class="block w-6 h-0.5 bg-current"></span>
-        </button>
-        <div
-          :class="[
-            'w-full lg:flex lg:w-auto lg:items-center lg:ml-auto',
-            isMenuOpen ? 'block' : 'hidden'
-          ]"
-          id="navbarNav"
-        >
-          <ul class="flex flex-col lg:flex-row lg:space-x-1 mt-4 lg:mt-0 font-bold tracking-wider text-sm uppercase">
-            <li class="nav-item">
-              <NuxtLink class="block py-2 px-2 text-gray-700 hover:text-gray-900 hover:bg-[#938b8b21] rounded transition-colors" to="/">About</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="block py-2 px-2 text-gray-700 hover:text-gray-900 hover:bg-[#938b8b21] rounded transition-colors" to="/projects">Projects</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="block py-2 px-2 text-gray-700 hover:text-gray-900 hover:bg-[#938b8b21] rounded transition-colors" to="/communications">Communications</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="block py-2 px-2 text-gray-700 hover:text-gray-900 hover:bg-[#938b8b21] rounded transition-colors" to="/teaching">Teaching</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink class="block py-2 px-2 text-gray-700 hover:text-gray-900 hover:bg-[#938b8b21] rounded transition-colors" to="/blog">Blog</NuxtLink>
-            </li>
+    <div class="navbar bg-base-100/95 sticky top-0 z-50 backdrop-blur-sm container mx-auto px-8 lg:px-32">
+      <div class="navbar-start">
+        <!-- Mobile Dropdown -->
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <li><NuxtLink to="/">About</NuxtLink></li>
+            <li><NuxtLink to="/projects">Projects</NuxtLink></li>
+            <li><NuxtLink to="/communications">Communications</NuxtLink></li>
+            <li><NuxtLink to="/teaching">Teaching</NuxtLink></li>
+            <li><NuxtLink to="/blog">Blog</NuxtLink></li>
           </ul>
         </div>
-      </nav>
+        <!-- Brand could go here if added later -->
+      </div>
+      
+      <div class="navbar-center hidden lg:flex">
+        <!-- Centered items if any -->
+      </div>
+      
+      <div class="navbar-end hidden lg:flex">
+         <ul class="menu menu-horizontal px-1 font-bold uppercase tracking-wider text-sm">
+          <li><NuxtLink to="/">About</NuxtLink></li>
+          <li><NuxtLink to="/projects">Projects</NuxtLink></li>
+          <li><NuxtLink to="/communications">Communications</NuxtLink></li>
+          <li><NuxtLink to="/teaching">Teaching</NuxtLink></li>
+          <li><NuxtLink to="/blog">Blog</NuxtLink></li>
+        </ul>
+      </div>
     </div>
   </header>
 </template>
 
 <style scoped>
-.router-link-active {
-  color: #066ac9;
-  background-color: rgba(6, 106, 201, 0.1);
-}
-@media (min-width: 1024px) {
-  .router-link-active {
-    background-color: transparent;
-  }
-}
+/* DaisyUI handles most styles. */
 </style>

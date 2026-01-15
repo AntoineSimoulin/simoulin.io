@@ -40,7 +40,7 @@ export default {
 
 <template>
 <section class="pb-0 lg:py-6">
-    <div class="container mx-auto px-8 lg:px-32 py-4">
+    <div class="py-4">
         <div class="w-full lg:w-8/12 md:w-full">
           <h1 class="font-bold text-4xl pb-4">Stuff I’ve created to leave my mark on the world.</h1>
           <p class="text-base pb-4 leading-relaxed font-light text-gray-700">

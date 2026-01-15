@@ -1,6 +1,6 @@
 <template>
     <section class="pb-0 lg:py-6">
-      <div class="container mx-auto px-8 lg:px-32 py-4">
+      <div class="py-4">
         <div class="flex flex-wrap items-center justify-between">
           <div class="w-full lg:w-7/12 order-1 lg:order-0 mt-8 lg:mt-0">
             <div class="container mx-auto">
@@ -32,11 +32,11 @@
               >
 
               <div class="w-full flex flex-col sm:flex-row justify-center lg:justify-between gap-3 px-4">
-                <a class="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md text-sm font-medium" href="/CV_SIMOULIN_V6.pdf" download rel="noopener noreferrer" target="_blank">
+                <a class="btn bg-blue-600 hover:bg-blue-700 text-white border-blue-600 hover:border-blue-700" href="/CV_SIMOULIN_V6.pdf" download rel="noopener noreferrer" target="_blank">
                   <i class="fa-solid fa-circle-arrow-down mr-2"></i>Download my CV
                 </a>
-                <a class="inline-flex items-center justify-center px-4 py-2 bg-white text-gray-800 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors shadow-sm text-sm font-medium" href="/Research_Statement.pdf" download rel="noopener noreferrer" target="_blank">
-                  <i class="fa-solid text-blue-600 fa-circle-arrow-down mr-2"></i>Research Statement
+                <a class="btn bg-transparent border-base-300 hover:bg-base-200 text-base-content" href="/Research_Statement.pdf" download rel="noopener noreferrer" target="_blank">
+                  <i class="fa-solid text-primary fa-circle-arrow-down mr-2"></i>Research Statement
                 </a>
               </div>
           </div>

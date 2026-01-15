@@ -48,37 +48,15 @@ export default {
 
 <template>
   <section class="pb-0 lg:py-6">
-    <div class="container mx-auto px-8 lg:px-32">
+    <div>
       <div class="w-full">
         <div class="bg-white shadow-sm rounded-lg overflow-hidden border border-gray-100">
             <!-- Tabs -->
-            <div class="px-4 py-3 bg-white border-b border-gray-100">
-                <ul class="flex flex-wrap gap-2 text-sm font-medium text-center text-gray-500">
-                    <li>
-                        <button 
-                            @click="setActiveTab('publications')"
-                            :class="['inline-block px-4 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors', activeTab === 'publications' ? 'text-blue-600 bg-blue-50' : '']"
-                        >
-                            Publications
-                        </button>
-                    </li>
-                    <li>
-                        <button 
-                            @click="setActiveTab('talks')"
-                            :class="['inline-block px-4 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors', activeTab === 'talks' ? 'text-blue-600 bg-blue-50' : '']"
-                        >
-                            Talks and Presentations
-                        </button>
-                    </li>
-                    <li>
-                        <button 
-                            @click="setActiveTab('awards')"
-                            :class="['inline-block px-4 py-2 rounded-lg hover:text-gray-900 hover:bg-gray-100 transition-colors', activeTab === 'awards' ? 'text-blue-600 bg-blue-50' : '']"
-                        >
-                            Awards and Services
-                        </button>
-                    </li>
-                </ul>
+            <!-- Tabs -->
+            <div role="tablist" class="tabs tabs-bordered w-full bg-white px-6 py-4 border-b-2 border-base-200">
+                <a role="tab" :class="['tab tab-bordered text-sm px-6 h-auto py-3 hover:bg-base-200 transition-colors duration-200 rounded-lg', activeTab === 'publications' ? 'tab-active text-blue-600 bg-blue-50' : '']" @click="setActiveTab('publications')">Publications</a>
+                <a role="tab" :class="['tab tab-bordered text-sm px-6 h-auto py-3 hover:bg-base-200 transition-colors duration-200 rounded-lg', activeTab === 'talks' ? 'tab-active text-blue-600 bg-blue-50' : '']" @click="setActiveTab('talks')">Talks and Presentations</a>
+                <a role="tab" :class="['tab tab-bordered text-sm px-6 h-auto py-3 hover:bg-base-200 transition-colors duration-200 rounded-lg', activeTab === 'awards' ? 'tab-active text-blue-600 bg-blue-50' : '']" @click="setActiveTab('awards')">Awards and Services</a>
             </div>
 
             <!-- Content -->

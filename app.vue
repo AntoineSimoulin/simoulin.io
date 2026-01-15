@@ -10,7 +10,7 @@ useHead({
 <template>
   <div id="app-layout" class="flex flex-col min-h-screen">
     <Header/>
-    <main class="flex-1 pt-16">
+    <main class="flex-1 pt-16 container mx-auto px-8 lg:px-32">
       <NuxtPage />
     </main>
     <Footer/>

@@ -121,24 +121,24 @@ def quickSort(array: list, low: int=None, high: int=None) -> list:
                 <!-- Sidebar -->
                 <div class="lg:col-span-4 xl:col-span-3">
                     <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden sticky top-6">
-                        <div class="p-4 border-b border-gray-100 bg-gray-50">
-                            <h2 class="text-lg font-bold text-gray-900">Course Modules</h2>
+                        <div class="p-4 border-b border-gray-100">
+                            <h2 class="text-lg font-bold text-gray-900">Cracking the coding interview</h2>
                         </div>
-                        <nav class="flex flex-col">
-                            <button 
-                                v-for="section in sections" 
-                                :key="section.id"
-                                @click="setActiveTab(section.id)"
-                                class="flex items-center gap-3 px-5 py-4 text-left transition-colors text-sm font-medium border-l-4"
-                                :class="activeTab === section.id 
-                                    ? 'bg-blue-50 text-blue-700 border-blue-600' 
-                                    : 'text-gray-600 hover:bg-gray-50 border-transparent hover:text-gray-900'"
-                            >
-                                <i :class="[section.icon, 'text-lg', activeTab === section.id ? 'text-blue-600' : 'text-gray-400']"></i>
-                                <span>{{ section.label }}</span>
-                                <i v-if="activeTab === section.id" class="fas fa-chevron-right ml-auto text-xs opacity-60"></i>
-                            </button>
-                        </nav>
+                        <ul class="menu w-full p-0">
+                            <li v-for="section in sections" :key="section.id">
+                                <a 
+                                    @click="setActiveTab(section.id)"
+                                    class="rounded-none border-l-4 px-5 py-4 transition-colors font-medium text-sm gap-3"
+                                    :class="activeTab === section.id 
+                                        ? 'bg-blue-50 text-blue-700 border-blue-600 hover:bg-blue-50 active' 
+                                        : 'text-gray-600 hover:bg-gray-50 border-transparent hover:text-gray-900'"
+                                >
+                                    <i :class="[section.icon, 'text-lg', activeTab === section.id ? 'text-blue-600' : 'text-gray-400']"></i>
+                                    <span>{{ section.label }}</span>
+                                    <i v-if="activeTab === section.id" class="fas fa-chevron-right ml-auto text-xs opacity-60"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 

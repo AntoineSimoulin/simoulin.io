@@ -15,33 +15,36 @@ export default {
 </script>
 
 <template>
-  <div class="w-full md:w-1/2 lg:w-1/3 flex pb-4">
-    <div class="w-full rounded-xl hover:bg-gray-100 p-4 transition-colors duration-200">
-      <a target="_blank" :href="href">
-        <img
-          :src="image"
-          alt="Image"
-          class="p-1 rounded-full bg-white border border-gray-200 shadow-sm max-w-full h-auto mb-4"
-          width="72"
-        />
-      </a>
-      <div class="flex flex-col text-left">
-        <div class="flex justify-between mb-3"></div>
-        <a class="no-underline" target="_blank" :href="href">
-          <h4 class="text-gray-900 font-bold text-xl mb-2">{{ title }}</h4>
-        </a>
-        <p class="text-gray-600 mb-4">
-          {{ abstract }}
-        </p>
-        <div class="flex py-2">
-          <a
-            :href="href"
-            target="_blank"
-            class="no-underline text-gray-500 flex items-center gap-2 hover:text-blue-600 transition-colors"
-          >
-            <LinkIcon />
-            <span class="text-gray-500">{{ getCleanUrl() }}</span>
+  <div class="w-full md:w-1/2 lg:w-1/3 flex pb-4 px-2">
+    <div class="card w-full bg-transparent border-0 shadow-none hover:bg-base-300 transition-all duration-200">
+      <div class="card-body">
+        <div class="flex items-start gap-4">
+          <a target="_blank" :href="href" class="avatar">
+            <div class="w-16 rounded-full ring-1 ring-gray-200 ring-offset-base-100 ring-offset-2">
+              <img
+                :src="image"
+                alt="Image"
+              />
+            </div>
           </a>
+          <div class="flex-1">
+             <a class="no-underline hover:link hover:text-blue-600" target="_blank" :href="href">
+              <h2 class="card-title text-xl mb-2">{{ title }}</h2>
+            </a>
+            <p class="text-base-content/70 mb-4 text-sm">
+              {{ abstract }}
+            </p>
+            <div class="card-actions">
+              <a
+                :href="href"
+                target="_blank"
+                class="btn btn-sm btn-ghost gap-2 pl-0 hover:bg-transparent hover:text-blue-600 hover:shadow-none shadow-none normal-case font-normal"
+              >
+                <LinkIcon />
+                <span class="opacity-70">{{ getCleanUrl() }}</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -49,4 +52,4 @@ export default {
 </template>
 
 <style scoped>
-</style>>
+</style>

@@ -31,7 +31,7 @@ export default {
 
 <template>
   <section class="pb-0 lg:py-6">
-    <div class="container mx-auto px-8 lg:px-32">
+    <div>
       <div class="flex flex-wrap -mx-2 mb-4">
         <BlogPost v-for="ref in blogPosts.entries" :key="ref.id" :citation="ref"/>
       </div>

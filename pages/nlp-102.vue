@@ -7,36 +7,12 @@ const setActiveTab = (tab) => {
   activeTab.value = tab;
 };
 
-// Accordion State
-const openAccordions = ref({});
+// Accordion Control
+const activeAccordionItem = ref(null);
 const toggleAccordion = (id) => {
-  if (openAccordions.value[id]) {
-    openAccordions.value[id] = false;
-  } else {
-    openAccordions.value = { [id]: true };
-  }
+    activeAccordionItem.value = activeAccordionItem.value === id ? null : id;
 };
 
-// Transition Hooks for smooth accordion
-const beforeEnter = (el) => {
-  el.style.height = '0';
-  el.style.opacity = '0';
-};
-const enter = (el) => {
-  el.style.height = el.scrollHeight + 'px';
-  el.style.opacity = '1';
-};
-const afterEnter = (el) => {
-  el.style.height = 'auto';
-};
-const beforeLeave = (el) => {
-  el.style.height = el.scrollHeight + 'px';
-  el.style.opacity = '1';
-};
-const leave = (el) => {
-  el.style.height = '0';
-  el.style.opacity = '0';
-};
 </script>
 
 <template>
@@ -67,33 +43,25 @@ const leave = (el) => {
                     <div class="bg-white shadow-sm rounded-lg overflow-hidden border border-gray-100">
                         
                         <!-- Tabs Navigation -->
-                        <div class="px-4 py-3 bg-white border-b border-gray-100 overflow-x-auto">
-                            <ul class="flex whitespace-nowrap gap-4 text-sm font-medium text-gray-500">
-                                <li>
-                                    <button 
-                                        @click="setActiveTab('overview')"
-                                        :class="['px-4 py-2 rounded-lg transition-colors', activeTab === 'overview' ? 'text-blue-600 bg-blue-50 font-bold' : 'hover:text-gray-900 hover:bg-gray-50']"
-                                    >
-                                        Overview
-                                    </button>
-                                </li>
-                                <li>
-                                    <button 
-                                        @click="setActiveTab('curriculum')"
-                                        :class="['px-4 py-2 rounded-lg transition-colors', activeTab === 'curriculum' ? 'text-blue-600 bg-blue-50 font-bold' : 'hover:text-gray-900 hover:bg-gray-50']"
-                                    >
-                                        Curriculum
-                                    </button>
-                                </li>
-                                <li>
-                                    <button 
-                                        @click="setActiveTab('requirements')"
-                                        :class="['px-4 py-2 rounded-lg transition-colors', activeTab === 'requirements' ? 'text-blue-600 bg-blue-50 font-bold' : 'hover:text-gray-900 hover:bg-gray-50']"
-                                    >
-                                        Technical requirements
-                                    </button>
-                                </li>
-                            </ul>
+                        <div role="tablist" class="tabs tabs-bordered w-full bg-white px-6 py-4 border-b-2 border-base-200 overflow-x-auto">
+                            <a role="tab" 
+                                @click="setActiveTab('overview')"
+                                :class="['tab tab-bordered text-sm px-6 h-auto py-3 hover:bg-base-200 transition-colors duration-200 rounded-lg whitespace-nowrap', activeTab === 'overview' ? 'tab-active text-blue-600 bg-blue-50' : '']"
+                            >
+                                Overview
+                            </a>
+                            <a role="tab" 
+                                @click="setActiveTab('curriculum')"
+                                :class="['tab tab-bordered text-sm px-6 h-auto py-3 hover:bg-base-200 transition-colors duration-200 rounded-lg whitespace-nowrap', activeTab === 'curriculum' ? 'tab-active text-blue-600 bg-blue-50' : '']"
+                            >
+                                Curriculum
+                            </a>
+                            <a role="tab" 
+                                @click="setActiveTab('requirements')"
+                                :class="['tab tab-bordered text-sm px-6 h-auto py-3 hover:bg-base-200 transition-colors duration-200 rounded-lg whitespace-nowrap', activeTab === 'requirements' ? 'tab-active text-blue-600 bg-blue-50' : '']"
+                            >
+                                Technical requirements
+                            </a>
                         </div>
                         
                         <!-- Tab Content -->
@@ -125,245 +93,178 @@ const leave = (el) => {
 
                             <!-- CURRICULUM TAB -->
                             <div v-if="activeTab === 'curriculum'">
-                                <div class="space-y-4">
+                                <div class="space-y-2">
                                     
                                     <!-- MODULE 1 -->
-                                    <div class="rounded-lg overflow-hidden">
-                                        <button @click="toggleAccordion('module1')" class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left">
-                                            <span class="font-bold text-gray-900">Cours 1 : Modélisation statistique du langage, vectorisation de texte</span>
-                                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200" :class="{'rotate-180': openAccordions['module1']}"></i>
-                                        </button>
-                                        <Transition
-                                            name="accordion"
-                                            @before-enter="beforeEnter"
-                                            @enter="enter"
-                                            @after-enter="afterEnter"
-                                            @before-leave="beforeLeave"
-                                            @leave="leave"
-                                        >
-                                            <div v-show="openAccordions['module1']" class="bg-white border-t border-gray-100 overflow-hidden">
-                                                <div class="p-4 space-y-4">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <button @click="openLecture('lecture_1')" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fa-solid fa-file-powerpoint"></i>
-                                                            </button>
-                                                            <span class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors cursor-pointer" @click="openLecture('lecture_1')">Lecture slides</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr class="border-gray-100">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Fr%C3%A9quences%20des%20mots.ipynb" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fas fa-display"></i>
-                                                            </a>
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Fr%C3%A9quences%20des%20mots.ipynb" target="_blank" class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">Lab materials</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Transition>
+                                    <div class="collapse collapse-arrow rounded-box overflow-hidden">
+                                        <input type="checkbox" :checked="activeAccordionItem === 'module1'" @change="toggleAccordion('module1')" /> 
+                                        <div class="collapse-title text-lg font-medium bg-base-200 rounded-box">
+                                            Cours 1 : Modélisation statistique du langage, vectorisation de texte
+                                        </div>
+                                        <div class="collapse-content bg-white !py-0"> 
+                                            <ul class="menu w-full p-2 rounded-box">
+                                                <li>
+                                                    <a @click="openLecture('lecture_1')" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fa-solid fa-file-powerpoint"></i>
+                                                        </span>
+                                                        Lecture slides
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%201%20-%20Mod%C3%A9lisation%20statistique%20du%20langage/Fr%C3%A9quences%20des%20mots.ipynb" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fas fa-display"></i>
+                                                        </span>
+                                                        Lab materials
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
 
                                     <!-- MODULE 2 (TP1) -->
-                                    <div class="rounded-lg overflow-hidden">
-                                        <button @click="toggleAccordion('tp1')" class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left">
-                                            <span class="font-bold text-gray-900">TP 1 : Classification de textes, modèles BoW</span>
-                                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200" :class="{'rotate-180': openAccordions['tp1']}"></i>
-                                        </button>
-                                        <Transition
-                                            name="accordion"
-                                            @before-enter="beforeEnter"
-                                            @enter="enter"
-                                            @after-enter="afterEnter"
-                                            @before-leave="beforeLeave"
-                                            @leave="leave"
-                                        >
-                                            <div v-show="openAccordions['tp1']" class="bg-white border-t border-gray-100 overflow-hidden">
-                                                <div class="p-4 space-y-4">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP1%20-%20Apprentissage%20supervis%C3%A9%20pour%20le%20NLP/Classification.ipynb" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fas fa-display"></i>
-                                                            </a>
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP1%20-%20Apprentissage%20supervis%C3%A9%20pour%20le%20NLP/Classification.ipynb" target="_blank" class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">Lab materials</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Transition>
+                                    <div class="collapse collapse-arrow rounded-box overflow-hidden">
+                                        <input type="checkbox" :checked="activeAccordionItem === 'module2'" @change="toggleAccordion('module2')" /> 
+                                        <div class="collapse-title text-lg font-medium bg-base-200 rounded-box">
+                                            TP 1 : Classification de textes, modèles BoW
+                                        </div>
+                                        <div class="collapse-content bg-white !py-0"> 
+                                            <ul class="menu w-full p-2 rounded-box">
+                                                <li>
+                                                    <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP1%20-%20Apprentissage%20supervis%C3%A9%20pour%20le%20NLP/Classification.ipynb" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fas fa-display"></i>
+                                                        </span>
+                                                        Lab materials
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
 
                                     <!-- MODULE 3 (TP2) -->
-                                    <div class="rounded-lg overflow-hidden">
-                                        <button @click="toggleAccordion('tp2')" class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left">
-                                            <span class="font-bold text-gray-900">TP 2 : Détection de thèmes, LDA</span>
-                                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200" :class="{'rotate-180': openAccordions['tp2']}"></i>
-                                        </button>
-                                        <Transition
-                                            name="accordion"
-                                            @before-enter="beforeEnter"
-                                            @enter="enter"
-                                            @after-enter="afterEnter"
-                                            @before-leave="beforeLeave"
-                                            @leave="leave"
-                                        >
-                                            <div v-show="openAccordions['tp2']" class="bg-white border-t border-gray-100 overflow-hidden">
-                                                <div class="p-4 space-y-4">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP2%20-%20Text%20Mining/TP2%20-%20Exploration%20de%20topics.ipynb" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fas fa-display"></i>
-                                                            </a>
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP2%20-%20Text%20Mining/TP2%20-%20Exploration%20de%20topics.ipynb" target="_blank" class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">Lab materials</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Transition>
+                                    <div class="collapse collapse-arrow rounded-box overflow-hidden">
+                                        <input type="checkbox" :checked="activeAccordionItem === 'module3'" @change="toggleAccordion('module3')" /> 
+                                        <div class="collapse-title text-lg font-medium bg-base-200 rounded-box">
+                                            TP 2 : Détection de thèmes, LDA
+                                        </div>
+                                        <div class="collapse-content bg-white !py-0"> 
+                                            <ul class="menu w-full p-2 rounded-box">
+                                                <li>
+                                                    <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP2%20-%20Text%20Mining/TP2%20-%20Exploration%20de%20topics.ipynb" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fas fa-display"></i>
+                                                        </span>
+                                                        Lab materials
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
 
                                     <!-- MODULE 4 (Lecture 2) -->
-                                    <div class="rounded-lg overflow-hidden">
-                                        <button @click="toggleAccordion('module2')" class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left">
-                                            <span class="font-bold text-gray-900">Cours 2 : Représentations sémantiques distributionnelles : Embeddings de mots</span>
-                                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200" :class="{'rotate-180': openAccordions['module2']}"></i>
-                                        </button>
-                                        <Transition
-                                            name="accordion"
-                                            @before-enter="beforeEnter"
-                                            @enter="enter"
-                                            @after-enter="afterEnter"
-                                            @before-leave="beforeLeave"
-                                            @leave="leave"
-                                        >
-                                            <div v-show="openAccordions['module2']" class="bg-white border-t border-gray-100 overflow-hidden">
-                                                <div class="p-4 space-y-4">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <button @click="openLecture('lecture_2')" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fa-solid fa-file-powerpoint"></i>
-                                                            </button>
-                                                            <span class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors cursor-pointer" @click="openLecture('lecture_2')">Lecture slides</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr class="border-gray-100">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%202%20-%20Embeddings/Words%20Embeddings.ipynb" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fas fa-display"></i>
-                                                            </a>
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%202%20-%20Embeddings/Words%20Embeddings.ipynb" target="_blank" class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">Lab materials</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Transition>
+                                    <div class="collapse collapse-arrow rounded-box overflow-hidden">
+                                        <input type="checkbox" :checked="activeAccordionItem === 'module4'" @change="toggleAccordion('module4')" /> 
+                                        <div class="collapse-title text-lg font-medium bg-base-200 rounded-box">
+                                            Cours 2 : Représentations sémantiques distributionnelles : Embeddings de mots
+                                        </div>
+                                        <div class="collapse-content bg-white !py-0"> 
+                                             <ul class="menu w-full p-2 rounded-box">
+                                                <li>
+                                                    <a @click="openLecture('lecture_2')" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fa-solid fa-file-powerpoint"></i>
+                                                        </span>
+                                                        Lecture slides
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%202%20-%20Embeddings/Words%20Embeddings.ipynb" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fas fa-display"></i>
+                                                        </span>
+                                                        Lab materials
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
 
                                     <!-- MODULE 5 (TP3) -->
-                                    <div class="rounded-lg overflow-hidden">
-                                        <button @click="toggleAccordion('tp3')" class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left">
-                                            <span class="font-bold text-gray-900">TP 3 : Embeddings de mots pour l'analyse de sentiments</span>
-                                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200" :class="{'rotate-180': openAccordions['tp3']}"></i>
-                                        </button>
-                                        <Transition
-                                            name="accordion"
-                                            @before-enter="beforeEnter"
-                                            @enter="enter"
-                                            @after-enter="afterEnter"
-                                            @before-leave="beforeLeave"
-                                            @leave="leave"
-                                        >
-                                            <div v-show="openAccordions['tp3']" class="bg-white border-t border-gray-100 overflow-hidden">
-                                                <div class="p-4 space-y-4">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP3%20-%20Word%20Embeddings/EmojiFy.ipynb" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fas fa-display"></i>
-                                                            </a>
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP3%20-%20Word%20Embeddings/EmojiFy.ipynb" target="_blank" class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">Lab materials</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Transition>
+                                    <div class="collapse collapse-arrow rounded-box overflow-hidden">
+                                        <input type="checkbox" :checked="activeAccordionItem === 'module5'" @change="toggleAccordion('module5')" /> 
+                                        <div class="collapse-title text-lg font-medium bg-base-200 rounded-box">
+                                            TP 3 : Embeddings de mots pour l'analyse de sentiments
+                                        </div>
+                                        <div class="collapse-content bg-white !py-0"> 
+                                            <ul class="menu w-full p-2 rounded-box">
+                                                <li>
+                                                    <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/TP3%20-%20Word%20Embeddings/EmojiFy.ipynb" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fas fa-display"></i>
+                                                        </span>
+                                                        Lab materials
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
 
                                     <!-- MODULE 6 (Lecture 3) -->
-                                    <div class="rounded-lg overflow-hidden">
-                                        <button @click="toggleAccordion('module3')" class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left">
-                                            <span class="font-bold text-gray-900">Cours 3 : Modélisation de séquences de mots : modèles de langue</span>
-                                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200" :class="{'rotate-180': openAccordions['module3']}"></i>
-                                        </button>
-                                        <Transition
-                                            name="accordion"
-                                            @before-enter="beforeEnter"
-                                            @enter="enter"
-                                            @after-enter="afterEnter"
-                                            @before-leave="beforeLeave"
-                                            @leave="leave"
-                                        >
-                                            <div v-show="openAccordions['module3']" class="bg-white border-t border-gray-100 overflow-hidden">
-                                                <div class="p-4 space-y-4">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <button @click="openLecture('lecture_3')" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fa-solid fa-file-powerpoint"></i>
-                                                            </button>
-                                                            <span class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors cursor-pointer" @click="openLecture('lecture_3')">Lecture slides</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr class="border-gray-100">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%203%20-%20Language%20Models/Mod%C3%A8les%20de%20langues.ipynb" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fas fa-display"></i>
-                                                            </a>
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%203%20-%20Language%20Models/Mod%C3%A8les%20de%20langues.ipynb" target="_blank" class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">Lab materials</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Transition>
+                                    <div class="collapse collapse-arrow rounded-box overflow-hidden">
+                                        <input type="checkbox" :checked="activeAccordionItem === 'module6'" @change="toggleAccordion('module6')" /> 
+                                        <div class="collapse-title text-lg font-medium bg-base-200 rounded-box">
+                                            Cours 3 : Modélisation de séquences de mots : modèles de langue
+                                        </div>
+                                        <div class="collapse-content bg-white !py-0"> 
+                                             <ul class="menu w-full p-2 rounded-box">
+                                                <li>
+                                                    <a @click="openLecture('lecture_3')" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fa-solid fa-file-powerpoint"></i>
+                                                        </span>
+                                                        Lecture slides
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%203%20-%20Language%20Models/Mod%C3%A8les%20de%20langues.ipynb" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fas fa-display"></i>
+                                                        </span>
+                                                        Lab materials
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
 
                                     <!-- MODULE 7 (Lecture 4) -->
-                                    <div class="rounded-lg overflow-hidden">
-                                        <button @click="toggleAccordion('module4')" class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left">
-                                            <span class="font-bold text-gray-900">Cours 4 : Deep Learning pour le NLP (RNN, Seq2Seq, Attention, Bert)</span>
-                                            <i class="fas fa-chevron-down text-gray-400 transition-transform duration-200" :class="{'rotate-180': openAccordions['module4']}"></i>
-                                        </button>
-                                        <Transition
-                                            name="accordion"
-                                            @before-enter="beforeEnter"
-                                            @enter="enter"
-                                            @after-enter="afterEnter"
-                                            @before-leave="beforeLeave"
-                                            @leave="leave"
-                                        >
-                                            <div v-show="openAccordions['module4']" class="bg-white border-t border-gray-100 overflow-hidden">
-                                                <div class="p-4 space-y-4">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <button @click="openLecture('lecture_4')" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fa-solid fa-file-powerpoint"></i>
-                                                            </button>
-                                                            <span class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors cursor-pointer" @click="openLecture('lecture_4')">Lecture slides</span>
-                                                        </div>
-                                                    </div>
-                                                    <hr class="border-gray-100">
-                                                    <div class="flex items-center justify-between group">
-                                                        <div class="flex items-center gap-3">
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/Bert_QA%5BCOLAB%5D.ipynb" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition-colors">
-                                                                <i class="fas fa-display"></i>
-                                                            </a>
-                                                            <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/Bert_QA%5BCOLAB%5D.ipynb" target="_blank" class="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">Lab materials</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Transition>
+                                    <div class="collapse collapse-arrow rounded-box overflow-hidden">
+                                        <input type="checkbox" :checked="activeAccordionItem === 'module7'" @change="toggleAccordion('module7')" /> 
+                                        <div class="collapse-title text-lg font-medium bg-base-200 rounded-box">
+                                            Cours 4 : Deep Learning pour le NLP (RNN, Seq2Seq, Attention, Bert)
+                                        </div>
+                                        <div class="collapse-content bg-white !py-0"> 
+                                             <ul class="menu w-full p-2 rounded-box">
+                                                <li>
+                                                    <a @click="openLecture('lecture_4')" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fa-solid fa-file-powerpoint"></i>
+                                                        </span>
+                                                        Lecture slides
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://colab.research.google.com/github/AntoineSimoulin/m2-data-sciences/blob/master/Cours%204%20-%20Introduction%20NLP%20%26%20Deep%20Learning/Bert_QA%5BCOLAB%5D.ipynb" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
+                                                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
+                                                            <i class="fas fa-display"></i>
+                                                        </span>
+                                                        Lab materials
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
 
                                 </div>
