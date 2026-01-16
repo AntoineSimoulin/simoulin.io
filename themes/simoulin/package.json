@@ -1,0 +1,26 @@
+{
+    "name": "slidev-theme-simoulin",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Custom Slidev theme for Antoine Simoulin",
+    "author": "Antoine Simoulin",
+    "engines": {
+        "slidev": ">=0.40.0"
+    },
+    "dependencies": {
+        "@retorquere/bibtex-parser": "^9.0.26"
+    },
+    "slidev": {
+        "extends": "default",
+        "colorSchema": "light",
+        "defaults": {
+            "fonts": {
+                "sans": "Roboto",
+                "webfonts": [
+                    "Roboto"
+                ]
+            },
+            "layout": "default"
+        }
+    }
+}

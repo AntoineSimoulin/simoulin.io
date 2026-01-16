@@ -17,26 +17,6 @@ const toggleAccordion = (id) => {
 
 <template>
     <div class="relative">
-        <!-- Modals Overlay -->
-        <div v-if="activeLecture" class="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
-            <div class="bg-white w-full h-full max-w-7xl max-h-[90vh] rounded-xl shadow-2xl flex flex-col overflow-hidden">
-                <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-gray-50">
-                    <h3 class="text-lg font-bold text-gray-900 truncate pr-4">{{ lectures[activeLecture].title }}</h3>
-                    <div class="flex items-center gap-2">
-                        <a :href="lectures[activeLecture].download" target="_blank" class="p-2 text-gray-500 hover:text-blue-600 transition-colors" title="Download PDF">
-                            <i class="fa-solid fa-download"></i>
-                        </a>
-                        <button @click="closeLecture" class="p-2 text-gray-500 hover:text-red-500 transition-colors">
-                            <i class="fa-solid fa-xmark text-xl"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="flex-1 bg-gray-100">
-                    <iframe :src="lectures[activeLecture].url" class="w-full h-full border-0"></iframe>
-                </div>
-            </div>
-        </div>
-
         <section class="pb-0 lg:py-6">
             <div class="container mx-auto px-8 lg:px-32 py-4">
                 <div class="w-full">
@@ -104,7 +84,7 @@ const toggleAccordion = (id) => {
                                         <div class="collapse-content bg-white !py-0"> 
                                             <ul class="menu w-full p-2 rounded-box">
                                                 <li>
-                                                    <a @click="openLecture('lecture_1')" class="group flex items-center gap-4 hover:bg-transparent">
+                                                    <a href="/slides/deck1/" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
                                                         <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
                                                             <i class="fa-solid fa-file-powerpoint"></i>
                                                         </span>
@@ -172,7 +152,7 @@ const toggleAccordion = (id) => {
                                         <div class="collapse-content bg-white !py-0"> 
                                              <ul class="menu w-full p-2 rounded-box">
                                                 <li>
-                                                    <a @click="openLecture('lecture_2')" class="group flex items-center gap-4 hover:bg-transparent">
+                                                    <a href="/slides/deck2/" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
                                                         <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
                                                             <i class="fa-solid fa-file-powerpoint"></i>
                                                         </span>
@@ -220,7 +200,7 @@ const toggleAccordion = (id) => {
                                         <div class="collapse-content bg-white !py-0"> 
                                              <ul class="menu w-full p-2 rounded-box">
                                                 <li>
-                                                    <a @click="openLecture('lecture_3')" class="group flex items-center gap-4 hover:bg-transparent">
+                                                    <a href="/slides/deck3/" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
                                                         <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
                                                             <i class="fa-solid fa-file-powerpoint"></i>
                                                         </span>
@@ -248,7 +228,7 @@ const toggleAccordion = (id) => {
                                         <div class="collapse-content bg-white !py-0"> 
                                              <ul class="menu w-full p-2 rounded-box">
                                                 <li>
-                                                    <a @click="openLecture('lecture_4')" class="group flex items-center gap-4 hover:bg-transparent">
+                                                    <a href="/slides/deck4/" target="_blank" class="group flex items-center gap-4 hover:bg-transparent">
                                                         <span class="w-8 h-8 flex items-center justify-center rounded-full bg-red-100 text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 ease-in-out">
                                                             <i class="fa-solid fa-file-powerpoint"></i>
                                                         </span>

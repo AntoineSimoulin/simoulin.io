@@ -1,13 +1,11 @@
 ---
-theme: default
-background: https://cover.sli.dev
+theme: ../themes/simoulin
 title: Welcome to Slidev
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
 
   Learn more at [Sli.dev](https://sli.dev)
-class: text-center
 drawings:
   persist: false
 transition: slide-left
@@ -25,7 +23,7 @@ Presentation slides for developers
 - 📝 **Markdown-based** - Write slides in a single Markdown file with ease
 - 🎨 **Themable** - Themes can be shared and installed as npm packages
 - 🧑‍💻 **Developer Friendly** - Code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - Embedding Vue components to enhance your expressions
+- 🤹 **Interactive** - Embedding Vue components to enhance your expressions <Cite id="yang-etal-2025-docagent, yang-etal-2025-code"/>
 
 ---
 

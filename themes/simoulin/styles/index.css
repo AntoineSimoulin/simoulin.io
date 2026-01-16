@@ -1,0 +1,71 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap';
+
+.slidev-layout {
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+    color: #212529;
+    text-align: left;
+    padding: 2rem !important;
+}
+
+h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+    font-weight: 400 !important;
+    text-transform: capitalize !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+code,
+pre,
+mark {
+    font-family: 'Ubuntu Mono', 'Fira Code', 'Monaco', monospace;
+    background-color: transparent !important;
+}
+
+.slidev-layout a {
+    color: #2563eb;
+    text-decoration: underline;
+    text-decoration-color: rgba(37, 99, 235, 0.3);
+}
+
+.slidev-layout a:hover {
+    text-decoration-color: #2563eb;
+}
+
+strong {
+    font-weight: 700;
+}
+
+:root {
+    --chapter-no: 1;
+}
+
+.slidev-layout {
+    counter-reset: subtitle slide var(--slide-no, 1) chapter var(--chapter-no, 1);
+}
+
+.slidev-layout h1::before {
+    counter-increment: section;
+    content: counter(chapter) "." counter(slide) ". ";
+    color: #2563eb;
+}
+
+.slidev-layout h2 {
+    counter-increment: subtitle;
+}
+
+.slidev-layout h2::before {
+    content: counter(chapter) "." counter(slide) "." counter(subtitle) ". ";
+    color: #2563eb;
+}

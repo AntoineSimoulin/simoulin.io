@@ -1,13 +1,11 @@
 ---
-theme: seriph
-background: https://cover.sli.dev
+theme: ../themes/simoulin
 title: Presenting Slidev
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
 
   Learn more at [Sli.dev](https://sli.dev)
-class: text-center
 drawings:
   persist: false
 transition: slide-left
@@ -56,8 +54,6 @@ Slidev is a slides maker and presenter designed for developers, consist of the f
 Read more about [Why Slidev?](https://sli.dev/guide/why)
 
 ---
-layout: center
-class: text-center
 ---
 
 # Learn More
