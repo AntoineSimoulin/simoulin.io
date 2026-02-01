@@ -14,13 +14,8 @@
         "extends": "default",
         "colorSchema": "light",
         "defaults": {
-            "fonts": {
-                "sans": "Roboto",
-                "webfonts": [
-                    "Roboto"
-                ]
-            },
-            "layout": "default"
+            "layout": "default",
+            "transition": "fade"
         }
     }
 }

@@ -2,7 +2,7 @@
 import { computed, inject, onMounted } from 'vue'
 import { useSlideContext } from '@slidev/client'
 import { citationsState } from '../logic/citations'
-import { getCitationText } from '../logic/bib'
+import { getCitationText, resolveCitationParts } from '../logic/bib'
 
 const props = defineProps<{
   id: string
@@ -22,14 +22,18 @@ onMounted(() => {
   }
 })
 
-const marker = computed(() => {
+const citationItems = computed(() => {
   const slideId = $page?.value
-  if (!slideId) return '?'
-  const indices = ids.value.map(id => {
+  if (!slideId) return []
+  return ids.value.map(id => {
     const index = citationsState.entries[String(slideId)]?.indexOf(id) ?? -1
-    return index !== -1 ? index + 1 : '*'
+    const displayIndex = index !== -1 ? index + 1 : '*'
+    const parts = resolveCitationParts(id)
+    return {
+      displayIndex,
+      url: parts?.url
+    }
   })
-  return indices.join(', ')
 })
 
 const fullCitation = computed(() => {
@@ -39,15 +43,21 @@ const fullCitation = computed(() => {
 
 <template>
   <span class="cite-component inline-block">
-    <sup class="text-blue-600 font-bold ml-0.5 cursor-help underline decoration-dotted" :title="fullCitation">
-      [{{ marker }}]
-    </sup>
+    <span class="ml-0.5 cursor-default" style="color: #2563eb !important; opacity: 1 !important;" :title="fullCitation">
+      [<template v-for="(item, i) in citationItems" :key="i">
+        <span v-if="i > 0">, </span>
+        <a v-if="item.url" :href="item.url" target="_blank" class="cite-link" style="color: inherit !important;">{{ item.displayIndex }}</a>
+        <span v-else>{{ item.displayIndex }}</span>
+      </template>]
+    </span>
   </span>
 </template>
 
 <style scoped>
-.cite-component {
-  vertical-align: super;
-  font-size: 0.8em;
+.cite-link {
+  text-decoration: none !important;
+}
+.cite-link:hover {
+  text-decoration: underline !important;
 }
 </style>
