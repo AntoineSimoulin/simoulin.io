@@ -20,7 +20,7 @@ function getParts(id: string) {
 </script>
 
 <template>
-  <div v-if="!isCover" class="abs-bl m-6 z-50 flex flex-col items-start pointer-events-none">
+  <div v-if="!isCover" class="abs-bl m-8 z-50 flex flex-col items-start pointer-events-none">
     <footer v-if="citations.length" class="text-[10px] border-l-4 border-[#2563eb] pl-2 bg-white/50 backdrop-blur-sm rounded-sm pr-1 mb-1 max-w-2/3">
       <div v-for="(id, i) in citations" :key="id" class="line-clamp-1 pointer-events-auto">
         <span v-if="getParts(id)">
@@ -36,7 +36,7 @@ function getParts(id: string) {
     </footer>
     <div class="text-gray-400 text-[10px]">simoulin.io, {{ currentYear }}, distribution prohibited without agreement</div>
   </div>
-  <div v-if="!isCover" class="abs-br m-6 z-50 flex flex-col items-end pointer-events-none">
+  <div v-if="!isCover" class="abs-br m-8 z-50 flex flex-col items-end pointer-events-none">
     <div class="text-black text-[10px]">{{ currentPage }}</div>
   </div>
 </template>

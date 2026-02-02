@@ -102,3 +102,35 @@ layout: cover
 * **Language:** Python 3.9+
 * **Core Libraries:** `spaCy`, `NLTK`, `Scikit-Learn`, `Gensim`.
 * **Environment:** Jupyter Notebooks or Google Colab.
+
+---
+
+# Image generation conditioned by text
+
+Multimodal deep learning architectures can handle **multiple data modalities**, including **text, image, audio, speech, video, and tabular data**. We can distinguish **various architectures**, each combining modalities with a different setup.
+
+<FigureCards :clickAnimate="true" :figures="[
+  {
+    src: '/encoder.svg',
+    caption: 'The encoder takes input from one or multiple modalities and outputs a vector representation. This is a fusion-based architecture.'
+  },
+  {
+    src: '/decoder.svg',
+    caption: 'The decoder takes a vector representation input and outputs one or multiple modalities. This is a fusion-based architecture.'
+  },
+  {
+    src: '/encoder-decoder.svg',
+    caption: 'Encoder-decoder takes one or multiple modalities as input and outputs one or multiple different or identical modalities.'
+  }
+]" />
+
+
+---
+
+# Technology maturity
+
+<IconList :clickAnimate="true" :items="[
+  { icon: '/arrow.svg', text: '**Multiple applications**, use-cases, startups, open-source contributions, and resources exist.' },
+  { icon: '/equalizer.svg', text: 'There has been&nbsp;**steady progress in technology**.' },
+  { icon: '/magnifier.svg', text: 'Unstructured data represent a&nbsp;**large portion of available company data**.' }
+]" />
