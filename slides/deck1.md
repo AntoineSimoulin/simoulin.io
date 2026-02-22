@@ -104,25 +104,21 @@ layout: cover
 * **Environment:** Jupyter Notebooks or Google Colab.
 
 ---
+layout: three-cols-header
+---
 
 # Image generation conditioned by text
 
 Multimodal deep learning architectures can handle **multiple data modalities**, including **text, image, audio, speech, video, and tabular data**. We can distinguish **various architectures**, each combining modalities with a different setup.
 
-<FigureCards :clickAnimate="true" align="center" :figures="[
-  {
-    src: '/encoder.svg',
-    caption: 'The encoder takes input from one or multiple modalities and outputs a vector representation. This is a fusion-based architecture.'
-  },
-  {
-    src: '/decoder.svg',
-    caption: 'The decoder takes a vector representation input and outputs one or multiple modalities. This is a fusion-based architecture.'
-  },
-  {
-    src: '/encoder-decoder.svg',
-    caption: 'Encoder-decoder takes one or multiple modalities as input and outputs one or multiple different or identical modalities.'
-  }
-]" />
+::left::
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="/encoder.svg" caption="The encoder takes input from one or multiple modalities and outputs a vector representation. This is a fusion-based architecture." />
+
+::center::
+<FigureCard :clickAnimate="true" align="center" label="Figure 2." src="/decoder.svg" caption="The decoder takes a vector representation input and outputs one or multiple modalities. This is a fusion-based architecture." />
+
+::right::
+<FigureCard :clickAnimate="true" align="center" label="Figure 3." src="/encoder-decoder.svg" caption="Encoder-decoder takes one or multiple modalities as input and outputs one or multiple different or identical modalities." />
 
 
 ---
@@ -142,9 +138,6 @@ align: top # top, bottom, center, stretch (default)
 
 
 ::right::
-<FigureCards :clickAnimate="true" align="stretch" :figures="[
-  {
-    src: 'https://www.gartner.com/ngw/globalassets/en/articles/images/hype-cycle-for-artificial-intelligence-2022.png',
-    caption: 'Gartner Hype Cycle for Artificial Intelligence, 2022. Source: [Gartner](https://www.gartner.com/en/articles/what-is-artificial-intelligence)'
-  }
-]" />
+<div class="flex flex-row justify-center items-stretch gap-4 mt-4 mb-8 flex-1 h-full min-h-0">
+  <FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://www.gartner.com/ngw/globalassets/en/articles/images/hype-cycle-for-artificial-intelligence-2022.png" caption="Gartner Hype Cycle for Artificial Intelligence, 2022. Source: [Gartner](https://www.gartner.com/en/articles/what-is-artificial-intelligence)" />
+</div>
