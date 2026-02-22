@@ -1,5 +1,5 @@
 import { parse } from '@retorquere/bibtex-parser'
-import bibString from '../../../assets/simoulin.bib?raw'
+import bibString from '../../../assets/references.bib?raw'
 
 let parsedData: any = null
 
