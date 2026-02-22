@@ -10,6 +10,8 @@
     height: 100% !important;
     border-radius: 20px;
     overflow: hidden;
+    user-select: text !important;
+    -webkit-user-select: text !important;
 }
 
 h1 {
