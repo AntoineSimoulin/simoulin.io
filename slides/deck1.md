@@ -16,7 +16,7 @@ layout: cover
 
 # The Foundations & The NLP Pipeline
 
-**Objective:** Understand the core challenges of human language and the essential steps to prepare raw text for machines <Cite id="yang-etal-2025-docagent, yang-etal-2025-code"/>.
+**Objective:** Understand the core challenges of human language and the essential steps to prepare raw text for machines.
 
 * **Theory:**
 * What is NLP? (Interaction between human language and computers).
@@ -141,3 +141,18 @@ align: top # top, bottom, center, stretch (default)
 <div class="flex flex-row justify-center items-stretch gap-4 mt-4 mb-8 flex-1 h-full min-h-0">
   <FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://www.gartner.com/ngw/globalassets/en/articles/images/hype-cycle-for-artificial-intelligence-2022.png" caption="Gartner Hype Cycle for Artificial Intelligence, 2022. Source: [Gartner](https://www.gartner.com/en/articles/what-is-artificial-intelligence)" />
 </div>
+
+---
+layout: two-cols-header
+align: top # top, bottom, center, stretch (default)
+---
+
+# Multimodal search engines
+
+At the 2021 IO conference, Google introduced MUM, a new model based on the T5 text-to-text architecture <Cite id="raffel2020exploring"/>. According to them, the model is 1,000 times more powerful than BERT <Cite url="https://blog.google/products/search/introducing-mum/"/>. MUM allows encoding and generating language and is trained in 75 languages and several tasks simultaneously. Finally, MUM is multimodal, for the moment, through text, image, and, in the future, possibly video and audio <Cite id="geigle2022retrieve"/>.
+
+::left::
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/MUM_GIF04_01_1_1.gif" caption="The features of MUM summarize well the current trends in NLP: (1) encoding and generation, (2) multilingual, (3) multi-task trained, and (4) multimodal." />
+
+::right::
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="" caption="Multimodal search engine" /> 
