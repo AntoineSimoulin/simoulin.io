@@ -5,39 +5,54 @@ import { citationsState } from '../logic/citations'
 import { getCitationText, resolveCitationParts } from '../logic/bib'
 
 const props = defineProps<{
-  id: string
+  id?: string
+  url?: string
 }>()
 
-console.log('[Cite] Component mounting with id:', props.id)
+console.log('[Cite] Component mounting with id:', props.id, 'url:', props.url)
 
 const { $page } = useSlideContext()
 
-const ids = computed(() => props.id.split(',').map(i => i.trim()).filter(Boolean))
+const items = computed(() => {
+  if (props.id) return props.id.split(',').map(i => i.trim()).filter(Boolean)
+  if (props.url) return [props.url]
+  return []
+})
 
 onMounted(() => {
+  if (!items.value.length) return
   // $page is a Ref<number>
   const slideId = $page?.value
   if (slideId) {
-    ids.value.forEach(id => citationsState.add(String(slideId), id))
+    items.value.forEach(item => citationsState.add(String(slideId), item))
   }
 })
 
 const citationItems = computed(() => {
   const slideId = $page?.value
   if (!slideId) return []
-  return ids.value.map(id => {
-    const index = citationsState.entries[String(slideId)]?.indexOf(id) ?? -1
+  return items.value.map(item => {
+    const index = citationsState.entries[String(slideId)]?.indexOf(item) ?? -1
     const displayIndex = index !== -1 ? index + 1 : '*'
-    const parts = resolveCitationParts(id)
+    let url = undefined
+    if (item.startsWith('http')) {
+      url = item
+    } else {
+      const parts = resolveCitationParts(item)
+      url = parts?.url
+    }
     return {
       displayIndex,
-      url: parts?.url
+      url: url
     }
   })
 })
 
 const fullCitation = computed(() => {
-  return ids.value.map(id => getCitationText(id)).join('\n')
+  return items.value.map(item => {
+    if (item.startsWith('http')) return item
+    return getCitationText(item)
+  }).join('\n')
 })
 </script>
 

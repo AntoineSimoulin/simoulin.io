@@ -30,7 +30,9 @@ function getParts(id: string) {
           <span v-else class="italic" style="color: #2563eb !important">{{ getParts(id)!.title }}.</span>
         </span>
         <span v-else>
-          [{{ i + 1 }}] {{ id }}
+          <span class="text-[#2563eb] font-bold mr-1">[{{ i + 1 }}]</span>
+          <a v-if="id.startsWith('http')" :href="id" target="_blank" class="italic hover:underline" style="color: #2563eb !important">{{ id }}</a>
+          <span v-else>{{ id }}</span>
         </span>
       </div>
     </footer>
