@@ -11,7 +11,7 @@ import MarkdownIt from 'markdown-it'
 const md = new MarkdownIt({ html: true })
 
 const renderMarkdown = (text: string) => {
-  return md.renderInline(text)
+  return md.render(text)
 }
 </script>
 
@@ -28,7 +28,9 @@ const renderMarkdown = (text: string) => {
         <img :src="item.icon" class="w-8 h-8 object-contain relative z-10" />
         <div class="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-4 bg-gray-100 rotate-45"></div>
       </div>
-      <div class="p-4 flex items-center text-sm text-gray-700" v-html="renderMarkdown(item.text)"></div>
+      <div class="p-4 flex items-center text-sm text-gray-700">
+        <div class="markdown-content" v-html="renderMarkdown(item.text)"></div>
+      </div>
     </div>
     <div
       v-if="!clickAnimate"
@@ -40,7 +42,9 @@ const renderMarkdown = (text: string) => {
         <img :src="item.icon" class="w-8 h-8 object-contain relative z-10" />
         <div class="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-4 bg-gray-100 rotate-45"></div>
       </div>
-      <div class="p-4 flex items-center text-sm text-gray-700" v-html="renderMarkdown(item.text)"></div>
+      <div class="p-4 flex items-center text-sm text-gray-700">
+        <div class="markdown-content" v-html="renderMarkdown(item.text)"></div>
+      </div>
     </div>
   </div>
 </template>

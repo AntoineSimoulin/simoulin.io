@@ -10,7 +10,7 @@ const info = computed(() => getSlideInfo(unref($page) || 1))
 </script>
 
 <template>
-  <div class="slidev-layout default" :style="{ '--chapter-no': info.chapter, '--slide-no': info.relativeSlide }">
+  <div class="slidev-layout default flex flex-col h-full w-full" :style="{ '--chapter-no': info.chapter, '--slide-no': info.relativeSlide }">
     <slot />
   </div>
 </template>

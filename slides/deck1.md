@@ -109,7 +109,7 @@ layout: cover
 
 Multimodal deep learning architectures can handle **multiple data modalities**, including **text, image, audio, speech, video, and tabular data**. We can distinguish **various architectures**, each combining modalities with a different setup.
 
-<FigureCards :clickAnimate="true" :figures="[
+<FigureCards :clickAnimate="true" align="center" :figures="[
   {
     src: '/encoder.svg',
     caption: 'The encoder takes input from one or multiple modalities and outputs a vector representation. This is a fusion-based architecture.'
@@ -126,11 +126,25 @@ Multimodal deep learning architectures can handle **multiple data modalities**, 
 
 
 ---
+layout: two-cols-header
+align: top # top, bottom, center, stretch (default)
+---
 
 # Technology maturity
 
+
+::left::
 <IconList :clickAnimate="true" :items="[
   { icon: '/arrow.svg', text: '**Multiple applications**, use-cases, startups, open-source contributions, and resources exist.' },
-  { icon: '/equalizer.svg', text: 'There has been&nbsp;**steady progress in technology**.' },
+  { icon: '/equalizer.svg', text: 'There has been **steady progress in technology**.' },
   { icon: '/magnifier.svg', text: 'Unstructured data represent a&nbsp;**large portion of available company data**.' }
+]" />
+
+
+::right::
+<FigureCards :clickAnimate="true" align="stretch" :figures="[
+  {
+    src: 'https://www.gartner.com/ngw/globalassets/en/articles/images/hype-cycle-for-artificial-intelligence-2022.png',
+    caption: 'Gartner Hype Cycle for Artificial Intelligence, 2022. Source: [Gartner](https://www.gartner.com/en/articles/what-is-artificial-intelligence)'
+  }
 ]" />
