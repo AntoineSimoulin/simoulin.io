@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useHead } from '@unhead/vue'
 import { useNav } from '@slidev/client'
 import { citationsState } from './logic/citations'
 import { resolveCitationParts } from './logic/bib'
 
+useHead({
+  script: [
+    { src: 'https://platform.twitter.com/widgets.js', async: true }
+  ]
+})
 const { currentPage, currentSlideRoute } = useNav()
 const currentYear = new Date().getFullYear()
 

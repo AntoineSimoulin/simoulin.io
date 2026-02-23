@@ -172,6 +172,4 @@ In 2021, Google introduced the **Magic Eraser** <Cite url="https://blog.google/p
 
 Runway <Cite url="https://runwayml.com/"/> is a company developing software to generate content such as images and videos using natural language text input.
 
-<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://twitter.com/runwayml/status/1568220303808991232?s=20&t=xVzWrPMm9jDz6YDFRTPkTw " caption="Illustration of the runway video editing tool." />
-
-
+<Tweet id="1568220303808991232" scale="0.5" cards="visible" />
