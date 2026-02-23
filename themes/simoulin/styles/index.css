@@ -63,11 +63,27 @@ strong {
     counter-reset: subtitle slide var(--slide-no, 1) chapter var(--chapter-no, 1);
 }
 
-.slidev-layout h1::before {
+.slidev-layout:not(.cover) h1 {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.slidev-layout:not(.cover) h1::before {
     counter-increment: section;
-    content: counter(chapter) "." counter(slide) ". ";
+    content: counter(chapter) "." counter(slide) ".";
+    position: absolute;
+    left: 0;
     color: #2563eb;
     font-weight: 700;
+}
+
+.slidev-layout:not(.cover) h2 {
+    padding-left: 3rem;
+    margin-bottom: 30px !important;
+}
+
+.slidev-layout:not(.cover) h1+h2 {
+    margin-top: -15px !important;
 }
 
 .slidev-layout.cover h1::before,
@@ -84,15 +100,7 @@ strong {
     padding: 0 !important;
 }
 
-.slidev-layout h2 {
-    counter-increment: subtitle;
-}
 
-.slidev-layout h2::before {
-    content: counter(chapter) "." counter(slide) "." counter(subtitle) ". ";
-    color: #2563eb;
-    font-weight: 700;
-}
 
 .fade-leave-active {
     transition-duration: 200ms !important;
