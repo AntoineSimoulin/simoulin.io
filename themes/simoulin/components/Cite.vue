@@ -15,7 +15,9 @@ const { $page } = useSlideContext()
 
 const items = computed(() => {
   if (props.id) return props.id.split(',').map(i => i.trim()).filter(Boolean)
-  if (props.url) return [props.url]
+  if (props.url) {
+    return props.url.replace(/[\[\]]/g, '').split(',').map(i => i.trim()).filter(Boolean)
+  }
   return []
 })
 

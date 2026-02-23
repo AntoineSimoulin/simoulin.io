@@ -190,3 +190,51 @@ DeepMind recently released a new **multimodal AI system: "Gato"** <Cite id="reed
 
 ::right::
 <FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR26ZaWp2hISPf2gF9oDZ-Qrq_kAI-oo_xFkA&s" caption="Gato model pre-training paradigm." />
+
+---
+layout: two-cols-header
+align: top # top, bottom, center, stretch (default)
+---
+
+# Document processing
+
+## Microsoft LayoutLMv3
+
+LayoutLMv3 is a **general-purpose pre-trained model** for text-centric and image-centric Document AI tasks. Experimental results show that it achieves state-of-the-art performance in text-centric tasks, including receipt understanding, document visual question answering, and image-centric tasks, such as **document image classification and document layout analysis**.
+
+
+::left::
+<Tweet id="1536374736590057474" scale="0.4" cards="visible" />
+
+
+::right::
+<Tweet id="1565334436702347266" scale="0.35" cards="visible" />
+
+---
+
+# Multimodal representation
+
+## Facebook CommerceMM
+
+Facebook released a new multimodal model, CommerceMM <Cite id="yu2022commercemm" />, which creates rich representations of commerce data. With state-of-the-art performance in product recognition & retrieval, CommerceMM helps tailor suggestions & search results to connect shoppers with the items they want.
+
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://www.marktechpost.com/wp-content/uploads/2022/05/Screen-Shot-2022-05-29-at-7.36.12-AM.png" caption="CommerceMM model architecture." />
+
+
+---
+layout: two-cols-header
+align: top # top, bottom, center, stretch (default)
+---
+
+# Inspirational content generation
+
+## Architecture design
+
+Using latent text-to-image diffusion, This House Does Not Exist and  Midjourney AI, Adobe Photoshop generates realistic images of modern architecture homes.  <Cite url="https://www.thishouseddoesnotexist.com/, https://amazingarchitecture.com/futuristic/ai-generated-future-cities-by-manas-bhatia" />
+
+::left::
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://thishousedoesnotexist.org/assets/houses/11493414.png?_1663637674" caption="House design generated using the query 'A modernist home in Thailand that is eco-friendly and made from sustainable materials'" />
+
+::right::
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://amazingarchitecture.com/storage/2825/responsive-images/ai_generated_future_cities_manas_bhatia___media_library_original_1344_756.jpg" caption="AI-generated Future Cities by Manas Bhatia using and Midjourney
+AI, Adobe Photoshop" />
