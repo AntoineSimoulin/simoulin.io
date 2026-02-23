@@ -165,3 +165,13 @@ At the 2021 IO conference, Google introduced **MUM**, a new model based on the T
 In 2021, Google introduced the **Magic Eraser** <Cite url="https://blog.google/products-and-platforms/products/photos/magic-eraser/"/>, which can automatically **figure out what you're trying to get rid of** by analyzing what you circle, so you don't have to worry about precise brushing. Once you decide what to erase, Magic Eraser uses machine learning again to predict what pixels would look like if the distraction were not there. The tool can **run directly on the device** and enable **subtle image editing without technical knowledge**.
 
 <FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MagicEraser-Blog.width-2200.format-webp.webp" caption="Illustration of the google magic eraser tool." />
+
+---
+
+# Video Edition using text
+
+Runway <Cite url="https://runwayml.com/"/> is a company developing software to generate content such as images and videos using natural language text input.
+
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://twitter.com/runwayml/status/1568220303808991232?s=20&t=xVzWrPMm9jDz6YDFRTPkTw " caption="Illustration of the runway video editing tool." />
+
+
