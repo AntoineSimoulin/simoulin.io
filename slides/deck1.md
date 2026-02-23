@@ -173,3 +173,20 @@ In 2021, Google introduced the **Magic Eraser** <Cite url="https://blog.google/p
 Runway <Cite url="https://runwayml.com/"/> is a company developing software to generate content such as images and videos using natural language text input.
 
 <Tweet id="1568220303808991232" scale="0.5" cards="visible" />
+
+
+---
+layout: two-cols-header
+align: top # top, bottom, center, stretch (default)
+---
+
+# General Artificial Intelligence Research
+
+DeepMind recently released a new **multimodal AI system: "Gato"** <Cite id="reed2022generalist" />. The algorithm is trained on many tasks (several hundred): from controlling a robot arm to writing poems. DeepMind called it a "general-purpose" system.
+
+::left::
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://img-cdn.tnwcdn.com/image?fit=1280%2C720&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2022%2F05%2FscalingAI.jpg&signature=521ede8490ac3f1d46bf5240c0ca1f37" caption="DeepMind researcher claims new ‘Gato’ AI could lead to AGI, says
+‘the game is over!’" />
+
+::right::
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR26ZaWp2hISPf2gF9oDZ-Qrq_kAI-oo_xFkA&s" caption="Gato model pre-training paradigm." />
