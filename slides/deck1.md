@@ -149,10 +149,19 @@ align: top # top, bottom, center, stretch (default)
 
 # Multimodal search engines
 
-At the 2021 IO conference, Google introduced MUM, a new model based on the T5 text-to-text architecture <Cite id="raffel2020exploring"/>. According to them, the model is 1,000 times more powerful than BERT <Cite url="https://blog.google/products/search/introducing-mum/"/>. MUM allows encoding and generating language and is trained in 75 languages and several tasks simultaneously. Finally, MUM is multimodal, for the moment, through text, image, and, in the future, possibly video and audio <Cite id="geigle2022retrieve"/>.
+At the 2021 IO conference, Google introduced **MUM**, a new model based on the T5 text-to-text architecture <Cite id="raffel2020exploring"/>. According to them, the model is 1,000 times more powerful than BERT <Cite url="https://blog.google/products/search/introducing-mum/"/>. MUM allows **encoding and generating language** and is trained in 75 languages and several tasks simultaneously. Finally, MUM is **multimodal**, for the moment, through **text, image, and, in the future, possibly video and audio** <Cite id="geigle2022retrieve"/>.
 
 ::left::
 <FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/MUM_GIF04_01_1_1.gif" caption="The features of MUM summarize well the current trends in NLP: (1) encoding and generation, (2) multilingual, (3) multi-task trained, and (4) multimodal." />
 
 ::right::
 <FigureCard :clickAnimate="true" align="center" label="Figure 1." src="" caption="Multimodal search engine" /> 
+
+
+---
+
+# Image edition
+
+In 2021, Google introduced the **Magic Eraser** <Cite url="https://blog.google/products-and-platforms/products/photos/magic-eraser/"/>, which can automatically **figure out what you're trying to get rid of** by analyzing what you circle, so you don't have to worry about precise brushing. Once you decide what to erase, Magic Eraser uses machine learning again to predict what pixels would look like if the distraction were not there. The tool can **run directly on the device** and enable **subtle image editing without technical knowledge**.
+
+<FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MagicEraser-Blog.width-2200.format-webp.webp" caption="Illustration of the google magic eraser tool." />
