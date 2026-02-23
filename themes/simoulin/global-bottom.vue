@@ -21,7 +21,7 @@ function getParts(id: string) {
 
 <template>
   <div v-if="!isCover" class="abs-bl m-8 z-50 flex flex-col items-start pointer-events-none">
-    <footer v-if="citations.length" class="text-[10px] border-l-4 border-[#2563eb] pl-2 bg-white/50 backdrop-blur-sm rounded-sm pr-1 mb-1 max-w-2/3">
+    <footer v-if="citations.length" class="text-[8px] border-l-2 border-[#2563eb] pl-2 bg-white/50 backdrop-blur-sm rounded-r-sm pr-1 mb-1 max-w-[850px]">
       <div v-for="(id, i) in citations" :key="id" class="line-clamp-1 pointer-events-auto">
         <span v-if="getParts(id)">
           <span class="text-[#2563eb] font-bold mr-1">[{{ i + 1 }}]</span>
