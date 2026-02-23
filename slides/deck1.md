@@ -230,7 +230,7 @@ align: top # top, bottom, center, stretch (default)
 
 ## Architecture design
 
-Using latent text-to-image diffusion, This House Does Not Exist and  Midjourney AI, Adobe Photoshop generates realistic images of modern architecture homes.  <Cite url="https://www.thishouseddoesnotexist.com/, https://amazingarchitecture.com/futuristic/ai-generated-future-cities-by-manas-bhatia" />
+Using latent text-to-image diffusion, This House Does Not Exist and  Midjourney AI, Adobe Photoshop generate realistic images of modern architecture homes.  <Cite url="https://www.thishouseddoesnotexist.com/, https://amazingarchitecture.com/futuristic/ai-generated-future-cities-by-manas-bhatia" />
 
 ::left::
 <FigureCard :clickAnimate="true" align="center" label="Figure 1." src="https://thishousedoesnotexist.org/assets/houses/11493414.png?_1663637674" caption="House design generated using the query 'A modernist home in Thailand that is eco-friendly and made from sustainable materials'" />
