@@ -1,5 +1,5 @@
 <script>
-import TwitterIcon from "./icons/iconTwitter.vue";
+import SubstackIcon from "./icons/iconSubstack.vue";
 import GithubIcon from "./icons/iconGithub.vue";
 import LinkedinIcon from "./icons/iconLinkedin.vue";
 import ScholarIcon from "./icons/iconScholar.vue";
@@ -9,7 +9,7 @@ import HuggingFaceIcon from "./icons/iconHuggingFace.vue";
 
 export default {
   components: {
-    TwitterIcon,
+    SubstackIcon,
     GithubIcon,
     LinkedinIcon,
     ScholarIcon,
@@ -26,14 +26,14 @@ export default {
       <p>Simoulin &copy; 2026. All rights reserved.</p>
     </div>
     <nav class="flex flex-wrap justify-center gap-4">
-      <a href="https://twitter.com/antoinesimoulin/" target="_blank" aria-label="Twitter" class="btn btn-ghost btn-circle">
-        <TwitterIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
-      </a>
       <a href="https://github.com/AntoineSimoulin" target="_blank" aria-label="GitHub" class="btn btn-ghost btn-circle">
         <GithubIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
       </a>
       <a href="https://www.linkedin.com/in/antoine-simoulin-phd-a00960b1/" target="_blank" aria-label="LinkedIn" class="btn btn-ghost btn-circle">
         <LinkedinIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
+      </a>
+      <a href="https://substack.com/@antoinesimoulin" target="_blank" aria-label="Substack" class="btn btn-ghost btn-circle">
+        <SubstackIcon class="w-5 h-5" />
       </a>
       <a href="https://scholar.google.fr/citations?hl=en&user=yZ-jUHAAAAAJ" target="_blank" aria-label="Google Scholar" class="btn btn-ghost btn-circle">
         <ScholarIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
