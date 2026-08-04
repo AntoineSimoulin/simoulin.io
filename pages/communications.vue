@@ -84,6 +84,7 @@ export default {
                 <!-- Awards -->
                 <div v-if="activeTab === 'awards'">
                     <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Conference">ECCV 2026</a>;</li>
                         <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=NeurIPS.cc/2025/Conference#tab-your-consoles">Neurips 2025</a>;</li>
                         <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=aclweb.org/ACL/2025/SRW">ACL-SRW 2025</a>;</li>
                         <li>Reviewer EMNLP 2024 (<a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/June">ACL June 2024 ARR</a>);</li>
