@@ -10,7 +10,7 @@
     "generate": "nuxt generate && npm run build:slides",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "gh-pages -d .output/public",
+    "deploy": "gh-pages -d .output/public --dotfiles",
     "build-and-deploy": "npm run generate && npm run deploy",
     "build:slides": "npx jiti scripts/build-slides.ts"
   },
