@@ -34,7 +34,7 @@ export default {
     <div>
       <div class="w-full mb-6">
         <h1 class="font-extrabold text-4xl pb-3 text-black tracking-tight">
-          Articles & thoughts on <mark class="bg-purple-300 text-black px-2 py-0.5 border-2 border-black shadow-[3px_3px_0px_#000] rounded-lg inline-block rotate-1">AI, NLP & Tech</mark>.
+          Articles & thoughts on <mark class="bg-purple-100 text-black px-2.5 py-0.5 border-2 border-black rounded-xl inline-block rotate-1">AI, NLP & Tech</mark>.
         </h1>
       </div>
       <div class="flex flex-wrap -mx-3 mb-4">

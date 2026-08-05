@@ -16,11 +16,11 @@ export default {
 
 <template>
   <div class="w-full md:w-1/2 lg:w-1/3 flex pb-6 px-3">
-    <div class="w-full bg-white border-2 border-black shadow-[5px_5px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0px_#000] transition-all duration-200 rounded-2xl p-5 flex flex-col justify-between">
+    <div class="w-full bg-white border-2 border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#000] transition-all duration-200 rounded-2xl p-5 flex flex-col justify-between">
       <div>
         <div class="flex items-center gap-4 mb-4">
           <a target="_blank" :href="href" class="block shrink-0">
-            <div class="w-14 h-14 rounded-xl border-2 border-black shadow-[2px_2px_0px_#000] overflow-hidden bg-yellow-100 flex items-center justify-center">
+            <div class="w-14 h-14 rounded-xl border-2 border-black overflow-hidden bg-indigo-50 flex items-center justify-center">
               <img
                 :src="image"
                 alt="Project image"
@@ -29,7 +29,7 @@ export default {
             </div>
           </a>
           <div>
-            <a class="no-underline text-black hover:text-blue-600" target="_blank" :href="href">
+            <a class="no-underline text-black hover:text-indigo-600" target="_blank" :href="href">
               <h2 class="text-xl font-extrabold tracking-tight leading-tight">{{ title }}</h2>
             </a>
           </div>
@@ -42,7 +42,7 @@ export default {
         <a
           :href="href"
           target="_blank"
-          class="inline-flex items-center gap-2 bg-yellow-300 hover:bg-yellow-400 text-black border-2 border-black shadow-[2px_2px_0px_#000] hover:shadow-[4px_4px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#000] px-3 py-1.5 rounded-xl font-extrabold text-xs transition-all"
+          class="inline-flex items-center gap-2 bg-indigo-100 hover:bg-indigo-200 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1.5 rounded-xl font-bold text-xs transition-all"
         >
           <LinkIcon class="w-4 h-4 fill-current text-black" />
           <span>{{ getCleanUrl() }}</span>
