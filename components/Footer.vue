@@ -21,8 +21,8 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto px-8 lg:px-32 my-6">
-    <footer class="py-2.5 px-6 bg-white border-2 border-black shadow-[3px_3px_0px_#000] rounded-full flex flex-col sm:flex-row justify-between items-center gap-3 text-black">
+  <div class="container mx-auto px-8 lg:px-32 my-8">
+    <footer class="flex flex-col sm:flex-row justify-between items-center gap-3 text-black">
       <div class="flex items-center">
         <p class="font-bold text-xs text-black/80">Simoulin &copy; 2026. All rights reserved.</p>
       </div>

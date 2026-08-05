@@ -12,18 +12,17 @@
                 An engineer looking to develop <span class="bg-pink-300 text-black px-2 py-0.5 border-2 border-black font-black rounded-md inline-block rotate-1">AI's future</span>.
               </h2>
          
-              <!-- Unboxed, natural flowing bio text -->
-              <div class="space-y-5 text-black mb-8">
-                <p class="text-base lg:text-lg leading-relaxed font-medium">
+              <div class="p-6 bg-white border-2 border-black shadow-[3px_3px_0px_#000] rounded-2xl mb-6 space-y-4">
+                <p class="text-base lg:text-lg leading-relaxed font-medium text-black">
                   I am looking to push forward the state-of-the-art of AI by <span class="bg-blue-100 text-black px-1.5 py-0.5 border border-black font-bold rounded">bridging research and engineering innovations</span> into the foundation of safe, reliable, efficient, and scalable products!
                   I have held academic and industry roles, giving me a fresh perspective on translating technical expertise into solutions for complex problems.
                 </p>
           
-                <p class="text-base lg:text-lg leading-relaxed font-medium">
+                <p class="text-base lg:text-lg leading-relaxed font-medium text-black">
                   For five years, I worked as a <span class="bg-yellow-200 text-black px-1.5 py-0.5 border border-black font-bold rounded">Sr. Data Scientist at Quantmetry</span> within the NLP research and innovation team 👔. I automated and optimized processes across large companies by implementing, testing, deploying, and maintaining end-to-end solutions.
                 </p>
   
-                <p class="text-base lg:text-lg leading-relaxed font-medium">
+                <p class="text-base lg:text-lg leading-relaxed font-medium text-black">
                   As a researcher 🎓, I conducted cutting-edge research and <span class="bg-purple-100 text-black px-1.5 py-0.5 border border-black font-bold rounded">completed my Ph.D. within the Formal Linguistics Lab at Paris University</span>, contributing to research at the crossroad of computational linguistics and statistical learning.
                 </p>
               </div>
