@@ -14,16 +14,16 @@
          
               <div class="p-6 bg-white border-2 border-black shadow-[3px_3px_0px_#000] rounded-2xl mb-6 space-y-4">
                 <p class="text-base lg:text-lg leading-relaxed font-medium text-black">
-                  I am looking to push forward the state-of-the-art of AI by <span class="bg-blue-100 text-black px-1.5 py-0.5 border border-black font-bold rounded">bridging research and engineering innovations</span> into the foundation of safe, reliable, efficient, and scalable products!
+                  I am looking to push forward the state-of-the-art of AI by <strong class="font-bold">bridging research and engineering innovations</strong> into the foundation of safe, reliable, efficient, and scalable products!
                   I have held academic and industry roles, giving me a fresh perspective on translating technical expertise into solutions for complex problems.
                 </p>
           
                 <p class="text-base lg:text-lg leading-relaxed font-medium text-black">
-                  For five years, I worked as a <span class="bg-yellow-200 text-black px-1.5 py-0.5 border border-black font-bold rounded">Sr. Data Scientist at Quantmetry</span> within the NLP research and innovation team 👔. I automated and optimized processes across large companies by implementing, testing, deploying, and maintaining end-to-end solutions.
+                  For five years, I worked as a <strong class="font-bold">Sr. Data Scientist at Quantmetry</strong> within the NLP research and innovation team 👔. I automated and optimized processes across large companies by implementing, testing, deploying, and maintaining end-to-end solutions.
                 </p>
   
                 <p class="text-base lg:text-lg leading-relaxed font-medium text-black">
-                  As a researcher 🎓, I conducted cutting-edge research and <span class="bg-purple-100 text-black px-1.5 py-0.5 border border-black font-bold rounded">completed my Ph.D. within the Formal Linguistics Lab at Paris University</span>, contributing to research at the crossroad of computational linguistics and statistical learning.
+                  As a researcher 🎓, I conducted cutting-edge research and <strong class="font-bold">completed my Ph.D. within the Formal Linguistics Lab at Paris University</strong>, contributing to research at the crossroad of computational linguistics and statistical learning.
                 </p>
               </div>
             </div>
