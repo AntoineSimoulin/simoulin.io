@@ -51,32 +51,43 @@ export default {
 </script>
 
 <template>
-  <a :href="citation.fields.url" class="no-underline text-blue-600 hover:text-blue-800" target="_blank">{{ citation.fields.title }}</a>
-  <a v-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="no-underline" target="_blank"><i class="fas fa-file-alt text-blue-600 ms-2" aria-hidden="true"></i></a>
-  <a v-if="'youtube' in citation.fields" :href="citation.fields.youtube" class="no-underline" target="_blank"><i class="fa-brands fa-youtube text-red-600 ms-2" aria-hidden="true"></i></a>
-  <a v-if="'github' in citation.fields" :href="citation.fields.github" class="no-underline" target="_blank"><i class="fa-brands fa-github text-gray-900 ms-2" aria-hidden="true"></i></a>
-  <i v-if="'award' in citation.fields" class="fa-solid fa-star text-yellow-500 mx-1" aria-hidden="true" title="Best Paper Award"></i>
-  <!-- <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="no-underline" target="_blank"><i class="fa-solid fa-file-powerpoint text-red-600 ms-2" aria-hidden="true"></i></a> -->
+  <div class="bg-white border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] hover:-translate-y-0.5 transition-all duration-200 rounded-2xl p-5 mb-4 text-black font-medium">
+    <div class="mb-2">
+      <a :href="citation.fields.url" class="font-extrabold text-lg text-black hover:text-blue-600 no-underline leading-snug" target="_blank">{{ citation.fields.title }}</a>
+    </div>
 
-  <!-- <div>{{ this.getAuthorsList(citation.fields.author) }}</div> -->
-  <div v-html="getAuthorsList(citation.fields.author)"></div>
-  <!-- <div>{{ citation.fields.author.join(", ") }}</div> -->
-  <div>
-    {{
-      "booktitle" in citation.fields
-        ? citation.fields.booktitle.split(",").length >= 4
-          ? `${citation.fields.booktitle.split(",")[1]}${
-              `${citation.fields.booktitle.toLowerCase().includes("student") ? " (Student)" : ""}`
-            }`
-          : `${citation.fields.booktitle}, ${citation.fields.year}`
-        : "journal" in citation.fields
-        ? `${citation.fields.journal}, ${citation.fields.year}`
-        : citation.type == "phdthesis"
-        ? `PhD Thesis, ${citation.fields.school}, ${citation.fields.year}`
-        : `Undefined, ${citation.fields.year}`
-    }}
+    <div class="flex flex-wrap items-center gap-2 my-3">
+      <a v-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
+        <i class="fas fa-file-alt text-black" aria-hidden="true"></i> PDF
+      </a>
+      <a v-if="'youtube' in citation.fields" :href="citation.fields.youtube" class="inline-flex items-center gap-1.5 bg-pink-300 hover:bg-pink-400 text-black border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
+        <i class="fa-brands fa-youtube text-black" aria-hidden="true"></i> Video
+      </a>
+      <a v-if="'github' in citation.fields" :href="citation.fields.github" class="inline-flex items-center gap-1.5 bg-purple-300 hover:bg-purple-400 text-black border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
+        <i class="fa-brands fa-github text-black" aria-hidden="true"></i> Code
+      </a>
+      <span v-if="'award' in citation.fields" class="inline-flex items-center gap-1.5 bg-yellow-300 text-black border-2 border-black shadow-[2px_2px_0px_#000] px-3 py-1 rounded-xl text-xs font-black">
+        <i class="fa-solid fa-star text-black" aria-hidden="true"></i> Best Paper Award
+      </span>
+    </div>
+
+    <div class="text-sm text-black/90 mb-1.5" v-html="getAuthorsList(citation.fields.author)"></div>
+    <div class="text-xs font-extrabold text-black/70 uppercase tracking-wide">
+      {{
+        "booktitle" in citation.fields
+          ? citation.fields.booktitle.split(",").length >= 4
+            ? `${citation.fields.booktitle.split(",")[1]}${
+                `${citation.fields.booktitle.toLowerCase().includes("student") ? " (Student)" : ""}`
+              }`
+            : `${citation.fields.booktitle}, ${citation.fields.year}`
+          : "journal" in citation.fields
+          ? `${citation.fields.journal}, ${citation.fields.year}`
+          : citation.type == "phdthesis"
+          ? `PhD Thesis, ${citation.fields.school}, ${citation.fields.year}`
+          : `Undefined, ${citation.fields.year}`
+      }}
+    </div>
   </div>
-  
 </template>
 
 <style>

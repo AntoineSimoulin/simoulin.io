@@ -50,22 +50,41 @@ export default {
   <section class="pb-0 lg:py-6">
     <div>
       <div class="w-full">
-        <div class="bg-white shadow-sm rounded-lg overflow-hidden border border-gray-100">
+        <div class="bg-white border-2 border-black shadow-[6px_6px_0px_#000] rounded-2xl overflow-hidden">
             <!-- Tabs -->
-            <!-- Tabs -->
-            <div role="tablist" class="tabs tabs-bordered w-full bg-white px-6 py-4 border-b-2 border-base-200">
-                <a role="tab" :class="['tab tab-bordered text-sm px-6 h-auto py-3 hover:bg-base-200 transition-colors duration-200 rounded-lg', activeTab === 'publications' ? 'tab-active text-blue-600 bg-blue-50' : '']" @click="setActiveTab('publications')">Publications</a>
-                <a role="tab" :class="['tab tab-bordered text-sm px-6 h-auto py-3 hover:bg-base-200 transition-colors duration-200 rounded-lg', activeTab === 'talks' ? 'tab-active text-blue-600 bg-blue-50' : '']" @click="setActiveTab('talks')">Talks and Presentations</a>
-                <a role="tab" :class="['tab tab-bordered text-sm px-6 h-auto py-3 hover:bg-base-200 transition-colors duration-200 rounded-lg', activeTab === 'awards' ? 'tab-active text-blue-600 bg-blue-50' : '']" @click="setActiveTab('awards')">Awards and Services</a>
+            <div role="tablist" class="flex flex-wrap gap-2 bg-yellow-100 p-4 border-b-2 border-black">
+                <button
+                  role="tab"
+                  :class="['px-5 py-2.5 rounded-xl font-extrabold text-sm border-2 border-black transition-all cursor-pointer', activeTab === 'publications' ? 'bg-yellow-300 shadow-[3px_3px_0px_#000] -translate-y-0.5' : 'bg-white hover:bg-yellow-200 shadow-[2px_2px_0px_#000]']"
+                  @click="setActiveTab('publications')"
+                >
+                  📄 Publications
+                </button>
+                <button
+                  role="tab"
+                  :class="['px-5 py-2.5 rounded-xl font-extrabold text-sm border-2 border-black transition-all cursor-pointer', activeTab === 'talks' ? 'bg-pink-300 shadow-[3px_3px_0px_#000] -translate-y-0.5' : 'bg-white hover:bg-pink-200 shadow-[2px_2px_0px_#000]']"
+                  @click="setActiveTab('talks')"
+                >
+                  🎤 Talks & Presentations
+                </button>
+                <button
+                  role="tab"
+                  :class="['px-5 py-2.5 rounded-xl font-extrabold text-sm border-2 border-black transition-all cursor-pointer', activeTab === 'awards' ? 'bg-purple-300 shadow-[3px_3px_0px_#000] -translate-y-0.5' : 'bg-white hover:bg-purple-200 shadow-[2px_2px_0px_#000]']"
+                  @click="setActiveTab('awards')"
+                >
+                  🏆 Awards & Services
+                </button>
             </div>
 
             <!-- Content -->
             <div class="p-6 bg-white min-h-[400px]">
                 <!-- Publications -->
                 <div v-if="activeTab === 'publications'">
-                    <div class="mb-6" v-for="year in Object.keys(bib).reverse()" :key="year">
-                        <h5 class="mb-3 text-lg font-bold text-gray-900">{{ year }}</h5>
-                        <div class="text-sm text-gray-700 capitalize mb-4" v-for="ref in bib[year]" :key="ref.key">
+                    <div class="mb-8" v-for="year in Object.keys(bib).reverse()" :key="year">
+                        <div class="inline-block bg-blue-300 text-black border-2 border-black px-4 py-1 rounded-xl font-black text-lg shadow-[3px_3px_0px_#000] mb-4 -rotate-1">
+                          {{ year }}
+                        </div>
+                        <div class="text-sm text-black mb-4" v-for="ref in bib[year]" :key="ref.key">
                             <Citation :citation="ref"/>
                         </div>
                     </div>  
@@ -73,9 +92,11 @@ export default {
 
                 <!-- Talks -->
                 <div v-if="activeTab === 'talks'">
-                    <div class="mb-6" v-for="year in Object.keys(talks).reverse()" :key="year">
-                        <h5 class="mb-3 text-lg font-bold text-gray-900">{{ year }}</h5>
-                        <div class="text-sm text-gray-700 capitalize mb-4" v-for="ref in talks[year]" :key="ref.key">
+                    <div class="mb-8" v-for="year in Object.keys(talks).reverse()" :key="year">
+                        <div class="inline-block bg-pink-300 text-black border-2 border-black px-4 py-1 rounded-xl font-black text-lg shadow-[3px_3px_0px_#000] mb-4 rotate-1">
+                          {{ year }}
+                        </div>
+                        <div class="text-sm text-black mb-4" v-for="ref in talks[year]" :key="ref.key">
                              <Talk :citation="ref"/> 
                         </div>
                     </div>
@@ -83,23 +104,38 @@ export default {
 
                 <!-- Awards -->
                 <div v-if="activeTab === 'awards'">
-                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Conference">ECCV 2026</a>;</li>
-                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=NeurIPS.cc/2025/Conference#tab-your-consoles">Neurips 2025</a>;</li>
-                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=aclweb.org/ACL/2025/SRW">ACL-SRW 2025</a>;</li>
-                        <li>Reviewer EMNLP 2024 (<a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/June">ACL June 2024 ARR</a>);</li>
-                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=ICML.cc/2024/Workshop/ES-FoMo-II">ES-FOMO-II 2024</a>;</li>
-                        <li>Reviewer ACL 2024 (<a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/February">ACL February 2024 ARR</a>);</li>
-                        <li>Reviewer <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://openreview.net/group?id=NeurIPS.cc/2023/Track/Datasets_and_Benchmarks">Neurips Datasets and Benchmarks 2023</a>;</li>
-                        <li>Reviewer ACL 2020;</li>
-                        <li>Reviewer EMNLP 2020;</li>
-                        <li>
-                            Hackathon Winner. PyTree, a PyTorch package for recursive neural networks.
-                            <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://devpost.com/software/pytree">PyTorch Annual Hackathon 2021</a>
+                    <ul class="space-y-3 font-medium text-black">
+                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000] flex items-center gap-2">
+                          <span class="font-black text-emerald-600">Reviewer:</span> <a class="font-bold underline hover:text-emerald-700" href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Conference">ECCV 2026</a>
                         </li>
-                        <li>
-                            Hackathon Winner. Train the Best Sentence Embedding Model Ever with 1B Training Pairs.
-                            <a class="no-underline capitalize text-blue-600 hover:text-blue-800" href="https://discuss.huggingface.co/t/train-the-best-sentence-embedding-model-ever-with-1b-training-pairs/7354">Hugging Face Community week using JAX/Flax for NLP & CV 2021</a>
+                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000] flex items-center gap-2">
+                          <span class="font-black text-emerald-600">Reviewer:</span> <a class="font-bold underline hover:text-emerald-700" href="https://openreview.net/group?id=NeurIPS.cc/2025/Conference#tab-your-consoles">Neurips 2025</a>
+                        </li>
+                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000] flex items-center gap-2">
+                          <span class="font-black text-emerald-600">Reviewer:</span> <a class="font-bold underline hover:text-emerald-700" href="https://openreview.net/group?id=aclweb.org/ACL/2025/SRW">ACL-SRW 2025</a>
+                        </li>
+                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000] flex items-center gap-2">
+                          <span class="font-black text-emerald-600">Reviewer:</span> EMNLP 2024 (<a class="font-bold underline hover:text-emerald-700" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/June">ACL June 2024 ARR</a>)
+                        </li>
+                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000] flex items-center gap-2">
+                          <span class="font-black text-emerald-600">Reviewer:</span> <a class="font-bold underline hover:text-emerald-700" href="https://openreview.net/group?id=ICML.cc/2024/Workshop/ES-FoMo-II">ES-FOMO-II 2024</a>
+                        </li>
+                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000] flex items-center gap-2">
+                          <span class="font-black text-emerald-600">Reviewer:</span> ACL 2024 (<a class="font-bold underline hover:text-emerald-700" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/February">ACL February 2024 ARR</a>)
+                        </li>
+                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000] flex items-center gap-2">
+                          <span class="font-black text-emerald-600">Reviewer:</span> <a class="font-bold underline hover:text-emerald-700" href="https://openreview.net/group?id=NeurIPS.cc/2023/Track/Datasets_and_Benchmarks">Neurips Datasets & Benchmarks 2023</a>
+                        </li>
+                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000] flex items-center gap-2">
+                          <span class="font-black text-emerald-600">Reviewer:</span> ACL 2020 & EMNLP 2020
+                        </li>
+                        <li class="p-4 bg-yellow-100 border-2 border-black rounded-xl shadow-[3px_3px_0px_#000]">
+                          <span class="font-black text-yellow-800">🏆 Hackathon Winner:</span> PyTree, a PyTorch package for recursive neural networks.
+                          <a class="font-bold underline hover:text-yellow-900 ml-1" href="https://devpost.com/software/pytree">PyTorch Annual Hackathon 2021</a>
+                        </li>
+                        <li class="p-4 bg-yellow-100 border-2 border-black rounded-xl shadow-[3px_3px_0px_#000]">
+                          <span class="font-black text-yellow-800">🏆 Hackathon Winner:</span> Train the Best Sentence Embedding Model Ever with 1B Training Pairs.
+                          <a class="font-bold underline hover:text-yellow-900 ml-1" href="https://discuss.huggingface.co/t/train-the-best-sentence-embedding-model-ever-with-1b-training-pairs/7354">Hugging Face Community Week (JAX/Flax) 2021</a>
                         </li>
                     </ul>
                 </div>

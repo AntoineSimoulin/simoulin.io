@@ -10,12 +10,26 @@ export default {
 </script>
 
 <template>
-  <a :href="citation.fields.url" class="link no-underline hover:link-hover text-blue-600 hover:text-blue-800 capitalize">{{ citation.fields.title }}</a> ({{ formatMonth(citation.fields.month) }}. {{ citation.fields.year }})
-  <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="no-underline" target="_blank"><i class="fas fa-file-alt text-blue-600 ms-1" aria-hidden="true"></i></a>
-  <div class="mt-1">
-    <strong>{{ citation.fields.venue }}, {{ citation.fields.address }}</strong>
-  </div>
-  <div class="text-base-content/80 mt-1">
-    {{ citation.fields.abstract }}
+  <div class="bg-white border-2 border-black shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] hover:-translate-y-0.5 transition-all duration-200 rounded-2xl p-5 mb-4 text-black">
+    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+      <a :href="citation.fields.url" class="font-extrabold text-lg text-black hover:text-blue-600 no-underline leading-snug" target="_blank">{{ citation.fields.title }}</a>
+      <span class="bg-yellow-300 text-black border-2 border-black px-2.5 py-0.5 rounded-lg text-xs font-black shadow-[2px_2px_0px_#000]">
+        {{ formatMonth(citation.fields.month) }} {{ citation.fields.year }}
+      </span>
+    </div>
+
+    <div v-if="'slides' in citation.fields" class="my-2">
+      <a :href="citation.fields.slides" class="inline-flex items-center gap-1.5 bg-purple-300 hover:bg-purple-400 text-black border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
+        <i class="fas fa-file-alt text-black" aria-hidden="true"></i> Slides
+      </a>
+    </div>
+
+    <div class="font-extrabold text-sm text-black/90 my-1">
+      📍 {{ citation.fields.venue }}, {{ citation.fields.address }}
+    </div>
+
+    <p v-if="citation.fields.abstract" class="text-sm font-medium text-black/80 mt-2 leading-relaxed">
+      {{ citation.fields.abstract }}
+    </p>
   </div>
 </template>

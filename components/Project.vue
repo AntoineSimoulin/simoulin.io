@@ -15,37 +15,38 @@ export default {
 </script>
 
 <template>
-  <div class="w-full md:w-1/2 lg:w-1/3 flex pb-4 px-2">
-    <div class="card w-full bg-transparent border-0 shadow-none hover:bg-base-300 transition-all duration-200">
-      <div class="card-body">
-        <div class="flex items-start gap-4">
-          <a target="_blank" :href="href" class="avatar">
-            <div class="w-16 rounded-full ring-1 ring-gray-200 ring-offset-base-100 ring-offset-2">
+  <div class="w-full md:w-1/2 lg:w-1/3 flex pb-6 px-3">
+    <div class="w-full bg-white border-2 border-black shadow-[5px_5px_0px_#000] hover:-translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0px_#000] transition-all duration-200 rounded-2xl p-5 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center gap-4 mb-4">
+          <a target="_blank" :href="href" class="block shrink-0">
+            <div class="w-14 h-14 rounded-xl border-2 border-black shadow-[2px_2px_0px_#000] overflow-hidden bg-yellow-100 flex items-center justify-center">
               <img
                 :src="image"
-                alt="Image"
+                alt="Project image"
+                class="w-full h-full object-cover"
               />
             </div>
           </a>
-          <div class="flex-1">
-             <a class="no-underline hover:link hover:text-blue-600" target="_blank" :href="href">
-              <h2 class="card-title text-xl mb-2">{{ title }}</h2>
+          <div>
+            <a class="no-underline text-black hover:text-blue-600" target="_blank" :href="href">
+              <h2 class="text-xl font-extrabold tracking-tight leading-tight">{{ title }}</h2>
             </a>
-            <p class="text-base-content/70 mb-4 text-sm">
-              {{ abstract }}
-            </p>
-            <div class="card-actions">
-              <a
-                :href="href"
-                target="_blank"
-                class="btn btn-sm btn-ghost gap-2 pl-0 hover:bg-transparent hover:text-blue-600 hover:shadow-none shadow-none normal-case font-normal"
-              >
-                <LinkIcon />
-                <span class="opacity-70">{{ getCleanUrl() }}</span>
-              </a>
-            </div>
           </div>
         </div>
+        <p class="text-black/80 mb-4 text-sm leading-relaxed font-medium">
+          {{ abstract }}
+        </p>
+      </div>
+      <div class="pt-2">
+        <a
+          :href="href"
+          target="_blank"
+          class="inline-flex items-center gap-2 bg-yellow-300 hover:bg-yellow-400 text-black border-2 border-black shadow-[2px_2px_0px_#000] hover:shadow-[4px_4px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0px_#000] px-3 py-1.5 rounded-xl font-extrabold text-xs transition-all"
+        >
+          <LinkIcon class="w-4 h-4 fill-current text-black" />
+          <span>{{ getCleanUrl() }}</span>
+        </a>
       </div>
     </div>
   </div>

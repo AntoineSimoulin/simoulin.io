@@ -9,7 +9,14 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'neo-sm': '2px 2px 0px #000',
+        'neo': '4px 4px 0px #000',
+        'neo-lg': '6px 6px 0px #000',
+        'neo-xl': '8px 8px 0px #000',
+      },
+    },
   },
   plugins: [
     require('daisyui'),

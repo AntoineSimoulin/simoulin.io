@@ -41,13 +41,15 @@ export default {
 <template>
 <section class="pb-0 lg:py-6">
     <div class="py-4">
-        <div class="w-full lg:w-8/12 md:w-full">
-          <h1 class="font-bold text-4xl pb-4">Stuff I’ve created to leave my mark on the world.</h1>
-          <p class="text-base pb-4 leading-relaxed font-light text-gray-700">
+        <div class="w-full lg:w-8/12 md:w-full mb-6">
+          <h1 class="font-extrabold text-4xl pb-3 text-black tracking-tight">
+            Stuff I’ve created to leave my <mark class="bg-blue-300 text-black px-2 py-0.5 border-2 border-black shadow-[3px_3px_0px_#000] rounded-lg inline-block rotate-1">mark on the world</mark>.
+          </h1>
+          <p class="text-base pb-2 leading-relaxed font-medium text-black">
             Here are some of the projects I'm proudest of. Many are open-source, so if you see something that catches your eye, feel free to investigate and contribute!
           </p>
         </div>
-        <div class="flex flex-wrap -mx-2">
+        <div class="flex flex-wrap -mx-3">
           <Project :title="project.title" :abstract="project.abstract" :href="project.href" :image="project.image" v-for="project in projects" />
         </div>
       </div>

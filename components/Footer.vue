@@ -21,34 +21,36 @@ export default {
 </script>
 
 <template>
-  <footer class="p-4 pb-8 bg-base-200 text-base-content sticky bottom-0 z-10 w-full container mx-auto px-8 lg:px-32 flex flex-col sm:flex-row justify-between items-center gap-4">
-    <div class="flex items-center">
-      <p>Simoulin &copy; 2026. All rights reserved.</p>
-    </div>
-    <nav class="flex flex-wrap justify-center gap-4">
-      <a href="https://github.com/AntoineSimoulin" target="_blank" aria-label="GitHub" class="btn btn-ghost btn-circle">
-        <GithubIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
-      </a>
-      <a href="https://www.linkedin.com/in/antoine-simoulin-phd-a00960b1/" target="_blank" aria-label="LinkedIn" class="btn btn-ghost btn-circle">
-        <LinkedinIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
-      </a>
-      <a href="https://substack.com/@antoinesimoulin" target="_blank" aria-label="Substack" class="btn btn-ghost btn-circle">
-        <SubstackIcon class="w-5 h-5" />
-      </a>
-      <a href="https://scholar.google.fr/citations?hl=en&user=yZ-jUHAAAAAJ" target="_blank" aria-label="Google Scholar" class="btn btn-ghost btn-circle">
-        <ScholarIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
-      </a>
-      <a href="https://dblp.org/pid/211/7662.html" target="_blank" aria-label="DBLP" class="btn btn-ghost btn-circle">
-        <DblpIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
-      </a>
-      <a href="https://aclanthology.org/people/a/antoine-simoulin/" target="_blank" aria-label="ACL Anthology" class="btn btn-ghost btn-circle">
-        <AclIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
-      </a>
-      <a href="https://huggingface.co/asi" target="_blank" aria-label="Hugging Face" class="btn btn-ghost btn-circle">
-        <HuggingFaceIcon class="w-6 h-6 fill-current hover:text-primary transition-colors" />
-      </a>
-    </nav>
-  </footer>
+  <div class="container mx-auto px-8 lg:px-32 my-6">
+    <footer class="py-2.5 px-6 bg-white border-2 border-black shadow-[3px_3px_0px_#000] rounded-full flex flex-col sm:flex-row justify-between items-center gap-3 text-black">
+      <div class="flex items-center">
+        <p class="font-bold text-xs text-black/80">Simoulin &copy; 2026. All rights reserved.</p>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-1.5 sm:gap-2">
+        <a href="https://github.com/AntoineSimoulin" target="_blank" aria-label="GitHub" class="p-1.5 bg-yellow-300 hover:bg-yellow-400 border-2 border-black shadow-[1.5px_1.5px_0px_#000] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 rounded-full transition-all">
+          <GithubIcon class="w-4 h-4 fill-current text-black" />
+        </a>
+        <a href="https://www.linkedin.com/in/antoine-simoulin-phd-a00960b1/" target="_blank" aria-label="LinkedIn" class="p-1.5 bg-blue-300 hover:bg-blue-400 border-2 border-black shadow-[1.5px_1.5px_0px_#000] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 rounded-full transition-all">
+          <LinkedinIcon class="w-4 h-4 fill-current text-black" />
+        </a>
+        <a href="https://substack.com/@antoinesimoulin" target="_blank" aria-label="Substack" class="p-1.5 bg-orange-300 hover:bg-orange-400 border-2 border-black shadow-[1.5px_1.5px_0px_#000] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 rounded-full transition-all">
+          <SubstackIcon class="w-4 h-4" />
+        </a>
+        <a href="https://scholar.google.fr/citations?hl=en&user=yZ-jUHAAAAAJ" target="_blank" aria-label="Google Scholar" class="p-1.5 bg-pink-300 hover:bg-pink-400 border-2 border-black shadow-[1.5px_1.5px_0px_#000] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 rounded-full transition-all">
+          <ScholarIcon class="w-4 h-4 fill-current text-black" />
+        </a>
+        <a href="https://dblp.org/pid/211/7662.html" target="_blank" aria-label="DBLP" class="p-1.5 bg-emerald-300 hover:bg-emerald-400 border-2 border-black shadow-[1.5px_1.5px_0px_#000] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 rounded-full transition-all">
+          <DblpIcon class="w-4 h-4 fill-current text-black" />
+        </a>
+        <a href="https://aclanthology.org/people/a/antoine-simoulin/" target="_blank" aria-label="ACL Anthology" class="p-1.5 bg-purple-300 hover:bg-purple-400 border-2 border-black shadow-[1.5px_1.5px_0px_#000] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 rounded-full transition-all">
+          <AclIcon class="w-4 h-4 fill-current text-black" />
+        </a>
+        <a href="https://huggingface.co/asi" target="_blank" aria-label="Hugging Face" class="p-1.5 bg-yellow-400 hover:bg-yellow-500 border-2 border-black shadow-[1.5px_1.5px_0px_#000] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 rounded-full transition-all">
+          <HuggingFaceIcon class="w-4 h-4 fill-current text-black" />
+        </a>
+      </nav>
+    </footer>
+  </div>
 </template>
 
 <style scoped>
