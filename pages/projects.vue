@@ -42,7 +42,7 @@ export default {
 <section class="pb-0 lg:py-6">
     <div class="py-4">
         <div class="w-full lg:w-8/12 md:w-full mb-6">
-          <h1 class="font-extrabold text-4xl pb-3 text-black tracking-tight">
+          <h1 class="font-extrabold text-3xl sm:text-4xl pb-3 text-black tracking-tight leading-tight">
             Stuff I’ve created to leave my <mark class="bg-yellow-300 text-black px-2.5 py-0.5 border-2 border-black rounded-xl inline-block rotate-1">mark on the world</mark>.
           </h1>
           <p class="text-base pb-2 leading-relaxed font-medium text-black">
