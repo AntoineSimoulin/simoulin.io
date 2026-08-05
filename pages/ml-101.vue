@@ -1,13 +1,13 @@
 <template>
-    <section class="py-12 bg-gray-50 min-h-screen flex items-center justify-center">
+    <section class="py-12 min-h-screen flex items-center justify-center">
         <div class="container mx-auto px-4">
             <div class="max-w-2xl mx-auto text-center">
-                <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100">
-                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div class="p-8 bg-white rounded-2xl shadow-[4px_4px_0px_#000] border-2 border-black">
+                    <div class="w-16 h-16 bg-emerald-300 text-black border-2 border-black rounded-full flex items-center justify-center mx-auto mb-6 shadow-[2px_2px_0px_#000]">
                         <i class="fas fa-hammer text-2xl"></i>
                     </div>
-                    <h1 class="text-2xl font-bold text-gray-900 mb-4">Module Under Construction</h1>
-                    <p class="text-gray-600 leading-relaxed">
+                    <h1 class="text-3xl font-extrabold text-black mb-4 tracking-tight">Module Under Construction</h1>
+                    <p class="text-black font-medium leading-relaxed">
                         The content for this module is currently being updated. Please check back later.
                     </p>
                 </div>

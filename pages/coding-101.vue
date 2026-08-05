@@ -114,28 +114,28 @@ def quickSort(array: list, low: int=None, high: int=None) -> list:
 </script>
 
 <template>
-    <section class="py-6 lg:py-12 bg-gray-50 min-h-screen">
+    <section class="py-6 lg:py-12 min-h-screen">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
                 
                 <!-- Sidebar -->
                 <div class="lg:col-span-4 xl:col-span-3">
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden sticky top-6">
-                        <div class="p-4 border-b border-gray-100">
-                            <h2 class="text-lg font-bold text-gray-900">Cracking the coding interview</h2>
+                    <div class="bg-white rounded-2xl shadow-[3px_3px_0px_#000] border-2 border-black overflow-hidden sticky top-6">
+                        <div class="p-4 border-b-2 border-black bg-emerald-100">
+                            <h2 class="text-lg font-black text-black tracking-tight">Cracking the coding interview</h2>
                         </div>
                         <ul class="menu w-full p-0">
                             <li v-for="section in sections" :key="section.id">
                                 <a 
                                     @click="setActiveTab(section.id)"
-                                    class="rounded-none border-l-4 px-5 py-4 transition-colors font-medium text-sm gap-3"
+                                    class="rounded-none border-l-4 px-5 py-4 transition-colors font-bold text-sm gap-3 cursor-pointer"
                                     :class="activeTab === section.id 
-                                        ? 'bg-blue-50 text-blue-700 border-blue-600 hover:bg-blue-50 active' 
-                                        : 'text-gray-600 hover:bg-gray-50 border-transparent hover:text-gray-900'"
+                                        ? 'bg-emerald-300 text-black border-black font-extrabold' 
+                                        : 'text-black/80 hover:bg-emerald-50 border-transparent hover:text-black'"
                                 >
-                                    <i :class="[section.icon, 'text-lg', activeTab === section.id ? 'text-blue-600' : 'text-gray-400']"></i>
+                                    <i :class="[section.icon, 'text-lg', activeTab === section.id ? 'text-black' : 'text-black/60']"></i>
                                     <span>{{ section.label }}</span>
-                                    <i v-if="activeTab === section.id" class="fas fa-chevron-right ml-auto text-xs opacity-60"></i>
+                                    <i v-if="activeTab === section.id" class="fas fa-chevron-right ml-auto text-xs"></i>
                                 </a>
                             </li>
                         </ul>
@@ -144,39 +144,39 @@ def quickSort(array: list, low: int=None, high: int=None) -> list:
 
                 <!-- Main Content -->
                 <div class="lg:col-span-8 xl:col-span-9">
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 lg:p-10 min-h-[500px]">
+                    <div class="bg-white rounded-2xl shadow-[3px_3px_0px_#000] border-2 border-black p-6 lg:p-10 min-h-[500px]">
                         
                         <!-- TAB: Course Description -->
                         <div v-if="activeTab === 'description'" class="space-y-6 animate-fade-in">
-                            <h2 class="text-2xl font-bold text-gray-900 border-b border-gray-100 pb-4 mb-6">Course Description</h2>
-                            <div class="prose prose-blue max-w-none text-gray-600">
+                            <h2 class="text-2xl lg:text-3xl font-extrabold text-black border-b-2 border-black pb-4 mb-6 tracking-tight">Course Description</h2>
+                            <div class="prose max-w-none text-black font-medium leading-relaxed">
                                 <p class="mb-4">
                                     Welcome to the 
-                                    <strong class="text-gray-900">Master 2 Mathématiques et Informatique pour la Data Science (M2 MIDS) from Paris University.</strong>
+                                    <strong class="text-black font-bold">Master 2 Mathématiques et Informatique pour la Data Science (M2 MIDS) from Paris University.</strong>
                                 </p>
                                 <p class="mb-4">
-                                    The course is part of the <a href="https://m2mids.github.io/m2mids/" class="text-blue-600 hover:underline font-medium">M2 MIDS</a> cursus.
+                                    The course is part of the <a href="https://m2mids.github.io/m2mids/" target="_blank" class="font-bold underline text-black hover:text-emerald-700">M2 MIDS</a> cursus.
                                 </p>
                                 <p class="mb-8">
                                     It introduces statistical methods for Natural Language Processing, including text vectorization, word embeddings, and sequence models. In addition, the course includes practical exercises that cover web scraping, regular expressions, and visualization. The labs include common use cases such as text classification or topic mining. Finally, the course gives an overview about open-source tools for nlp such as nlp libraries, intelligibility methods or deep learning frameworks.
                                 </p>
 
-                                <h3 class="text-xl font-bold text-gray-900 mb-4">What you’ll learn</h3>
+                                <h3 class="text-xl font-extrabold text-black mb-4">What you’ll learn</h3>
                                 <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 list-none p-0">
-                                    <li class="flex items-center gap-3 text-gray-700 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                                        <i class="fas fa-check-circle text-green-500 text-lg"></i>
+                                    <li class="flex items-center gap-3 text-black p-3 bg-emerald-50 rounded-xl border-2 border-black font-bold shadow-[1px_1px_0px_#000]">
+                                        <i class="fas fa-check-circle text-emerald-600 text-lg"></i>
                                         <span class="capitalize">Text vectorization</span>
                                     </li>
-                                    <li class="flex items-center gap-3 text-gray-700 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                                        <i class="fas fa-check-circle text-green-500 text-lg"></i>
+                                    <li class="flex items-center gap-3 text-black p-3 bg-emerald-50 rounded-xl border-2 border-black font-bold shadow-[1px_1px_0px_#000]">
+                                        <i class="fas fa-check-circle text-emerald-600 text-lg"></i>
                                         <span class="capitalize">Word embeddings</span>
                                     </li>
-                                    <li class="flex items-center gap-3 text-gray-700 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                                        <i class="fas fa-check-circle text-green-500 text-lg"></i>
+                                    <li class="flex items-center gap-3 text-black p-3 bg-emerald-50 rounded-xl border-2 border-black font-bold shadow-[1px_1px_0px_#000]">
+                                        <i class="fas fa-check-circle text-emerald-600 text-lg"></i>
                                         <span class="capitalize">Sequence models</span>
                                     </li>
-                                    <li class="flex items-center gap-3 text-gray-700 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                                        <i class="fas fa-check-circle text-green-500 text-lg"></i>
+                                    <li class="flex items-center gap-3 text-black p-3 bg-emerald-50 rounded-xl border-2 border-black font-bold shadow-[1px_1px_0px_#000]">
+                                        <i class="fas fa-check-circle text-emerald-600 text-lg"></i>
                                         <span class="capitalize">Web scraping</span>
                                     </li>
                                     <li class="flex items-center gap-3 text-gray-700 p-3 bg-gray-50 rounded-lg border border-gray-100">
