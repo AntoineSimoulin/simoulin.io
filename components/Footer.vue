@@ -22,11 +22,8 @@ export default {
 
 <template>
   <div class="container mx-auto px-8 lg:px-32 my-8">
-    <footer class="flex flex-col sm:flex-row justify-between items-center gap-3 text-black">
-      <div class="flex items-center">
-        <p class="font-bold text-xs text-black/80">Simoulin &copy; 2026. All rights reserved.</p>
-      </div>
-      <nav class="flex flex-wrap justify-center gap-1.5 sm:gap-2">
+    <footer class="flex flex-col items-center justify-center gap-3 text-black text-center">
+      <nav class="flex flex-wrap justify-center gap-2">
         <a href="https://github.com/AntoineSimoulin" target="_blank" aria-label="GitHub" class="p-1.5 bg-yellow-300 hover:bg-yellow-400 border-2 border-black shadow-[1.5px_1.5px_0px_#000] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 rounded-full transition-all">
           <GithubIcon class="w-4 h-4 fill-current text-black" />
         </a>
@@ -49,6 +46,9 @@ export default {
           <HuggingFaceIcon class="w-4 h-4 fill-current text-black" />
         </a>
       </nav>
+      <div class="flex items-center justify-center">
+        <p class="font-bold text-xs text-black/80">Simoulin &copy; 2026. All rights reserved.</p>
+      </div>
     </footer>
   </div>
 </template>
