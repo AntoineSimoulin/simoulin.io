@@ -31,8 +31,8 @@ export default {
 </script>
 
 <template>
-  <div :class="['flex', isWide ? 'col-span-1 md:col-span-2 lg:col-span-2' : 'col-span-1']">
-    <div class="w-full bg-white border-2 border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#000] transition-all duration-200 rounded-2xl p-6 flex flex-col justify-between h-full">
+  <div :class="['flex w-full min-w-0', isWide ? 'col-span-1 md:col-span-2 lg:col-span-2' : 'col-span-1']">
+    <div class="w-full min-w-0 bg-white border-2 border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#000] transition-all duration-200 rounded-2xl p-5 sm:p-6 flex flex-col justify-between h-full overflow-hidden">
       <div>
         <div class="flex items-center justify-between gap-2 mb-3">
           <span :class="['text-black border-2 border-black px-3 py-1 rounded-xl text-xs font-black shadow-[1.5px_1.5px_0px_#000]', badgeColorClass]">
@@ -40,22 +40,22 @@ export default {
           </span>
         </div>
         <a target="_blank" :href="citation.fields.url" class="no-underline text-black hover:text-blue-600">
-          <h2 :class="['font-black tracking-tight leading-snug mb-3', isWide ? 'text-2xl lg:text-3xl' : 'text-xl']">
+          <h2 :class="['font-black tracking-tight leading-snug mb-3 break-words', isWide ? 'text-2xl lg:text-3xl' : 'text-xl']">
             {{ citation.fields.title }}
           </h2>
         </a>
-        <p v-if="'abstract' in citation.fields" class="text-black/80 text-sm font-medium leading-relaxed my-3">
+        <p v-if="'abstract' in citation.fields" class="text-black/80 text-sm font-medium leading-relaxed my-3 break-words">
           {{ citation.fields.abstract }}
         </p>
       </div>
-      <div class="pt-4 flex items-center">
+      <div class="pt-4 flex items-center min-w-0">
         <a
           :href="citation.fields.url"
           target="_blank"
-          :class="['inline-flex items-center gap-1.5 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1.5 rounded-xl font-black text-xs transition-all no-underline', btnColorClass]"
+          :class="['inline-flex items-center gap-1.5 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1.5 rounded-xl font-black text-xs transition-all no-underline max-w-full overflow-hidden', btnColorClass]"
         >
-          <LinkIcon class="w-3.5 h-3.5 fill-current text-black"/>
-          <span>{{ getCleanUrl(citation.fields.url) }}</span>
+          <LinkIcon class="w-3.5 h-3.5 fill-current text-black shrink-0"/>
+          <span class="truncate">{{ getCleanUrl(citation.fields.url) }}</span>
         </a>
       </div>
     </div>
