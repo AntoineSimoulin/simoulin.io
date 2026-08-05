@@ -37,7 +37,7 @@ export default {
           Articles & thoughts on <mark class="bg-purple-100 text-black px-2.5 py-0.5 border-2 border-black rounded-xl inline-block rotate-1">AI, NLP & Tech</mark>.
         </h1>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-dense mb-8">
         <BlogPost v-for="(ref, index) in blogPosts.entries" :key="ref.id" :citation="ref" :index="index" />
       </div>
     </div>

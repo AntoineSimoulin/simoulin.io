@@ -30,11 +30,7 @@
           </div>
         
           <div class="w-full lg:w-4/12 order-0 lg:order-1 flex flex-col items-center">
-              <!-- Asymmetrical Image with Sticker Badge -->
               <div class="relative mb-8">
-                <div class="absolute -top-4 -right-2 z-10 bg-emerald-300 text-black text-xs font-black border-2 border-black px-3 py-1.5 rounded-full shadow-[2px_2px_0px_#000] -rotate-3">
-                  Ph.D. & Sr. AI Engineer ⚡
-                </div>
                 <img 
                   src="@/assets/img/moi-5.jpg" 
                   class="max-w-full h-auto w-64 lg:w-full rounded-2xl border-2 border-black shadow-[5px_5px_0px_#000] rotate-1 hover:rotate-0 transition-transform duration-300 bg-white"

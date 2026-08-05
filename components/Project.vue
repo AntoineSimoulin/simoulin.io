@@ -5,7 +5,7 @@ export default {
   components: {
     LinkIcon,
   },
-  props: ["title", "abstract", "href", "image"],
+  props: ["title", "abstract", "href"],
   methods: {
     getCleanUrl() {
       return this.href.replace(/(^\w+:|^)\/\//, "");
@@ -19,15 +19,8 @@ export default {
     <div class="w-full bg-white border-2 border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#000] transition-all duration-200 rounded-2xl p-6 flex flex-col justify-between">
       <div>
         <div class="mb-4">
-          <a target="_blank" :href="href" class="inline-flex items-center gap-3 bg-yellow-100 hover:bg-yellow-200 border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 rounded-full p-1.5 pr-4 transition-all no-underline text-black">
-            <div class="w-10 h-10 rounded-full border-2 border-black bg-white p-1 flex items-center justify-center shrink-0 overflow-hidden">
-              <img
-                :src="image"
-                :alt="title"
-                class="max-w-full max-h-full object-contain rounded-full"
-              />
-            </div>
-            <h2 class="text-base sm:text-lg font-black tracking-tight leading-snug text-black">{{ title }}</h2>
+          <a target="_blank" :href="href" class="inline-block bg-yellow-300 hover:bg-yellow-400 border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 rounded-xl px-3.5 py-1.5 transition-all no-underline text-black">
+            <h2 class="text-lg font-black tracking-tight leading-snug text-black">{{ title }}</h2>
           </a>
         </div>
         <p class="text-black/80 mb-4 text-sm leading-relaxed font-medium">

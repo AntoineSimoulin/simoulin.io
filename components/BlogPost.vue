@@ -9,7 +9,8 @@ export default {
   },
   computed: {
     isWide() {
-      return (this.index % 5 === 0) || (this.index % 5 === 3);
+      // 1 wide card out of every 4 items for dense 3-column packing
+      return (this.index % 4 === 0);
     },
     badgeColorClass() {
       const colors = ['bg-yellow-300', 'bg-pink-300', 'bg-purple-300', 'bg-blue-300', 'bg-emerald-300'];
@@ -33,12 +34,9 @@ export default {
   <div :class="['flex', isWide ? 'col-span-1 md:col-span-2 lg:col-span-2' : 'col-span-1']">
     <div class="w-full bg-white border-2 border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#000] transition-all duration-200 rounded-2xl p-6 flex flex-col justify-between h-full">
       <div>
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div class="flex items-center justify-between gap-2 mb-3">
           <span :class="['text-black border-2 border-black px-3 py-1 rounded-xl text-xs font-black shadow-[1.5px_1.5px_0px_#000]', badgeColorClass]">
             {{ formatMonth(citation.fields.month) }} {{ citation.fields.year }}
-          </span>
-          <span v-if="isWide" class="text-xs font-black uppercase tracking-wider bg-black text-white px-2.5 py-0.5 rounded-lg shadow-[1px_1px_0px_#000]">
-            Featured
           </span>
         </div>
         <a target="_blank" :href="citation.fields.url" class="no-underline text-black hover:text-blue-600">

@@ -12,28 +12,24 @@ export default {
           title: 'GPT-fr',
           abstract: 'Large pre-trained language model for French. The base version, equivalent to OpenAI GPT in English, includes above one billion parameters.',
           href: 'https://huggingface.co/asi/gpt-fr-cased-small',
-          image: '/gpt-fr.png',
           tags: ['French NLP', 'PyTorch', 'HuggingFace']
         },
         {
           title: 'Pytree',
           abstract: 'PyTree implements tree-structured neural networks in PyTorch. The package provides highly generic implementations as well as efficient batching methods.',
           href: 'https://github.com/AntoineSimoulin/pytree',
-          image: '/pytree.png',
           tags: ['PyTorch', 'Hackathon Winner']
         },
         {
           title: 'Sentence embedding model',
           abstract: 'Sentence embedding pre-trained model trained on 1B sentence pairs during the Community week using JAX/Flax for NLP & CV, organized by Hugging Face.',
           href: 'https://huggingface.co/flax-sentence-embeddings',
-          image: '/sbert.png',
           tags: ['JAX/Flax', 'Embeddings']
         },
         {
           title: 'Melusine',
           abstract: 'Melusine is a high-level Python library for email classification and feature extraction developed by Quantmetry and MAIF.',
           href: 'https://github.com/MAIF/melusine',
-          image: 'https://github.com/MAIF/melusine/raw/master/docs/_static/melusine.png',
           tags: ['Email NLP', 'Python']
         }
       ]
@@ -54,7 +50,7 @@ export default {
           </p>
         </div>
         <div class="flex flex-wrap -mx-3">
-          <Project :title="project.title" :abstract="project.abstract" :href="project.href" :image="project.image" :tags="project.tags" v-for="project in projects" :key="project.title" />
+          <Project :title="project.title" :abstract="project.abstract" :href="project.href" :tags="project.tags" v-for="project in projects" :key="project.title" />
         </div>
       </div>
     </section>
