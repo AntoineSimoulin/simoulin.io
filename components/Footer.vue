@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-  <div class="container mx-auto px-8 lg:px-32 my-8">
+  <div class="container mx-auto px-8 lg:px-32 mt-8 mb-28 lg:mb-8">
     <footer class="flex flex-col items-center justify-center gap-3 text-black text-center">
       <nav class="flex flex-wrap justify-center gap-2">
         <a href="https://github.com/AntoineSimoulin" target="_blank" aria-label="GitHub" class="p-1.5 bg-yellow-300 hover:bg-yellow-400 border-2 border-black shadow-[1.5px_1.5px_0px_#000] hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 rounded-full transition-all">
