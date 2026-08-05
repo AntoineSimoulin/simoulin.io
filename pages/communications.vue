@@ -103,41 +103,71 @@ export default {
                 </div>
 
                 <!-- Awards -->
-                <div v-if="activeTab === 'awards'">
-                    <ul class="space-y-3 font-medium text-black">
-                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000] flex items-center gap-2">
-                          <span class="font-black text-emerald-700">Reviewer:</span> <a class="font-bold underline hover:text-emerald-800" href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Conference" target="_blank">ECCV 2026</a>
-                        </li>
-                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000] flex items-center gap-2">
-                          <span class="font-black text-emerald-700">Reviewer:</span> <a class="font-bold underline hover:text-emerald-800" href="https://openreview.net/group?id=NeurIPS.cc/2025/Conference#tab-your-consoles" target="_blank">Neurips 2025</a>
-                        </li>
-                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000] flex items-center gap-2">
-                          <span class="font-black text-emerald-700">Reviewer:</span> <a class="font-bold underline hover:text-emerald-800" href="https://openreview.net/group?id=aclweb.org/ACL/2025/SRW" target="_blank">ACL-SRW 2025</a>
-                        </li>
-                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000] flex items-center gap-2">
-                          <span class="font-black text-emerald-700">Reviewer:</span> EMNLP 2024 (<a class="font-bold underline hover:text-emerald-800" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/June" target="_blank">ACL June 2024 ARR</a>)
-                        </li>
-                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000] flex items-center gap-2">
-                          <span class="font-black text-emerald-700">Reviewer:</span> <a class="font-bold underline hover:text-emerald-800" href="https://openreview.net/group?id=ICML.cc/2024/Workshop/ES-FoMo-II" target="_blank">ES-FOMO-II 2024</a>
-                        </li>
-                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000] flex items-center gap-2">
-                          <span class="font-black text-emerald-700">Reviewer:</span> ACL 2024 (<a class="font-bold underline hover:text-emerald-800" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/February" target="_blank">ACL February 2024 ARR</a>)
-                        </li>
-                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000] flex items-center gap-2">
-                          <span class="font-black text-emerald-700">Reviewer:</span> <a class="font-bold underline hover:text-emerald-800" href="https://openreview.net/group?id=NeurIPS.cc/2023/Track/Datasets_and_Benchmarks" target="_blank">Neurips Datasets & Benchmarks 2023</a>
-                        </li>
-                        <li class="p-3 bg-emerald-50 border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000] flex items-center gap-2">
-                          <span class="font-black text-emerald-700">Reviewer:</span> ACL 2020 & EMNLP 2020
-                        </li>
-                        <li class="p-4 bg-yellow-100 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000]">
-                          <span class="font-black text-yellow-800">🏆 Hackathon Winner:</span> PyTree, a PyTorch package for recursive neural networks.
-                          <a class="font-bold underline hover:text-yellow-900 ml-1" href="https://devpost.com/software/pytree" target="_blank">PyTorch Annual Hackathon 2021</a>
-                        </li>
-                        <li class="p-4 bg-yellow-100 border-2 border-black rounded-xl shadow-[2px_2px_0px_#000]">
-                          <span class="font-black text-yellow-800">🏆 Hackathon Winner:</span> Train the Best Sentence Embedding Model Ever with 1B Training Pairs.
-                          <a class="font-bold underline hover:text-yellow-900 ml-1" href="https://discuss.huggingface.co/t/train-the-best-sentence-embedding-model-ever-with-1b-training-pairs/7354" target="_blank">Hugging Face Community Week (JAX/Flax) 2021</a>
-                        </li>
-                    </ul>
+                <div v-if="activeTab === 'awards'" class="space-y-6">
+                    <!-- Reviewing Services Card -->
+                    <div class="p-6 bg-emerald-50 border-2 border-black rounded-2xl shadow-[3px_3px_0px_#000]">
+                        <h3 class="text-xl font-black text-black mb-4 flex items-center gap-2">
+                            🎓 Academic Reviewing Services
+                        </h3>
+                        <div class="flex flex-wrap gap-2.5">
+                            <a class="inline-flex items-center gap-1.5 bg-white hover:bg-emerald-100 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3.5 py-2 rounded-xl text-sm font-bold no-underline transition-all" href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Conference" target="_blank">
+                                <span class="font-black text-emerald-700">Reviewer:</span> ECCV 2026
+                            </a>
+                            <a class="inline-flex items-center gap-1.5 bg-white hover:bg-emerald-100 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3.5 py-2 rounded-xl text-sm font-bold no-underline transition-all" href="https://openreview.net/group?id=NeurIPS.cc/2025/Conference#tab-your-consoles" target="_blank">
+                                <span class="font-black text-emerald-700">Reviewer:</span> NeurIPS 2025
+                            </a>
+                            <a class="inline-flex items-center gap-1.5 bg-white hover:bg-emerald-100 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3.5 py-2 rounded-xl text-sm font-bold no-underline transition-all" href="https://openreview.net/group?id=aclweb.org/ACL/2025/SRW" target="_blank">
+                                <span class="font-black text-emerald-700">Reviewer:</span> ACL-SRW 2025
+                            </a>
+                            <a class="inline-flex items-center gap-1.5 bg-white hover:bg-emerald-100 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3.5 py-2 rounded-xl text-sm font-bold no-underline transition-all" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/June" target="_blank">
+                                <span class="font-black text-emerald-700">Reviewer:</span> EMNLP 2024 (ACL ARR)
+                            </a>
+                            <a class="inline-flex items-center gap-1.5 bg-white hover:bg-emerald-100 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3.5 py-2 rounded-xl text-sm font-bold no-underline transition-all" href="https://openreview.net/group?id=ICML.cc/2024/Workshop/ES-FoMo-II" target="_blank">
+                                <span class="font-black text-emerald-700">Reviewer:</span> ES-FOMO-II 2024
+                            </a>
+                            <a class="inline-flex items-center gap-1.5 bg-white hover:bg-emerald-100 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3.5 py-2 rounded-xl text-sm font-bold no-underline transition-all" href="https://openreview.net/group?id=aclweb.org/ACL/ARR/2024/February" target="_blank">
+                                <span class="font-black text-emerald-700">Reviewer:</span> ACL 2024 (ACL ARR)
+                            </a>
+                            <a class="inline-flex items-center gap-1.5 bg-white hover:bg-emerald-100 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3.5 py-2 rounded-xl text-sm font-bold no-underline transition-all" href="https://openreview.net/group?id=NeurIPS.cc/2023/Track/Datasets_and_Benchmarks" target="_blank">
+                                <span class="font-black text-emerald-700">Reviewer:</span> NeurIPS 2023 Datasets
+                            </a>
+                            <span class="inline-flex items-center gap-1.5 bg-white text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] px-3.5 py-2 rounded-xl text-sm font-bold">
+                                <span class="font-black text-emerald-700">Reviewer:</span> ACL 2020 & EMNLP 2020
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Hackathons & Awards Card -->
+                    <div class="p-6 bg-yellow-100 border-2 border-black rounded-2xl shadow-[3px_3px_0px_#000]">
+                        <h3 class="text-xl font-black text-black mb-4 flex items-center gap-2">
+                            🏆 Hackathon Awards
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="p-4 bg-white border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000]">
+                                <div class="font-black text-black text-base mb-1">
+                                    PyTree: PyTorch Package for Recursive Neural Networks
+                                </div>
+                                <p class="text-sm font-medium text-black/80 mb-2">
+                                    PyTree implements tree-structured neural networks in PyTorch with generic implementations and efficient batching methods.
+                                </p>
+                                <a class="inline-flex items-center gap-1.5 bg-yellow-300 hover:bg-yellow-400 text-black border-2 border-black shadow-[1px_1px_0px_#000] px-3 py-1 rounded-lg font-bold text-xs no-underline transition-all" href="https://devpost.com/software/pytree" target="_blank">
+                                    🏆 Winner — PyTorch Annual Hackathon 2021
+                                </a>
+                            </div>
+                            
+                            <div class="p-4 bg-white border-2 border-black rounded-xl shadow-[1.5px_1.5px_0px_#000]">
+                                <div class="font-black text-black text-base mb-1">
+                                    1B Sentence Pair Embedding Model
+                                </div>
+                                <p class="text-sm font-medium text-black/80 mb-2">
+                                    Train the Best Sentence Embedding Model Ever with 1B Training Pairs during Hugging Face Community Week (JAX/Flax).
+                                </p>
+                                <a class="inline-flex items-center gap-1.5 bg-yellow-300 hover:bg-yellow-400 text-black border-2 border-black shadow-[1px_1px_0px_#000] px-3 py-1 rounded-lg font-bold text-xs no-underline transition-all" href="https://discuss.huggingface.co/t/train-the-best-sentence-embedding-model-ever-with-1b-training-pairs/7354" target="_blank">
+                                    🏆 Winner — Hugging Face Community Week 2021
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
