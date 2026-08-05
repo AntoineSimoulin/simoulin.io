@@ -1,3 +1,14 @@
+<script>
+export default {
+  computed: {
+    isTeachingActive() {
+      const teachingPaths = ['/teaching', '/nlp-101', '/nlp-102', '/ml-101', '/coding-101'];
+      return teachingPaths.includes(this.$route.path);
+    }
+  }
+}
+</script>
+
 <template>
   <header class="fixed z-50 left-1/2 -translate-x-1/2 bottom-3 sm:bottom-4 lg:bottom-auto lg:top-4 w-[calc(100%-1.25rem)] sm:w-auto max-w-md lg:max-w-max px-1 sm:px-2">
     <nav class="flex items-center justify-between sm:justify-center gap-1 sm:gap-2 p-1.5 sm:px-3 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md border-2 border-black shadow-[3px_3px_0px_#000] text-xs sm:text-sm font-extrabold tracking-wide">
@@ -25,8 +36,7 @@
       </NuxtLink>
       <NuxtLink
         to="/teaching"
-        class="px-2.5 sm:px-3.5 py-1.5 rounded-full transition-all duration-150 hover:bg-emerald-100 text-black text-center"
-        active-class="bg-emerald-300 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000]"
+        :class="['px-2.5 sm:px-3.5 py-1.5 rounded-full transition-all duration-150 hover:bg-emerald-100 text-black text-center', isTeachingActive ? 'bg-emerald-300 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000]' : '']"
       >
         Teaching
       </NuxtLink>
