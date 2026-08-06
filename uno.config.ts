@@ -1,0 +1,68 @@
+import { defineConfig, presetIcons, presetUno } from 'unocss'
+
+export default defineConfig({
+  presets: [
+    presetUno(),
+    presetIcons({
+      scale: 1.2,
+      extraProperties: {
+        'display': 'inline-block',
+        'vertical-align': 'middle',
+      },
+    }),
+  ],
+  content: {
+    pipeline: {
+      include: [
+        /\.(vue|svelte|html|md|ts|js)$/,
+        /node_modules\/@slidev\/client\/.*\.vue$/,
+      ],
+    },
+  },
+  safelist: [
+    'i-carbon:minimize',
+    'i-carbon:maximize',
+    'i-carbon:arrow-left',
+    'i-carbon:arrow-right',
+    'i-carbon:apps',
+    'i-carbon:pen',
+    'i-carbon:presentation-file',
+    'i-carbon:user-speaker',
+    'i-carbon:information',
+    'i-carbon:overflow-menu-horizontal',
+    'i-carbon:arrows-vertical',
+    'i-carbon:sliders',
+    'i-carbon:close',
+    'i-carbon:sun',
+    'i-carbon:moon',
+    'i-carbon:download',
+    'i-carbon:document-pdf',
+    'i-carbon:text-annotation-toggle',
+    'i-carbon-minimize',
+    'i-carbon-maximize',
+    'i-carbon-arrow-left',
+    'i-carbon-arrow-right',
+    'i-carbon-apps',
+    'i-carbon-pen',
+    'i-carbon-presentation-file',
+    'i-carbon-user-speaker',
+    'i-carbon-information',
+    'i-carbon-overflow-menu-horizontal',
+    'i-carbon-arrows-vertical',
+    'i-carbon-sliders',
+    'i-ph-play',
+    'i-ph-pause',
+    'i-ph-arrows-out-simple',
+    'i-ph-caret-left',
+    'i-ph-caret-right',
+    'i-ph-squares-four',
+    'i-ph-pen',
+    'i-ph-user-speaker',
+    'i-ph-info',
+    'i-ph-arrows-down-up',
+    'i-ph-sliders',
+    'i-ph-x',
+    'i-ph-sun',
+    'i-ph-moon'
+  ]
+})
