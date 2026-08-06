@@ -15,7 +15,7 @@ export function useSlideNumbering() {
             const title = (slideMeta?.title || '').trim().toLowerCase()
 
             const isCover = layout === 'cover' || index === 0
-            const isCenterLayout = layout === 'center'
+            const isCenterLayout = layout === 'center' || layout === 'section'
             const isAboutMe = title.includes('about me')
 
             if (isCover || isAboutMe) {

@@ -23,7 +23,7 @@ layout: cover
 * **Academic Research:** Conducted cutting-edge research and completed a Ph.D. within the Laboratory of Formal Linguistics at Paris University.
 
 ---
-layout: center
+layout: section
 class: text-center
 ---
 
@@ -83,7 +83,7 @@ layout: two-cols-header
 4. **Conclusion and future work** *(5 mins)*
 
 ---
-layout: center
+layout: section
 class: text-center
 ---
 
@@ -191,7 +191,7 @@ In May 2022, Hugging Face released `diffusers`, an open-source library providing
 <FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/mck_pages/slide_17.png" caption="Hugging Face Diffusers ecosystem for open-source diffusion models." />
 
 ---
-layout: center
+layout: section
 class: text-center
 ---
 
@@ -352,7 +352,7 @@ To reduce high computational cost, Latent Diffusion <Cite id="rombach2022high" /
 * Reduces memory and compute overhead by a factor of 4x to 8x while preserving perceptual quality.
 
 ---
-layout: center
+layout: section
 class: text-center
 ---
 

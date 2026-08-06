@@ -181,9 +181,47 @@ pre {
     font-weight: 900 !important;
 }
 
-ul li::marker {
+.slidev-layout ul {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.slidev-layout ul li {
+    position: relative !important;
+    padding-left: 2.2rem !important;
+    margin-bottom: 0.95rem !important;
+    line-height: 1.5 !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
     color: #000000 !important;
+}
+
+/* Custom Neo-Brutalist Pop Bullet Pill */
+.slidev-layout ul li::before {
+    content: '▶' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.15em !important;
+    width: 1.35rem !important;
+    height: 1.35rem !important;
+    background-color: #FDE047 !important;
+    border: 2px solid #000000 !important;
+    border-radius: 8px !important;
+    box-shadow: 1.5px 1.5px 0px #000000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.55rem !important;
     font-weight: 900 !important;
+    color: #000000 !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.slidev-layout ul li:hover::before {
+    transform: translate(-1px, -1px) scale(1.08) !important;
+    box-shadow: 2.5px 2.5px 0px #000000 !important;
 }
 
 .fade-leave-active {
