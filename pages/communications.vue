@@ -79,7 +79,7 @@ export default {
             <!-- Content -->
             <div class="p-6 bg-white min-h-[400px]">
                 <!-- Publications -->
-                <div v-if="activeTab === 'publications'">
+                <div v-show="activeTab === 'publications'">
                     <div class="mb-8" v-for="year in Object.keys(bib).reverse()" :key="year">
                         <div class="inline-block bg-blue-300 text-black border-2 border-black px-4 py-1 rounded-xl font-extrabold text-base shadow-[2px_2px_0px_#000] mb-4 -rotate-1">
                           {{ year }}
@@ -91,7 +91,7 @@ export default {
                 </div>
 
                 <!-- Talks -->
-                <div v-if="activeTab === 'talks'">
+                <div v-show="activeTab === 'talks'">
                     <div class="mb-8" v-for="year in Object.keys(talks).reverse()" :key="year">
                         <div class="inline-block bg-pink-300 text-black border-2 border-black px-4 py-1 rounded-xl font-extrabold text-base shadow-[2px_2px_0px_#000] mb-4 rotate-1">
                           {{ year }}
@@ -103,7 +103,7 @@ export default {
                 </div>
 
                 <!-- Awards -->
-                <div v-if="activeTab === 'awards'" class="space-y-6">
+                <div v-show="activeTab === 'awards'" class="space-y-6">
                     <!-- Reviewing Services Card -->
                     <div class="p-6 bg-emerald-50 border-2 border-black rounded-2xl shadow-[3px_3px_0px_#000]">
                         <h3 class="text-xl font-black text-black mb-4 flex items-center gap-2">

@@ -7,7 +7,7 @@
     "dev": "npm run dev:slides && nuxt dev",
     "dev:nuxt": "nuxt dev",
     "dev:slides": "npx jiti scripts/dev-slides.ts",
-    "generate": "nuxt generate && npm run build:slides",
+    "generate": "npm run build:slides && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "deploy": "gh-pages -d .output/public --dotfiles",

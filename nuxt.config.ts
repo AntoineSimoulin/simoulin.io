@@ -14,5 +14,13 @@ export default defineNuxtConfig({
   ],
   gtag: {
     id: 'G-CN3HGJDFD2'
+  },
+  routeRules: {
+    '/slides/**': { prerender: false }
+  },
+  nitro: {
+    prerender: {
+      ignore: ['/slides', '/slides/**', '/slides/deck1', '/slides/deck1/']
+    }
   }
 })
