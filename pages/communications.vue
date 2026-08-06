@@ -1,6 +1,5 @@
 <script>
 import { parse } from "@retorquere/bibtex-parser";
-import Cite from "citation-js";
 import Citation from "../components/Citation.vue";
 import Talk from "../components/Talk.vue";
 import bibString from '@/assets/simoulin.bib?raw';
@@ -13,35 +12,33 @@ export default {
   },
   data() {
     return {
-      bib: bibString,
-      talks: talksString,
       activeTab: 'publications', // 'publications' | 'talks' | 'awards'
     };
   },
-  methods: {
-    getBibEntries(bibFile) {
-      let bib = parse(bibFile);
-      return bib
-    },
-    groupByYear(bib) {
-      let groupByYear = bib.entries.reduce((group, ref) => {
-        const year = ref['fields']['year'];
+  computed: {
+    bibEntries() {
+      const parsed = parse(bibString);
+      return parsed.entries.reduce((group, ref) => {
+        const year = ref.fields.year;
         group[year] = group[year] ?? [];
         group[year].push(ref);
         return group;
       }, {});
-      return groupByYear
     },
-    setActiveTab(tab) {
-        this.activeTab = tab;
+    talksEntries() {
+      const parsed = parse(talksString);
+      return parsed.entries.reduce((group, ref) => {
+        const year = ref.fields.year;
+        group[year] = group[year] ?? [];
+        group[year].push(ref);
+        return group;
+      }, {});
     }
   },
-  created () {
-    this.bib = this.getBibEntries(this.bib);
-    this.bib = this.groupByYear(this.bib);
-
-    this.talks = this.getBibEntries(this.talks);
-    this.talks = this.groupByYear(this.talks);
+  methods: {
+    setActiveTab(tab) {
+      this.activeTab = tab;
+    }
   }
 };
 </script>
@@ -79,31 +76,31 @@ export default {
             <!-- Content -->
             <div class="p-6 bg-white min-h-[400px]">
                 <!-- Publications -->
-                <div v-show="activeTab === 'publications'">
-                    <div class="mb-8" v-for="year in Object.keys(bib).reverse()" :key="year">
+                <div :class="activeTab === 'publications' ? '' : 'hidden'">
+                    <div class="mb-8" v-for="year in Object.keys(bibEntries).reverse()" :key="year">
                         <div class="inline-block bg-blue-300 text-black border-2 border-black px-4 py-1 rounded-xl font-extrabold text-base shadow-[2px_2px_0px_#000] mb-4 -rotate-1">
                           {{ year }}
                         </div>
-                        <div class="text-sm text-black mb-4" v-for="ref in bib[year]" :key="ref.key">
+                        <div class="text-sm text-black mb-4" v-for="ref in bibEntries[year]" :key="ref.key">
                             <Citation :citation="ref"/>
                         </div>
                     </div>  
                 </div>
 
                 <!-- Talks -->
-                <div v-show="activeTab === 'talks'">
-                    <div class="mb-8" v-for="year in Object.keys(talks).reverse()" :key="year">
+                <div :class="activeTab === 'talks' ? '' : 'hidden'">
+                    <div class="mb-8" v-for="year in Object.keys(talksEntries).reverse()" :key="year">
                         <div class="inline-block bg-pink-300 text-black border-2 border-black px-4 py-1 rounded-xl font-extrabold text-base shadow-[2px_2px_0px_#000] mb-4 rotate-1">
                           {{ year }}
                         </div>
-                        <div class="text-sm text-black mb-4" v-for="ref in talks[year]" :key="ref.key">
+                        <div class="text-sm text-black mb-4" v-for="ref in talksEntries[year]" :key="ref.key">
                              <Talk :citation="ref"/> 
                         </div>
                     </div>
                 </div>
 
                 <!-- Awards -->
-                <div v-show="activeTab === 'awards'" class="space-y-6">
+                <div :class="activeTab === 'awards' ? 'space-y-6' : 'hidden space-y-6'">
                     <!-- Reviewing Services Card -->
                     <div class="p-6 bg-emerald-50 border-2 border-black rounded-2xl shadow-[3px_3px_0px_#000]">
                         <h3 class="text-xl font-black text-black mb-4 flex items-center gap-2">
