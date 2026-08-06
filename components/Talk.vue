@@ -12,17 +12,20 @@ export default {
 <template>
   <div class="bg-white border-2 border-black hover:shadow-[3.5px_3.5px_0px_#000] hover:-translate-y-0.5 transition-all duration-200 rounded-2xl p-5 mb-5 text-black font-medium">
     
-    <!-- Top Row: Venue Location Badge (Left) + Slides / PDF Link (Right) -->
-    <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
-      <!-- Venue / Location Highlight Mark -->
-      <mark class="bg-pink-300 text-black font-black text-xs sm:text-sm px-3 py-1 border-2 border-black shadow-[1.5px_1.5px_0px_#000] rounded-xl inline-block -rotate-1">
-        📍 {{ citation.fields.venue }}
-      </mark>
+    <!-- Top Row: Title (Left) + Slides / PDF Link (Right) -->
+    <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
+      <!-- Talk Title -->
+      <a v-if="'url' in citation.fields || 'slides' in citation.fields" :href="citation.fields.slides || citation.fields.url" class="font-black text-lg sm:text-xl text-black hover:text-blue-600 no-underline leading-snug flex-1 min-w-[200px]" target="_blank">
+        {{ citation.fields.title }}
+      </a>
+      <span v-else class="font-black text-lg sm:text-xl text-black leading-snug flex-1 min-w-[200px]">
+        {{ citation.fields.title }}
+      </span>
 
       <!-- Slides / PDF Link (Top Right on desktop >= sm) -->
-      <div class="hidden sm:flex flex-wrap items-center gap-2 ml-auto">
+      <div class="hidden sm:flex flex-wrap items-center gap-2 ml-auto shrink-0">
         <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
-          <i class="fas fa-file-alt text-black" aria-hidden="true"></i> Slides (PDF)
+          <i class="fas fa-file-alt text-black" aria-hidden="true"></i> Slides
         </a>
         <a v-else-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
           <i class="fas fa-file-alt text-black" aria-hidden="true"></i> PDF
@@ -33,30 +36,23 @@ export default {
       </div>
     </div>
 
-    <!-- Talk Title -->
-    <div class="mb-2">
-      <a v-if="'url' in citation.fields || 'slides' in citation.fields" :href="citation.fields.slides || citation.fields.url" class="font-black text-lg sm:text-xl text-black hover:text-blue-600 no-underline leading-snug" target="_blank">
-        {{ citation.fields.title }}
-      </a>
-      <span v-else class="font-black text-lg sm:text-xl text-black leading-snug">
-        {{ citation.fields.title }}
+    <!-- Date & Location below title (Styled Neo-Brutalist Mini Pills) -->
+    <div class="flex flex-wrap items-center gap-2.5 my-2.5">
+      <span class="inline-flex items-center gap-1.5 bg-yellow-200 text-black border-2 border-black shadow-[1px_1px_0px_#000] px-2.5 py-1 rounded-lg text-xs font-black">
+        <i class="fa-regular fa-calendar text-black"></i>
+        <span>{{ formatMonth(citation.fields.month) }} {{ citation.fields.year }}</span>
+      </span>
+
+      <span v-if="citation.fields.venue || citation.fields.address" class="inline-flex items-center gap-1.5 bg-pink-200 text-black border-2 border-black shadow-[1px_1px_0px_#000] px-2.5 py-1 rounded-lg text-xs font-black">
+        <i class="fa-solid fa-location-dot text-black"></i>
+        <span>{{ citation.fields.venue }}{{ citation.fields.address ? `, ${citation.fields.address}` : '' }}</span>
       </span>
     </div>
 
-    <!-- Date below title -->
-    <div class="flex flex-wrap items-center gap-2 mb-3">
-      <span class="inline-block bg-yellow-300 text-black border-2 border-black px-2.5 py-0.5 rounded-lg text-xs font-black shadow-[1px_1px_0px_#000]">
-        🗓️ {{ formatMonth(citation.fields.month) }} {{ citation.fields.year }}
-      </span>
-      <span v-if="citation.fields.address" class="text-xs font-bold text-black/70">
-        • {{ citation.fields.address }}
-      </span>
-    </div>
-
-    <!-- Slides / PDF Link (Mobile Only: flex sm:hidden below title & date) -->
+    <!-- Slides / PDF Link (Mobile Only: flex sm:hidden below title & metadata) -->
     <div class="flex sm:hidden flex-wrap items-center gap-2 my-2.5">
       <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
-        <i class="fas fa-file-alt text-black" aria-hidden="true"></i> Slides (PDF)
+        <i class="fas fa-file-alt text-black" aria-hidden="true"></i> Slides
       </a>
       <a v-else-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
         <i class="fas fa-file-alt text-black" aria-hidden="true"></i> PDF
