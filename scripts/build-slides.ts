@@ -34,6 +34,9 @@ for (const file of deckFiles) {
 
     console.log(`Building ${deckName}...`)
     try {
+        if (fs.existsSync(deckOutputPath)) {
+            fs.rmSync(deckOutputPath, { recursive: true, force: true })
+        }
         // --base must end with /
         const command = `npx slidev build "${inputPath}" --base "${base}" --out "${deckOutputPath}"`
         console.log(`Running: ${command}`)
