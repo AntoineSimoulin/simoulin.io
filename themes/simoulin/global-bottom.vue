@@ -27,25 +27,29 @@ function getParts(id: string) {
 
 <template>
   <div v-if="!isCover" class="abs-bl mb-4 mx-8 mt-8 z-50 flex flex-col items-start pointer-events-none">
-    <footer v-if="citations.length" class="text-[8px] border-l-2 border-[#2563eb] pl-1 bg-white/50 backdrop-blur-sm rounded-r-sm pr-1 mb-1 max-w-[850px] relative mt-2">
-      <img src="/essay.svg" class="absolute top-0 -left-4 w-3 h-3 object-contain" />
-      <div v-for="(id, i) in citations" :key="id" class="line-clamp-1 pointer-events-auto">
+    <footer v-if="citations.length" class="text-[8px] font-normal mb-1 max-w-[850px] relative pointer-events-auto flex flex-col gap-0.5 pl-4">
+      <img src="/essay.svg" class="absolute top-0 left-0 w-3 h-3 object-contain" />
+      <div v-for="(id, i) in citations" :key="id" class="line-clamp-1 pointer-events-auto leading-tight">
         <span v-if="getParts(id)">
-          <span class="text-[#2563eb] font-bold mr-1">[{{ i + 1 }}]</span>
-          <span>{{ getParts(id)!.authors }} ({{ getParts(id)!.year }}). </span>
-          <a v-if="getParts(id)!.url" :href="getParts(id)!.url" target="_blank" class="italic hover:underline" style="color: #2563eb !important">{{ getParts(id)!.title }}.</a>
-          <span v-else class="italic" style="color: #2563eb !important">{{ getParts(id)!.title }}.</span>
+          <span class="text-black font-medium mr-1">[{{ i + 1 }}]</span>
+          <span class="font-normal text-black/90">{{ getParts(id)!.authors }} ({{ getParts(id)!.year }}). </span>
+          <a v-if="getParts(id)!.url" :href="getParts(id)!.url" target="_blank" class="italic hover:underline font-normal text-black" style="color: #000 !important">{{ getParts(id)!.title }}.</a>
+          <span v-else class="italic font-normal text-black/90">{{ getParts(id)!.title }}.</span>
         </span>
         <span v-else>
-          <span class="text-[#2563eb] font-bold mr-1">[{{ i + 1 }}]</span>
-          <a v-if="id.startsWith('http')" :href="id" target="_blank" class="italic hover:underline" style="color: #2563eb !important">{{ id }}</a>
-          <span v-else>{{ id }}</span>
+          <span class="text-black font-medium mr-1">[{{ i + 1 }}]</span>
+          <a v-if="id.startsWith('http')" :href="id" target="_blank" class="italic hover:underline font-normal text-black" style="color: #000 !important">{{ id }}</a>
+          <span v-else class="font-normal text-black/90">{{ id }}</span>
         </span>
       </div>
     </footer>
-    <div class="text-gray-400 text-[10px]">simoulin.io, {{ currentYear }}, distribution prohibited without agreement</div>
+    <div class="text-black/80 font-medium text-[10px] tracking-normal">
+      Simoulin © {{ currentYear }}. All rights reserved.
+    </div>
   </div>
   <div v-if="!isCover" class="abs-br mb-4 mx-8 mt-8 z-50 flex flex-col items-end pointer-events-none">
-    <div class="text-black text-[10px]">{{ currentPage }}</div>
+    <div class="bg-yellow-300 text-black font-black text-xs border-2 border-black shadow-[1.5px_1.5px_0px_#000] rounded-lg px-2.5 py-0.5 pointer-events-auto">
+      {{ currentPage }}
+    </div>
   </div>
 </template>

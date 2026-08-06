@@ -7,6 +7,7 @@ info: |
   External Speaker Series
 drawings:
   persist: false
+transition: slide-left
 mdc: true
 layout: cover
 ---

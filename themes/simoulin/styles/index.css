@@ -1,26 +1,34 @@
-@import 'https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500;700;900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap';
+
+html,
+body,
+#app,
+#page-root,
+.slidev-container,
+.slidev-page,
+#slide-content,
+.slidev-slide-container {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+}
 
 .slidev-layout {
-    font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
-    color: #212529;
-    font-size: 0.9rem !important;
+    font-family: 'Urbanist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    color: #000000 !important;
+    font-size: 1rem !important;
     text-align: left;
-    padding: 2rem !important;
-    font-weight: 400;
-    background-color: #F8F9FA !important;
+    padding: 1.5rem 2.2rem !important;
+    font-weight: 500;
+    background-color: #FFFFFF !important;
+    width: 100% !important;
     height: 100% !important;
-    border-radius: 20px;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
     overflow: hidden;
     user-select: text !important;
     -webkit-user-select: text !important;
-}
-
-h1 {
-    font-size: 1.4rem !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-    font-weight: 300 !important;
-    text-transform: capitalize !important;
+    box-sizing: border-box !important;
 }
 
 h1,
@@ -29,30 +37,86 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Urbanist', sans-serif;
-    font-weight: 200;
-    color: #212529;
+    font-family: 'Urbanist', sans-serif !important;
+    font-weight: 900 !important;
+    color: #000000 !important;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 20px !important;
+    text-transform: none !important;
+}
+
+h2 {
+    font-size: 1.3rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 20px !important;
 }
 
 code,
 pre,
 mark {
-    font-family: 'Ubuntu Mono', 'Fira Code', 'Monaco', monospace;
-    background-color: transparent !important;
+    font-family: 'Ubuntu Mono', 'Fira Code', 'Monaco', monospace !important;
 }
 
 .slidev-layout a {
-    color: #2563eb;
-    text-decoration: underline;
-    text-decoration-color: rgba(37, 99, 235, 0.3);
+    color: #000000 !important;
+    font-weight: 800 !important;
+    text-decoration: none !important;
+    background-color: #BFDBFE !important;
+    padding: 2px 7px !important;
+    border-radius: 8px !important;
+    border: 1.5px solid #000000 !important;
+    box-shadow: 1.5px 1.5px 0px #000000 !important;
+    transition: all 0.15s ease !important;
+    display: inline-block !important;
 }
 
 .slidev-layout a:hover {
-    text-decoration-color: #2563eb;
+    background-color: #93C5FD !important;
+    transform: translateY(-1px) !important;
+}
+
+.slidev-layout a.cite-link {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    display: inline !important;
+}
+
+.slidev-layout a.cite-link:hover {
+    text-decoration: underline !important;
+    transform: none !important;
 }
 
 strong {
-    font-weight: 700;
+    font-weight: 900 !important;
+    color: #000000 !important;
+}
+
+mark {
+    background-color: #FDE047 !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    padding: 2px 8px !important;
+    border: 2px solid #000000 !important;
+    border-radius: 10px !important;
+    box-shadow: 2px 2px 0px #000000 !important;
+    display: inline-block !important;
+}
+
+pre {
+    border: 2.5px solid #000000 !important;
+    box-shadow: 3.5px 3.5px 0px #000000 !important;
+    background-color: #FFFFFF !important;
+    border-radius: 14px !important;
+    padding: 1rem !important;
 }
 
 :root {
@@ -65,7 +129,7 @@ strong {
 
 .slidev-layout:not(.cover) h1 {
     position: relative;
-    padding-left: 3rem;
+    padding-left: 3.4rem;
 }
 
 .slidev-layout:not(.cover) h1::before {
@@ -73,17 +137,25 @@ strong {
     content: counter(chapter) "." counter(slide) ".";
     position: absolute;
     left: 0;
-    color: #2563eb;
-    font-weight: 700;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FDE047 !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    font-size: 0.85rem !important;
+    padding: 2px 8px !important;
+    border: 2px solid #000000 !important;
+    border-radius: 8px !important;
+    box-shadow: 1.5px 1.5px 0px #000000 !important;
 }
 
 .slidev-layout:not(.cover) h2 {
-    padding-left: 3rem;
-    margin-bottom: 30px !important;
+    padding-left: 3.4rem;
+    margin-bottom: 25px !important;
 }
 
 .slidev-layout:not(.cover) h1+h2 {
-    margin-top: -15px !important;
+    margin-top: -12px !important;
 }
 
 .slidev-layout.cover h1::before,
@@ -93,19 +165,51 @@ strong {
 
 .cover-title,
 .cover-title h1 {
-    font-size: 3rem !important;
-    line-height: 1.2 !important;
-    color: #2563eb !important;
+    font-size: 2.4rem !important;
+    line-height: 1.25 !important;
+    color: #000000 !important;
     margin: 0 !important;
     padding: 0 !important;
+    font-weight: 900 !important;
 }
 
-
+ul li::marker {
+    color: #000000 !important;
+    font-weight: 900 !important;
+}
 
 .fade-leave-active {
-    transition-duration: 200ms !important;
+    transition-duration: 150ms !important;
 }
 
 .fade-enter-active {
-    transition-duration: 1200ms !important;
+    transition-duration: 200ms !important;
+}
+
+/* Smooth, comfortable Neo-Brutalist Slide Transitions */
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease-out !important;
+}
+
+.slide-left-enter-from {
+    transform: translateX(100%) !important;
+    opacity: 0 !important;
+}
+
+.slide-left-leave-to {
+    transform: translateX(-20%) !important;
+    opacity: 0 !important;
+}
+
+.slide-right-enter-from {
+    transform: translateX(-100%) !important;
+    opacity: 0 !important;
+}
+
+.slide-right-leave-to {
+    transform: translateX(20%) !important;
+    opacity: 0 !important;
 }
