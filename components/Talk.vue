@@ -22,15 +22,15 @@ export default {
         {{ citation.fields.title }}
       </span>
 
-      <!-- Slides / PDF Link (Top Right on desktop >= sm) -->
+      <!-- Action Buttons (Top Right on desktop >= sm) -->
       <div class="hidden sm:flex flex-wrap items-center gap-2 ml-auto shrink-0">
         <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
-          <i class="fas fa-file-alt text-black" aria-hidden="true"></i> Slides
+          <i class="fas fa-desktop text-black" aria-hidden="true"></i> Slides
         </a>
-        <a v-else-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
-          <i class="fas fa-file-alt text-black" aria-hidden="true"></i> PDF
+        <a v-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="inline-flex items-center gap-1.5 bg-yellow-300 hover:bg-yellow-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
+          <i class="fas fa-file-pdf text-black" aria-hidden="true"></i> PDF
         </a>
-        <a v-else-if="'url' in citation.fields" :href="citation.fields.url" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
+        <a v-else-if="!('slides' in citation.fields) && 'url' in citation.fields" :href="citation.fields.url" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
           <i class="fas fa-external-link-alt text-black" aria-hidden="true"></i> Link
         </a>
       </div>
@@ -49,13 +49,13 @@ export default {
       </span>
     </div>
 
-    <!-- Slides / PDF Link (Mobile Only: flex sm:hidden below title & metadata) -->
+    <!-- Action Buttons (Mobile Only: flex sm:hidden below title & metadata) -->
     <div class="flex sm:hidden flex-wrap items-center gap-2 my-2.5">
       <a v-if="'slides' in citation.fields" :href="citation.fields.slides" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
-        <i class="fas fa-file-alt text-black" aria-hidden="true"></i> Slides
+        <i class="fas fa-desktop text-black" aria-hidden="true"></i> Slides
       </a>
-      <a v-else-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="inline-flex items-center gap-1.5 bg-blue-300 hover:bg-blue-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
-        <i class="fas fa-file-alt text-black" aria-hidden="true"></i> PDF
+      <a v-if="'pdf' in citation.fields" :href="citation.fields.pdf" class="inline-flex items-center gap-1.5 bg-yellow-300 hover:bg-yellow-400 text-black border-2 border-black shadow-[1.5px_1.5px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 px-3 py-1 rounded-xl text-xs font-extrabold no-underline transition-all" target="_blank">
+        <i class="fas fa-file-pdf text-black" aria-hidden="true"></i> PDF
       </a>
     </div>
 

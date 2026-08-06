@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, unref } from 'vue'
+import { useSlideContext } from '@slidev/client'
+import { useSlideNumbering } from '../logic/titles'
 
 const props = defineProps<{
   align?: 'top' | 'bottom' | 'center' | 'stretch'
 }>()
+
+const { $page } = useSlideContext()
+const { getSlideInfo } = useSlideNumbering()
+const info = computed(() => getSlideInfo(unref($page) || 1))
 
 const alignClass = computed(() => {
   switch (props.align) {
@@ -17,15 +23,15 @@ const alignClass = computed(() => {
 </script>
 
 <template>
-  <div class="slidev-layout two-cols-header w-full h-full flex flex-col">
-    <div class="col-span-2 mb-4">
+  <div class="slidev-layout two-cols-header w-full h-full flex flex-col" :style="{ '--chapter-no': info.chapter, '--slide-no': info.relativeSlide }">
+    <div class="col-span-2 mb-3">
       <slot />
     </div>
     <div class="grid grid-cols-2 gap-6 flex-1 min-h-0" :class="alignClass">
-      <div class="col-left h-full flex flex-col">
+      <div class="col-left h-full flex flex-col min-h-0">
         <slot name="left" />
       </div>
-      <div class="col-right h-full flex flex-col">
+      <div class="col-right h-full flex flex-col min-h-0">
         <slot name="right" />
       </div>
     </div>
