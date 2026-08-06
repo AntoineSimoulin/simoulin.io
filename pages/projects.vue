@@ -50,7 +50,7 @@ export default {
           </p>
         </div>
         <div class="flex flex-wrap -mx-3">
-          <Project :title="project.title" :abstract="project.abstract" :href="project.href" :tags="project.tags" v-for="project in projects" :key="project.title" />
+          <Project :title="project.title" :abstract="project.abstract" :href="project.href" :tags="project.tags" v-for="(project, index) in projects" :key="project.title" :index="index" />
         </div>
       </div>
     </section>

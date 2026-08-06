@@ -5,7 +5,13 @@ export default {
   components: {
     LinkIcon,
   },
-  props: ["title", "abstract", "href"],
+  props: ["title", "abstract", "href", "index"],
+  computed: {
+    badgeColorClass() {
+      const colors = ['bg-yellow-300', 'bg-pink-300', 'bg-purple-300', 'bg-emerald-300', 'bg-blue-300'];
+      return colors[(this.index || 0) % colors.length];
+    }
+  },
   methods: {
     getCleanUrl() {
       return this.href.replace(/(^\w+:|^)\/\//, "");
@@ -19,8 +25,10 @@ export default {
     <div class="w-full bg-white border-2 border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_#000] transition-all duration-200 rounded-2xl p-6 flex flex-col justify-between">
       <div>
         <div class="mb-4">
-          <a target="_blank" :href="href" class="inline-block bg-yellow-300 hover:bg-yellow-400 border-2 border-black shadow-[2px_2px_0px_#000] active:translate-x-0.5 active:translate-y-0.5 rounded-xl px-3.5 py-1.5 transition-all no-underline text-black">
-            <h2 class="text-lg font-black tracking-tight leading-snug text-black">{{ title }}</h2>
+          <a target="_blank" :href="href" class="inline-block no-underline text-black">
+            <mark :class="['text-black font-black text-base sm:text-lg px-3 py-1 border-2 border-black shadow-[2px_2px_0px_#000] rounded-xl inline-block -rotate-1 hover:rotate-0 transition-transform', badgeColorClass]">
+              {{ title }}
+            </mark>
           </a>
         </div>
         <p class="text-black/80 mb-4 text-sm leading-relaxed font-medium">
