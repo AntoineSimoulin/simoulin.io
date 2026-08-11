@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-35 0 1000 850" width="100%" height="100%">
   <defs>
     <!-- Standard Arrow Marker (No Brutalist Styling) -->
-    <marker id="arrow-up" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 1 L 8 5 L 0 9 Z" fill="#000" />
+    <marker id="arrow-up" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 7.5 5 L 1 8.5" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </marker>
     
     <!-- Hard Offset Black Drop Shadow for Neo-Brutalism -->
