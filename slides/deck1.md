@@ -387,13 +387,13 @@ layout: two-cols-header
 
 # Adaptation of GPT-fr for Image Generation
 
-Research on adapting **GPT-fr** for French text-to-image generation using VQ-GAN discrete image tokens <Cite id="esser2021taming" />. <Cite url="https://huggingface.co/asi/igpt-fr-cased-base" />
+Research on adapting **GPT-fr** for French text-to-image generation using VQ-GAN discrete image tokens <Cite id="esser2021taming, https://huggingface.co/asi/igpt-fr-cased-base" />.
 
 ::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/mck_pages/slide_34.png" caption="Training configuration coupling VQ-GAN discrete tokens with GPT-fr." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="/gpt-fr-image-training.svg" caption="Training configuration coupling VQ-GAN discrete tokens with GPT-fr." />
 
 ::right::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/mck_pages/slide_34.png" caption="Inference configuration generating images from French text prompts." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="/gpt-fr-image-inference.svg" caption="Inference configuration generating images from French text prompts." />
 
 ---
 

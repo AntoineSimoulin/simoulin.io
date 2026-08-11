@@ -14,11 +14,14 @@ console.log('[Cite] Component mounting with id:', props.id, 'url:', props.url)
 const { $page } = useSlideContext()
 
 const items = computed(() => {
-  if (props.id) return props.id.split(',').map(i => i.trim()).filter(Boolean)
-  if (props.url) {
-    return props.url.replace(/[\[\]]/g, '').split(',').map(i => i.trim()).filter(Boolean)
+  const result: string[] = []
+  if (props.id) {
+    result.push(...props.id.split(',').map(i => i.trim()).filter(Boolean))
   }
-  return []
+  if (props.url) {
+    result.push(...props.url.replace(/[\[\]]/g, '').split(',').map(i => i.trim()).filter(Boolean))
+  }
+  return result
 })
 
 onMounted(() => {
@@ -37,15 +40,19 @@ const citationItems = computed(() => {
     const index = citationsState.entries[String(slideId)]?.indexOf(item) ?? -1
     const displayIndex = index !== -1 ? index + 1 : '*'
     let url = undefined
+    let text = item
     if (item.startsWith('http')) {
       url = item
+      text = item
     } else {
       const parts = resolveCitationParts(item)
       url = parts?.url
+      text = getCitationText(item)
     }
     return {
       displayIndex,
-      url: url
+      url,
+      text
     }
   })
 })
@@ -59,23 +66,18 @@ const fullCitation = computed(() => {
 </script>
 
 <template>
-  <span class="cite-component inline align-baseline ml-0.5 mr-0">
-    <a
-      v-if="citationItems.length && citationItems[0].url"
-      :href="citationItems[0].url"
+  <span class="cite-component inline align-baseline ml-0.5 mr-0 text-black font-bold">
+    [<template v-for="(item, i) in citationItems" :key="i"><span v-if="i > 0">, </span><a
+      v-if="item.url"
+      :href="item.url"
       target="_blank"
       class="cite-link text-black font-bold hover:underline no-underline"
-      :title="fullCitation"
-    >
-      [<template v-for="(item, i) in citationItems" :key="i"><span v-if="i > 0">, </span>{{ item.displayIndex }}</template>]
-    </a>
-    <span
+      :title="item.text"
+    >{{ item.displayIndex }}</a><span
       v-else
       class="cite-badge text-black font-bold cursor-default"
-      :title="fullCitation"
-    >
-      [<template v-for="(item, i) in citationItems" :key="i"><span v-if="i > 0">, </span>{{ item.displayIndex }}</template>]
-    </span>
+      :title="item.text"
+    >{{ item.displayIndex }}</span></template>]
   </span>
 </template>
 
