@@ -92,41 +92,41 @@
     <!-- ================= STAGE 2: ARROW 1 ================= -->
     <g class="wipe-up" style="animation-delay: 0.5s;">
       <rect x="205" y="660" width="40" height="50" fill="none" pointer-events="none" />
-      <line x1="225" y1="705" x2="225" y2="679" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
+      <line x1="225" y1="705" x2="225" y2="690" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
     </g>
 
     <!-- ================= STAGE 3: INPUT TOKENS & SEGMENTATION TEXT ================= -->
     <!-- Segmentation Text -->
     <g class="drop-in" style="animation-delay: 0.9s;">
-      <text x="225" y="595" text-anchor="middle" font-size="20" fill="#000">SEGMENTATION OF THE TEXT INTO</text>
-      <text x="225" y="625" text-anchor="middle" font-size="20" fill="#000">LEXICAL UNITS OF THE SUBWORD TYPE.</text>
+      <text x="225" y="650" text-anchor="middle" font-size="20" fill="#000">SEGMENTATION OF THE TEXT INTO</text>
+      <text x="225" y="680" text-anchor="middle" font-size="20" fill="#000">LEXICAL UNITS OF THE SUBWORD TYPE.</text>
     </g>
 
     <!-- Grey (Yellow Brutalist) Tokens -->
-    <g class="drop-in" style="animation-delay: 1.00s;"><rect x="60" y="640" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 1.05s;"><rect x="94" y="640" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 1.10s;"><rect x="128" y="640" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 1.15s;"><rect x="162" y="640" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 1.20s;"><rect x="196" y="640" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 1.25s;"><rect x="230" y="640" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 1.30s;"><rect x="264" y="640" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 1.35s;"><rect x="298" y="640" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 1.40s;"><rect x="332" y="640" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.00s;"><rect x="60" y="585" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.05s;"><rect x="94" y="585" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.10s;"><rect x="128" y="585" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.15s;"><rect x="162" y="585" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.20s;"><rect x="196" y="585" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.25s;"><rect x="230" y="585" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.30s;"><rect x="264" y="585" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.35s;"><rect x="298" y="585" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.40s;"><rect x="332" y="585" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
     <!-- Teal (Green Brutalist) Token -->
-    <g class="drop-in" style="animation-delay: 1.45s;"><rect x="366" y="640" width="24" height="24" rx="4" fill="#75E6A3" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 1.45s;"><rect x="366" y="585" width="24" height="24" rx="4" fill="#75E6A3" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
 
     <!-- ================= STAGE 4: INCREMENTAL LANGUAGE MODEL ================= -->
     <g class="drop-in" style="animation-delay: 2.0s;">
       <!-- Base Box -->
       <g filter="url(#brutal-shadow)">
-        <rect x="50" y="370" width="560" height="190" rx="10" fill="#FF9ED2" stroke="#000" stroke-width="4" />
+        <rect x="50" y="370" width="560" height="190" rx="10" fill="#FFE83A" stroke="#000" stroke-width="4" />
         <path d="M 50 430 L 610 430 L 610 380 Q 610 370 600 370 L 60 370 Q 50 370 50 380 Z" fill="#D2A8FF" stroke="#000" stroke-width="4" />
       </g>
       <!-- Header Text -->
       <text x="330" y="412" text-anchor="middle" font-size="30" fill="#000">INCREMENTAL LANGUAGE MODEL</text>
 
       <!-- Inner GPT Modules -->
-      <rect x="230" y="450" width="35" height="35" rx="6" fill="#A3CFFF" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" />
+      <rect x="230" y="450" width="35" height="35" rx="6" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" />
       <text x="247.5" y="476" text-anchor="middle" font-size="22" fill="#000">G</text>
 
       <rect x="275" y="450" width="35" height="35" rx="6" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" />
@@ -139,7 +139,7 @@
       <rect x="210" y="500" width="35" height="35" rx="6" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" />
       <text x="227.5" y="525" text-anchor="middle" font-size="18" fill="#000">FR</text>
 
-      <rect x="255" y="500" width="35" height="35" rx="6" fill="#D2A8FF" stroke="#000" stroke-width="4" />
+      <rect x="255" y="500" width="35" height="35" rx="6" fill="#D2A8FF" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" />
       <text x="272.5" y="525" text-anchor="middle" font-size="22" fill="#000">&gt;</text>
 
       <rect x="300" y="500" width="100" height="35" rx="6" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" />
@@ -151,16 +151,16 @@
       <text x="610" y="355" font-size="20" fill="#000">THE OUTPUT IMAGE</text>
     </g>
 
-    <!-- 9 Grey (Yellow) Tokens -->
-    <g class="drop-in" style="animation-delay: 2.60s;"><rect x="60" y="320" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 2.65s;"><rect x="94" y="320" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 2.70s;"><rect x="128" y="320" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 2.75s;"><rect x="162" y="320" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 2.80s;"><rect x="196" y="320" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 2.85s;"><rect x="230" y="320" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 2.90s;"><rect x="264" y="320" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 2.95s;"><rect x="298" y="320" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
-    <g class="drop-in" style="animation-delay: 3.00s;"><rect x="332" y="320" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <!-- 9 Text Tokens (Pink Brutalist) -->
+    <g class="drop-in" style="animation-delay: 2.60s;"><rect x="60" y="320" width="24" height="24" rx="4" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 2.65s;"><rect x="94" y="320" width="24" height="24" rx="4" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 2.70s;"><rect x="128" y="320" width="24" height="24" rx="4" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 2.75s;"><rect x="162" y="320" width="24" height="24" rx="4" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 2.80s;"><rect x="196" y="320" width="24" height="24" rx="4" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 2.85s;"><rect x="230" y="320" width="24" height="24" rx="4" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 2.90s;"><rect x="264" y="320" width="24" height="24" rx="4" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 2.95s;"><rect x="298" y="320" width="24" height="24" rx="4" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
+    <g class="drop-in" style="animation-delay: 3.00s;"><rect x="332" y="320" width="24" height="24" rx="4" fill="#FF9ED2" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
     
     <!-- 1 Teal (Green) Token -->
     <g class="drop-in" style="animation-delay: 3.05s;"><rect x="366" y="320" width="24" height="24" rx="4" fill="#75E6A3" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
