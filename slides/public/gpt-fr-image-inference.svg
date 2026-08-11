@@ -92,7 +92,7 @@
     <!-- ================= STAGE 2: ARROW 1 ================= -->
     <g class="wipe-up" style="animation-delay: 0.5s;">
       <rect x="205" y="660" width="40" height="50" fill="none" pointer-events="none" />
-      <line x1="225" y1="708" x2="225" y2="676" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
+      <line x1="225" y1="705" x2="225" y2="679" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
     </g>
 
     <!-- ================= STAGE 3: INPUT TOKENS & SEGMENTATION TEXT ================= -->
@@ -139,7 +139,7 @@
       <rect x="210" y="500" width="35" height="35" rx="6" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" />
       <text x="227.5" y="525" text-anchor="middle" font-size="18" fill="#000">FR</text>
 
-      <rect x="255" y="500" width="35" height="35" rx="6" fill="#D2A8FF" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" />
+      <rect x="255" y="500" width="35" height="35" rx="6" fill="#D2A8FF" stroke="#000" stroke-width="4" />
       <text x="272.5" y="525" text-anchor="middle" font-size="22" fill="#000">&gt;</text>
 
       <rect x="300" y="500" width="100" height="35" rx="6" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" />
@@ -177,7 +177,7 @@
     <!-- Arrow 2 -->
     <g class="wipe-up" style="animation-delay: 3.8s;">
       <rect x="475" y="270" width="40" height="40" fill="none" pointer-events="none" />
-      <line x1="497" y1="308" x2="497" y2="272" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
+      <line x1="497" y1="305" x2="497" y2="275" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
     </g>
 
     <!-- Decoder D -->
@@ -194,7 +194,7 @@
     <!-- Arrow 3 -->
     <g class="wipe-up" style="animation-delay: 4.6s;">
       <rect x="475" y="160" width="40" height="40" fill="none" pointer-events="none" />
-      <line x1="497" y1="198" x2="497" y2="162" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
+      <line x1="497" y1="195" x2="497" y2="165" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
     </g>
 
     <!-- Final Image Output -->
