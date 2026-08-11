@@ -160,7 +160,7 @@
     <!-- Arrow 4 (Discretization to Tokens) -->
     <g class="wipe-up" style="animation-delay: 1.8s;">
       <rect x="690" y="455" width="40" height="40" fill="none" pointer-events="none" />
-      <line x1="712" y1="475" x2="712" y2="404" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
+      <line x1="712" y1="485" x2="712" y2="470" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
     </g>
 
     <!-- Middle Image Tokens Cascade -->
