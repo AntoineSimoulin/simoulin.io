@@ -108,7 +108,7 @@
     <g class="wipe-up" style="animation-delay: 0.5s;">
       <!-- Invisible bounding box to fix SVG clip-path bounds -->
       <rect x="330" y="470" width="40" height="180" fill="none" pointer-events="none" />
-      <line x1="351.6" y1="630" x2="351.6" y2="404" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
+      <line x1="351.6" y1="630" x2="351.6" y2="560" stroke="#000" stroke-width="3" marker-end="url(#arrow-up)" />
     </g>
 
     <!-- Arrow 2 (Image to E Module) -->
@@ -132,8 +132,8 @@
     <g class="drop-in" style="animation-delay: 1.2s;"><rect x="509.2" y="360" width="24" height="24" rx="4" fill="#FFE83A" stroke="#000" stroke-width="3" filter="url(#brutal-shadow)" /></g>
 
     <g class="drop-in" style="animation-delay: 1.3s;">
-      <text x="330" y="510" text-anchor="end" font-size="20" fill="#000">SEGMENTATION OF THE TEXT INTO</text>
-      <text x="330" y="538" text-anchor="end" font-size="20" fill="#000">LEXICAL UNITS OF THE SUBWORD TYPE.</text>
+      <text x="351.6" y="510" text-anchor="middle" font-size="20" fill="#000">SEGMENTATION OF THE TEXT INTO</text>
+      <text x="351.6" y="538" text-anchor="middle" font-size="20" fill="#000">LEXICAL UNITS OF THE SUBWORD TYPE.</text>
     </g>
 
     <!-- Image Path Waterfall (Right Side) -->
