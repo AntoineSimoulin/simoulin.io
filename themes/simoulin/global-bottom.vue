@@ -60,8 +60,8 @@ const resolveIcon = (iconPath: string) => {
         </span>
       </div>
     </footer>
-    <div class="text-black/80 font-medium text-[10px] tracking-normal">
-      Simoulin © {{ currentYear }}. All rights reserved.
+    <div class="text-black/80 font-medium text-[10px] tracking-normal inline-flex items-center flex-wrap pointer-events-auto">
+      <a href="https://simoulin.io" target="_blank" class="hover:underline text-black font-medium" style="color: #000 !important">Simoulin.io</a>&nbsp;© {{ currentYear }}.&nbsp;Released under the license&nbsp;<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" class="hover:underline text-black font-medium" style="color: #000 !important">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">.
     </div>
   </div>
   <div v-if="!isCover" class="abs-br bottom-5 right-[2.2rem] z-50 flex flex-col items-end pointer-events-none">
