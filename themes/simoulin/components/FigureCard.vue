@@ -2,11 +2,13 @@
 import { computed, ref, watch, unref, onMounted, onUnmounted } from 'vue'
 import MarkdownIt from 'markdown-it'
 import { useSlideContext, useNav } from '@slidev/client'
+import Cite from './Cite.vue'
 
 const props = defineProps<{
   src: string
   label?: string
-  caption: string
+  caption?: string
+  cite?: string
   clickAnimate?: boolean
   align?: 'stretch' | 'top' | 'bottom' | 'center'
 }>()
@@ -89,7 +91,12 @@ const computedSrc = computed(() => {
       </div>
       <figcaption class="text-left text-xs font-medium text-black leading-snug bg-yellow-100/80 border-t-2 border-black px-3.5 py-2 w-full mt-auto shrink-0 flex items-start gap-2">
         <span v-if="label" class="font-black bg-yellow-300 text-black border border-black shadow-[1px_1px_0px_#000] px-1.5 py-0.5 rounded-md shrink-0 inline-flex items-center text-[10.5px] leading-none select-none self-start">{{ label }}</span>
-        <span class="flex-1" v-html="renderMarkdown(caption)"></span>
+        <div class="flex-1">
+          <slot name="caption">
+            <span v-if="caption" v-html="renderMarkdown(caption)"></span>
+            <Cite v-if="cite" :id="cite" />
+          </slot>
+        </div>
       </figcaption>
     </figure>
   </div>
@@ -105,7 +112,12 @@ const computedSrc = computed(() => {
       </div>
       <figcaption class="text-left text-xs font-medium text-black leading-snug bg-yellow-100/80 border-t-2 border-black px-3.5 py-2 w-full mt-auto shrink-0 flex items-start gap-2">
         <span v-if="label" class="font-black bg-yellow-300 text-black border border-black shadow-[1px_1px_0px_#000] px-1.5 py-0.5 rounded-md shrink-0 inline-flex items-center text-[10.5px] leading-none select-none self-start">{{ label }}</span>
-        <span class="flex-1" v-html="renderMarkdown(caption)"></span>
+        <div class="flex-1">
+          <slot name="caption">
+            <span v-if="caption" v-html="renderMarkdown(caption)"></span>
+            <Cite v-if="cite" :id="cite" />
+          </slot>
+        </div>
       </figcaption>
     </figure>
   </div>
