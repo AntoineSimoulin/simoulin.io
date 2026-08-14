@@ -113,7 +113,7 @@ function splitTitle(fullText: string): { staticText: string, typedText: string }
 
 export function useTitleTypewriter(rootRef: { value: HTMLElement | null }, options?: { speed?: number, delay?: number }) {
   const speed = options?.speed ?? 85
-  const delay = options?.delay ?? 850
+  const delay = options?.delay ?? 450
 
   let slidePage: any = null
   let navCurrentPage: any = null

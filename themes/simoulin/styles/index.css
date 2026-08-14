@@ -219,30 +219,35 @@ pre {
     transition-duration: 200ms !important;
 }
 
-/* Smooth, comfortable Neo-Brutalist Slide Transitions */
-.slide-left-enter-active,
+/* Clean In-Place Slide Transitions (No Translation) */
 .slide-left-leave-active,
-.slide-right-enter-active,
 .slide-right-leave-active {
-    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.35s ease-out !important;
+    transition: opacity 0.1s ease-out !important;
+    z-index: 2 !important;
 }
 
-.slide-left-enter-from {
-    transform: translateX(100%) !important;
-    opacity: 0 !important;
+.slide-left-leave-from,
+.slide-right-leave-from {
+    opacity: 1 !important;
 }
 
-.slide-left-leave-to {
-    transform: translateX(-20%) !important;
-    opacity: 0 !important;
-}
-
-.slide-right-enter-from {
-    transform: translateX(-100%) !important;
-    opacity: 0 !important;
-}
-
+.slide-left-leave-to,
 .slide-right-leave-to {
-    transform: translateX(20%) !important;
     opacity: 0 !important;
+}
+
+.slide-left-enter-active,
+.slide-right-enter-active {
+    transition: opacity 0.14s ease-in 0.06s !important;
+    z-index: 1 !important;
+}
+
+.slide-left-enter-from,
+.slide-right-enter-from {
+    opacity: 0 !important;
+}
+
+.slide-left-enter-to,
+.slide-right-enter-to {
+    opacity: 1 !important;
 }
