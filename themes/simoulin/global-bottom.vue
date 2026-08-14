@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch, nextTick } from 'vue'
 import { useHead } from '@unhead/vue'
 import { useNav } from '@slidev/client'
 import { citationsState } from './logic/citations'
@@ -30,6 +30,20 @@ const sectionNumberString = computed(() => {
   return `${currentSlideInfo.value.chapter}.${currentSlideInfo.value.relativeSlide}.`
 })
 
+const badgeRef = ref<HTMLElement | null>(null)
+
+watch([sectionNumberString, hasSectionNumber], async () => {
+  await nextTick()
+  if (typeof document !== 'undefined') {
+    if (hasSectionNumber.value && badgeRef.value) {
+      const width = badgeRef.value.offsetWidth
+      document.documentElement.style.setProperty('--title-offset', `${width + 12}px`)
+    } else {
+      document.documentElement.style.setProperty('--title-offset', '0px')
+    }
+  }
+}, { immediate: true, flush: 'post' })
+
 const citations = computed(() => {
   const slideNo = currentPage.value
   return citationsState.entries[String(slideNo)] || []
@@ -54,7 +68,7 @@ const resolveIcon = (iconPath: string) => {
     v-if="hasSectionNumber"
     class="abs-tl top-[1.95rem] left-[2.2rem] z-40 pointer-events-none"
   >
-    <div class="bg-yellow-300 text-black font-black text-[0.85rem] border-2 border-black shadow-[1.5px_1.5px_0px_#000] rounded-lg px-2 py-0.5 pointer-events-auto flex items-center leading-normal">
+    <div ref="badgeRef" class="bg-yellow-300 text-black font-black text-[0.85rem] border-2 border-black shadow-[1.5px_1.5px_0px_#000] rounded-lg px-2 py-0.5 pointer-events-auto flex items-center leading-normal">
       {{ sectionNumberString }}
     </div>
   </div>

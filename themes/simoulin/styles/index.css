@@ -129,7 +129,7 @@ pre {
 
 .slidev-layout:not(.cover) h1 {
     position: relative;
-    padding-left: 3.4rem;
+    padding-left: var(--title-offset, 3.6rem) !important;
 }
 
 .slidev-layout:not(.cover) h1::before {
@@ -137,7 +137,7 @@ pre {
 }
 
 .slidev-layout:not(.cover) h2 {
-    padding-left: 3.4rem;
+    padding-left: var(--title-offset, 3.6rem) !important;
     margin-bottom: 25px !important;
 }
 
