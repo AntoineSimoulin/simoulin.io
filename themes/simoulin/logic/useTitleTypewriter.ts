@@ -87,23 +87,18 @@ function playTypewriterClick(isSpace = false) {
   } catch {}
 }
 
-function splitTitle(fullText: string): { staticText: string, typedText: string } {
+function splitTitle(fullText: string): { staticText: string, typedText: string } | null {
   const trimmed = fullText.trim()
-  if (!trimmed) return { staticText: '', typedText: '' }
+  if (!trimmed) return null
 
   const words = trimmed.split(/\s+/)
-  if (words.length <= 1) {
-    return { staticText: '', typedText: trimmed }
-  }
-  if (words.length === 2) {
-    return { staticText: words[0] + ' ', typedText: words[1] }
-  }
-  if (words.length === 3) {
-    return { staticText: words[0] + ' ', typedText: words.slice(1).join(' ') }
+  // Short titles (<= 5 words): Keep completely static, no typewriter effect
+  if (words.length <= 5) {
+    return null
   }
 
-  // For 4 or more words: type the last 3-4 words
-  const numTypedWords = words.length >= 6 ? 4 : 3
+  // Longer titles (> 5 words): type the last 3-4 words
+  const numTypedWords = words.length >= 7 ? 4 : 3
   const splitIndex = words.length - numTypedWords
   const staticText = words.slice(0, splitIndex).join(' ') + ' '
   const typedText = words.slice(splitIndex).join(' ')
@@ -147,7 +142,10 @@ export function useTitleTypewriter(rootRef: { value: HTMLElement | null }, optio
     h1.setAttribute('data-tw-initialized', 'true')
 
     const rawText = h1.textContent || ''
-    const { staticText, typedText } = splitTitle(rawText)
+    const split = splitTitle(rawText)
+    if (!split) return // Short title: keep completely static!
+
+    const { staticText, typedText } = split
     if (!typedText) return
 
     h1.innerHTML = ''
