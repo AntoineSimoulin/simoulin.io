@@ -3,6 +3,7 @@ import { computed, unref, ref } from 'vue'
 import { useSlideContext } from '@slidev/client'
 import { useSlideNumbering } from '../logic/titles'
 import { useTitleTypewriter } from '../logic/useTitleTypewriter'
+import { useSyncCaptions } from '../logic/useSyncCaptions'
 
 const { $page } = useSlideContext()
 const { getSlideInfo } = useSlideNumbering()
@@ -11,6 +12,7 @@ const info = computed(() => getSlideInfo(unref($page) || 1))
 
 const rootRef = ref<HTMLElement | null>(null)
 useTitleTypewriter(rootRef)
+useSyncCaptions(rootRef)
 </script>
 
 <template>
