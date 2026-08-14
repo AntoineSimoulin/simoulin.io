@@ -20,11 +20,104 @@ const props = defineProps({
     type: Boolean,
     default: true
   },
+  sound: {
+    type: Boolean,
+    default: true
+  },
   as: {
     type: String,
     default: 'span'
   }
 })
+
+// Web Audio API Typewriter Sound Synthesizer
+let audioCtx: AudioContext | null = null
+
+function getAudioContext(): AudioContext | null {
+  if (typeof window === 'undefined') return null
+  if (!audioCtx) {
+    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext
+    if (AudioContextClass) {
+      audioCtx = new AudioContextClass()
+    }
+  }
+  if (audioCtx && audioCtx.state === 'suspended') {
+    audioCtx.resume().catch(() => {})
+  }
+  return audioCtx
+}
+
+function playTypewriterClick(isSpace = false) {
+  try {
+    const ctx = getAudioContext()
+    if (!ctx) return
+
+    const now = ctx.currentTime
+
+    // 1. High-frequency mechanical snap transient (6-8ms)
+    const snapLen = Math.floor(ctx.sampleRate * 0.008)
+    const snapBuffer = ctx.createBuffer(1, snapLen, ctx.sampleRate)
+    const snapData = snapBuffer.getChannelData(0)
+    for (let i = 0; i < snapLen; i++) {
+      snapData[i] = (Math.random() * 2 - 1) * Math.exp(-i / (snapLen * 0.25))
+    }
+    const snapSource = ctx.createBufferSource()
+    snapSource.buffer = snapBuffer
+
+    const snapFilter = ctx.createBiquadFilter()
+    snapFilter.type = 'highpass'
+    snapFilter.frequency.setValueAtTime(isSpace ? 1800 : 2600 + (Math.random() * 600 - 300), now)
+
+    const snapGain = ctx.createGain()
+    snapGain.gain.setValueAtTime(isSpace ? 0.07 : 0.14 + Math.random() * 0.04, now)
+    snapGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.008)
+
+    snapSource.connect(snapFilter)
+    snapFilter.connect(snapGain)
+    snapGain.connect(ctx.destination)
+    snapSource.start(now)
+
+    // 2. Resonant mechanical body thud (30-40ms)
+    const thudLen = Math.floor(ctx.sampleRate * 0.035)
+    const thudBuffer = ctx.createBuffer(1, thudLen, ctx.sampleRate)
+    const thudData = thudBuffer.getChannelData(0)
+    for (let i = 0; i < thudLen; i++) {
+      thudData[i] = (Math.random() * 2 - 1) * Math.exp(-i / (thudLen * 0.3))
+    }
+    const thudSource = ctx.createBufferSource()
+    thudSource.buffer = thudBuffer
+
+    const thudFilter = ctx.createBiquadFilter()
+    thudFilter.type = 'bandpass'
+    const baseFreq = isSpace ? 340 : 540 + (Math.random() * 120 - 60)
+    thudFilter.frequency.setValueAtTime(baseFreq, now)
+    thudFilter.Q.setValueAtTime(4.0, now)
+
+    const thudGain = ctx.createGain()
+    thudGain.gain.setValueAtTime(isSpace ? 0.10 : 0.16, now)
+    thudGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.035)
+
+    thudSource.connect(thudFilter)
+    thudFilter.connect(thudGain)
+    thudGain.connect(ctx.destination)
+    thudSource.start(now)
+
+    // 3. Subtle metallic ping
+    const osc = ctx.createOscillator()
+    const oscGain = ctx.createGain()
+    osc.type = 'triangle'
+    osc.frequency.setValueAtTime(isSpace ? 650 : 1250 + (Math.random() * 200 - 100), now)
+    oscGain.gain.setValueAtTime(0.015, now)
+    oscGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.025)
+
+    osc.connect(oscGain)
+    oscGain.connect(ctx.destination)
+    osc.start(now)
+    osc.stop(now + 0.025)
+  } catch {
+    // Graceful fallback if Web Audio is blocked
+  }
+}
 
 let slidePage: any = null
 let navCurrentPage: any = null
@@ -123,6 +216,11 @@ function startTyping() {
 
         if (cursorEl && span.parentNode) {
           span.parentNode.insertBefore(cursorEl, span.nextSibling)
+        }
+
+        if (props.sound) {
+          const char = span.textContent || ''
+          playTypewriterClick(char === ' ')
         }
       }
 
