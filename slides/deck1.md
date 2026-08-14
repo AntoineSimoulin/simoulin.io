@@ -397,11 +397,15 @@ Research on adapting **GPT-fr** for French text-to-image generation using VQ-GAN
 
 ---
 
-# Conclusion
+# Conclusion <Typewriter>and future work</Typewriter>
+
+<v-clicks>
 
 * **Rapid Evolution:** Generative multimodal AI has rapidly advanced, merging vision and natural language processing into unified architectures.
 * **Practical Applications:** Real-world applications span search engines, automated document intelligence, graphic design, and artistic generation.
 * **Ethical & Copyright Considerations:** Content generation technologies raise important copyright, attribution, and governance questions.
+
+</v-clicks>
 
 ---
 
