@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, unref } from 'vue'
+import { computed, unref, ref } from 'vue'
 import { useSlideContext } from '@slidev/client'
 import { useSlideNumbering } from '../logic/titles'
+import { useTitleTypewriter } from '../logic/useTitleTypewriter'
 
 const props = defineProps<{
   align?: 'top' | 'bottom' | 'center' | 'stretch'
@@ -10,6 +11,9 @@ const props = defineProps<{
 const { $page } = useSlideContext()
 const { getSlideInfo } = useSlideNumbering()
 const info = computed(() => getSlideInfo(unref($page) || 1))
+
+const rootRef = ref<HTMLElement | null>(null)
+useTitleTypewriter(rootRef)
 
 const alignClass = computed(() => {
   switch (props.align) {
@@ -23,7 +27,7 @@ const alignClass = computed(() => {
 </script>
 
 <template>
-  <div class="slidev-layout three-cols-header w-full h-full flex flex-col" :style="{ '--chapter-no': info.chapter, '--slide-no': info.relativeSlide }">
+  <div ref="rootRef" class="slidev-layout three-cols-header w-full h-full flex flex-col" :style="{ '--chapter-no': info.chapter, '--slide-no': info.relativeSlide }">
     <div class="col-span-3 mb-4">
       <slot />
     </div>

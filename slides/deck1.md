@@ -397,7 +397,7 @@ Research on adapting **GPT-fr** for French text-to-image generation using VQ-GAN
 
 ---
 
-# Conclusion <Typewriter>and future work</Typewriter>
+# Conclusion and future work
 
 <v-clicks>
 

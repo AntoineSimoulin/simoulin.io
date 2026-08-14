@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { computed, unref } from 'vue'
+import { computed, unref, ref } from 'vue'
 import { useSlideContext } from '@slidev/client'
 import { useSlideNumbering } from '../logic/titles'
+import { useTitleTypewriter } from '../logic/useTitleTypewriter'
 
 const { $page } = useSlideContext()
 const { getSlideInfo } = useSlideNumbering()
 const info = computed(() => getSlideInfo(unref($page) || 1))
+
+const rootRef = ref<HTMLElement | null>(null)
+useTitleTypewriter(rootRef)
 </script>
 
 <template>
-  <div class="slidev-layout center section w-full h-full flex flex-col justify-center items-center p-8 bg-white" :style="{ '--chapter-no': info.chapter, '--slide-no': info.relativeSlide }">
+  <div ref="rootRef" class="slidev-layout center section w-full h-full flex flex-col justify-center items-center p-8 bg-white" :style="{ '--chapter-no': info.chapter, '--slide-no': info.relativeSlide }">
     <!-- Slightly Tilted Pop Colored Box for Section Title -->
     <div class="inline-block bg-yellow-300 border-3 sm:border-4 border-black shadow-[6px_6px_0px_#000] rounded-2xl px-8 py-6 sm:px-12 sm:py-8 -rotate-1.5 transition-transform duration-300 max-w-3xl text-center">
       <div class="font-black text-2xl sm:text-4xl md:text-5xl leading-tight text-black tracking-tight">
