@@ -4,6 +4,7 @@ import { useHead } from '@unhead/vue'
 import { useNav } from '@slidev/client'
 import { citationsState } from './logic/citations'
 import { resolveCitationParts } from './logic/bib'
+import { useSlideNumbering } from './logic/titles'
 
 useHead({
   script: [
@@ -14,6 +15,20 @@ const { currentPage, currentSlideRoute } = useNav()
 const currentYear = new Date().getFullYear()
 
 const isCover = computed(() => currentSlideRoute.value.meta?.layout === 'cover')
+
+const { getSlideInfo } = useSlideNumbering()
+const currentSlideInfo = computed(() => getSlideInfo(currentPage.value))
+
+const hasSectionNumber = computed(() => {
+  if (isCover.value) return false
+  const layout = currentSlideRoute.value.meta?.layout
+  if (layout === 'center' || layout === 'section') return false
+  return currentSlideInfo.value.relativeSlide > 0
+})
+
+const sectionNumberString = computed(() => {
+  return `${currentSlideInfo.value.chapter}.${currentSlideInfo.value.relativeSlide}.`
+})
 
 const citations = computed(() => {
   const slideNo = currentPage.value
@@ -34,6 +49,16 @@ const resolveIcon = (iconPath: string) => {
 </script>
 
 <template>
+  <!-- Persistent Section / Chapter Number Box at top-left -->
+  <div
+    v-if="hasSectionNumber"
+    class="abs-tl top-[1.95rem] left-[2.2rem] z-40 pointer-events-none"
+  >
+    <div class="bg-yellow-300 text-black font-black text-[0.85rem] border-2 border-black shadow-[1.5px_1.5px_0px_#000] rounded-lg px-2 py-0.5 pointer-events-auto flex items-center leading-normal">
+      {{ sectionNumberString }}
+    </div>
+  </div>
+
   <div v-if="!isCover" class="abs-bl bottom-5 left-[2.2rem] z-50 flex flex-col items-start pointer-events-none">
     <footer v-if="citations.length" class="text-[8px] font-normal mb-1.5 max-w-[850px] relative pointer-events-auto flex flex-col gap-0.5 pl-4">
       <!-- Paper Icon matching exact 8px citation font height -->

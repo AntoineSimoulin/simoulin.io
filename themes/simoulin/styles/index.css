@@ -133,20 +133,7 @@ pre {
 }
 
 .slidev-layout:not(.cover) h1::before {
-    counter-increment: section;
-    content: counter(chapter) "." counter(slide) ".";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #FDE047 !important;
-    color: #000000 !important;
-    font-weight: 900 !important;
-    font-size: 0.85rem !important;
-    padding: 2px 8px !important;
-    border: 2px solid #000000 !important;
-    border-radius: 8px !important;
-    box-shadow: 1.5px 1.5px 0px #000000 !important;
+    content: none !important;
 }
 
 .slidev-layout:not(.cover) h2 {
