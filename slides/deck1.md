@@ -18,9 +18,10 @@ layout: cover
 
 ### Antoine SIMOULIN
 
-* **Education & Experience:** Engineer by education and experience, blending academic and industry perspectives to translate technical expertise into real-world solutions.
-* **Industry Leadership:** Worked 5+ years as a Sr. Data Scientist at Quantmetry within the NLP Research & Innovation team.
-* **Academic Research:** Conducted cutting-edge research and completed a Ph.D. within the Laboratory of Formal Linguistics at Paris University.
+* **I am an engineer by education and experience.**
+* I have held academic and industry roles, giving me a fresh perspective on translating technical expertise into solutions for complex problems.
+* For the last five years, I worked as a Sr. Data Scientist at Quantmetry within the NLP research and innovation team.
+* As a researcher, I conducted cutting-edge research and completed my Ph.D. within the laboratory of formal linguistics at Paris University.
 
 ---
 layout: section
@@ -61,7 +62,7 @@ layout: two-cols-header
 
 ::right::
 <div class="flex flex-row justify-center items-stretch gap-4 mt-4 mb-8 flex-1 h-full min-h-0">
-  <FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://www.gartner.com/ngw/globalassets/en/articles/images/hype-cycle-for-artificial-intelligence-2022.png" caption="Gartner Hype Cycle for Artificial Intelligence, 2022. Source: [Gartner](https://www.gartner.com/en/articles/what-is-artificial-intelligence)" />
+  <FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://www.gartner.com/ngw/globalassets/en/articles/images/hype-cycle-for-artificial-intelligence-2022.png" caption="Position of the generative AI technology on the Gartner hype cycle for artificial intelligence 2022." />
 </div>
 
 ---
@@ -95,27 +96,27 @@ layout: two-cols-header
 
 # Multimodal search engines
 
-At the 2021 IO conference, Google introduced **MUM**, a new model based on the T5 text-to-text architecture <Cite id="raffel2020exploring"/>. According to them, the model is 1,000 times more powerful than BERT <Cite url="https://blog.google/products/search/introducing-mum/"/>. MUM allows **encoding and generating language** and is trained in 75 languages and several tasks simultaneously. Finally, MUM is **multimodal**, through **text, image, and, in the future, possibly video and audio** <Cite id="geigle2022retrieve"/>.
+At the 2021 IO conference, Google introduced **MUM**, a new model based on the T5 text-to-text architecture <Cite id="raffel2020exploring"/>. According to them, the model is 1,000 times more powerful than BERT <Cite url="https://blog.google/products/search/introducing-mum/"/>. MUM allows **encoding and generating language** and is trained in 75 languages and several tasks simultaneously. Finally, MUM is **multimodal**, for the moment, through **text, image, and, in the future, possibly video and audio** <Cite id="geigle2022retrieve"/>.
 
 ::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/MUM_GIF04_01_1_1.gif" caption="The features of MUM summarize well current trends: (1) encoding & generation, (2) multilingual, (3) multi-task, and (4) multimodal." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/MUM_GIF04_01_1_1.gif" caption="The features of MUM summarize well the current trends in NLP: (1) encoding and generation, (2) multilingual, (3) multi-task trained, and (4) multimodal." />
 
 ::right::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/geigle_2022_rerank.png" caption="Retrieve-and-rerank paradigm for cross-modal search: fast retrieval with Joint+BE followed by precision reranking with Joint+CE." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/geigle_2022_rerank.png" caption="Multimodal search engine." cite="geigle2022retrieve" />
 
 ---
 
 # Image edition
 
-In 2021, Google introduced the **Magic Eraser** <Cite url="https://blog.google/products-and-platforms/products/photos/magic-eraser/"/>, which can automatically **figure out what you're trying to get rid of** by analyzing what you circle. Magic Eraser uses machine learning to predict what pixels would look like if the distraction were not there, running **directly on device**.
+In 2021, Google introduced the **Magic Eraser** <Cite url="https://blog.google/products-and-platforms/products/photos/magic-eraser/"/>, which can automatically **figure out what you're trying to get rid of** by analyzing what you circle, so you don't have to worry about precise brushing. Once you decide what to erase, Magic Eraser uses machine learning again to predict what pixels would look like if the distraction were not there. The tool can run **directly on the device** and enable subtle image editing without technical knowledge.
 
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MagicEraser-Blog.width-2200.format-webp.webp" caption="Illustration of the Google Magic Eraser tool." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/MagicEraser-Blog.width-2200.format-webp.webp" caption="Illustration of the google magic eraser tool." />
 
 ---
 
 # Video Edition using text
 
-Runway <Cite url="https://runwayml.com/"/> is a company developing software to generate and edit video content using natural language text prompts.
+Runway <Cite url="https://runwayml.com/"/> is a company developing software to generate content such as images and videos using natural language text input.
 
 <Tweet id="1568220303808991232" scale="0.5" cards="visible" />
 
@@ -125,13 +126,13 @@ layout: two-cols-header
 
 # General Artificial Intelligence Research
 
-DeepMind recently released a new **multimodal AI system: "Gato"** <Cite id="reed2022generalist" />. The algorithm is trained on hundreds of tasks: from controlling a robot arm to writing poems, operating as a general-purpose system.
+DeepMind recently released a new **multimodal AI system: "Gato"** <Cite id="reed2022generalist" />. The algorithm is trained on many tasks (several hundred): from controlling a robot arm to writing poems. DeepMind called it a "general-purpose" system.
 
 ::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/scalingAI.avif" caption="DeepMind researcher claims new 'Gato' AI could lead to AGI." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/scalingAI.avif" caption="DeepMind researcher claims new ‘Gato’ AI could lead to AGI, says ‘the game is over!’ (thenextweb.com)" />
 
 ::right::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/gato_pretraining.webp" caption="Gato model multi-task pre-training paradigm." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/gato_pretraining.webp" caption="Gato model pre-training paradigm." cite="reed2022generalist" />
 
 ---
 layout: two-cols-header
@@ -139,7 +140,7 @@ layout: two-cols-header
 
 # Document processing
 
-LayoutLMv3 <Cite id="huang2022layoutlmv3" /> is a **general-purpose pre-trained model** for text-centric and image-centric Document AI tasks, achieving state-of-the-art performance in receipt understanding, visual question answering, document classification, and layout analysis.
+LayoutLMv3 <Cite id="huang2022layoutlmv3" /> is a **general-purpose pre-trained model** for text-centric and image-centric Document AI tasks. Experimental results show that it achieves **state-of-the-art performance** in text-centric tasks, including receipt understanding, document visual question answering, and image-centric tasks, such as document image classification and document layout analysis.
 
 ::left::
 <Tweet id="1536374736590057474" scale="0.4" cards="visible" />
@@ -148,17 +149,12 @@ LayoutLMv3 <Cite id="huang2022layoutlmv3" /> is a **general-purpose pre-trained 
 <Tweet id="1565334436702347266" scale="0.35" cards="visible" />
 
 ---
-layout: two-cols-header
----
 
 # Document Processing Use Cases
 
-::left::
-* **Forged Document Detection:** Led projects identifying forged documents for insurance companies by extracting information and verifying internal document consistency.
-* **Layout Analysis:** Parsing unstructured PDF receipts, invoices, and contracts into structured JSON representations.
+I have led a project in identifying forged documents for an insurance company. Part of the pipeline involved automatically extracting information from the document and verifying its internal consistency. For example, I confirmed the sum of the amount matched the detailed listing.
 
-::right::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/document_processing_use_cases.png" caption="Document AI processing pipeline for layout analysis and forgery detection." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/document_processing_use_cases.png" caption="Identifying zone of interest with layoutLM to check the consistency of information." />
 
 ---
 layout: two-cols-header
@@ -166,10 +162,10 @@ layout: two-cols-header
 
 # Multimodal representation
 
-Facebook released **CommerceMM** <Cite id="yu2022commercemm" />, creating rich representations of commerce data across text and image modalities for product recognition and retrieval.
+Facebook released a new multimodal model, **CommerceMM** <Cite id="yu2022commercemm" />, which creates rich representations of commerce data. With state-of-the-art performance in product recognition & retrieval, CommerceMM helps tailor suggestions & search results to connect shoppers with the items they want.
 
 ::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/commercemm_posts.png" caption="Integrating text & image characterizations of posts using CommerceMM." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/commercemm_posts.png" caption="Use Microsoft CommerceMM to “understand” multimodal data by integrating its characterizations of a post’s text and image." />
 
 ::right::
 <FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://www.marktechpost.com/wp-content/uploads/2022/05/Screen-Shot-2022-05-29-at-7.36.12-AM.png" caption="CommerceMM model architecture." />
@@ -180,21 +176,21 @@ layout: two-cols-header
 
 # Inspirational content generation
 
-Using latent text-to-image diffusion, tools like *This House Does Not Exist* and *Midjourney* generate realistic architecture and artwork. <Cite url="https://thishouseddoesnotexist.com/" />
+Using latent text-to-image diffusion, **This House Does Not Exist** generates realistic images of modern architecture homes. <Cite url="https://thishousedoesnotexist.org/" />
 
 ::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://resizeapi.com/resize-cgi/image/format=auto,fit=contain,width=900,quality=80/https://r2.thishousedoesnotexist.org/houses/11493414.png" caption="House design generated from text query: 'A modernist eco-friendly home in Thailand'" />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://resizeapi.com/resize-cgi/image/format=auto,fit=contain,width=900,quality=80/https://r2.thishousedoesnotexist.org/houses/11493414.png" caption="House design generated using the query “A modernist home in Thailand that is eco-friendly and made from sustainable materials”" />
 
 ::right::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://amazingarchitecture.com/storage/2825/responsive-images/ai_generated_future_cities_manas_bhatia___media_library_original_1344_756.jpg" caption="AI-generated Future Cities by Manas Bhatia using Midjourney." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://amazingarchitecture.com/storage/2825/responsive-images/ai_generated_future_cities_manas_bhatia___media_library_original_1344_756.jpg" caption="AI-generated Future Cities by Manas Bhatia using Midjourney AI, Adobe Photoshop." cite="https://amazingarchitecture.com/futuristic/ai-generated-future-cities-by-manas-bhatia" />
 
 ---
 layout: two-cols-header
 ---
 
-# Stable Diffusion & Open Source Release
+# Open sources release
 
-In May 2022, Hugging Face released `diffusers`, an open-source library providing pre-trained diffusion models across vision and audio modalities as a modular toolbox. <Cite url="https://github.com/huggingface/diffusers/" />
+In May 2022, Hugging Face released the open-source library **🤗 Diffusers**, which provides pre-trained diffusion models across multiple modalities, such as vision and audio, and serves as a modular toolbox for inference and training diffusion models. <Cite url="https://github.com/huggingface/diffusers/" />
 
 ::left::
 <FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/hfdiffusion.png" caption="Image generation for the prompt « a high tech solarpunk utopia in the Amazon rainforest » using the Hugging Face stable diffusion demo." />
@@ -210,19 +206,12 @@ class: text-center
 # Technical background
 
 ---
-layout: two-cols-header
----
 
 # Generative Adversarial Networks (GAN)
 
-GANs <Cite id="goodfellow2014generative" /> consist of two neural networks trained end-to-end: a **Generator** creating images from random noise, and a **Discriminator** distinguishing generated images from real ones.
+GANs <Cite id="goodfellow2014generative" /> consist of two parts trained in an end-to-end fashion. The generator generates images out of random noise, while the discriminator aims to distinguish generated images from authentic images from a training set. Consequently, the generators need to improve the quality of their generated images as the discriminator improves at discriminating images.
 
-::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/gan_adversarial_training.png" caption="Illustration of the GAN adversarial training process." />
-
-::right::
-* **Generator:** Learns to capture real data distribution.
-* **Discriminator:** Estimates probability that a sample came from training data rather than Generator.
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/gan_adversarial_training.png" caption="Illustration of the GAN training process." />
 
 ---
 
@@ -233,19 +222,12 @@ Websites like *This Person Does Not Exist* <Cite url="https://thispersondoesnote
 <FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/thispersondoesnotexist.png" caption="Human portrait synthesized using StyleGAN2 architecture." />
 
 ---
-layout: two-cols-header
----
 
 # Neural Style Transfer
 
-Neural Style Transfer <Cite id="mordvintsev2015inceptionism" /> transfers artistic style from one image onto the content of another using pre-trained convolutional feature maps.
+Neural Style Transfer <Cite id="gatys2016image" /> transfers the style from one image to another while keeping the content unchanged. The architecture requires two networks, a neural transfer network and a feature extractor. The transfer model is trained to generate images given the input image. Next, the feature extractor compares the internal representations of the input, generated, and style images and attempts to reduce the distance between internal layer representations encoding styles or content.
 
-::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/neural_style_transfer.png" caption="Neural Style Transfer optimization loop using Content and Style loss." />
-
-::right::
-* **Content Loss:** Preserves spatial structure from content image.
-* **Style Loss:** Minimizes Gram matrix differences between feature activations.
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/neural_style_transfer.png" caption="Illustration of the architecture used to train neural style transfer models." />
 
 ---
 
@@ -253,65 +235,39 @@ Neural Style Transfer <Cite id="mordvintsev2015inceptionism" /> transfers artist
 
 Platforms like *Deep Dream Generator* <Cite url="https://deepdreamgenerator.com/" /> allow users to blend arbitrary style images with content photos.
 
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/style_transfer_in_action.png" caption="Example of Neural Style Transfer generated with Deep Dream Generator." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/style_transfer_in_action.png" caption="Application using Deep Dream Generator." />
 
----
-layout: two-cols-header
 ---
 
 # Diffusion Process: General Principle
 
-Diffusion models <Cite id="sohl2015deep" /> iteratively process images by adding Gaussian noise over $T$ steps (Forward) and learning to reverse the noise to synthesize detailed images (Reverse).
+Diffusion models <Cite id="sohl2015deep" /> process iteratively by progressively adding noise to the input image over $T$ steps until it is entirely random noise. Instead of generating the image from random noise in a single step, we decompose the problem by training the model to generate a slightly less noisy image at each step.
 
-::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/diffusion_process.png" caption="Illustration of forward (noising) and backward (denoising) diffusion process." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/diffusion_process.png" caption="Illustration of the forward and backward diffusion process." />
 
-::right::
-* **Forward Process:** $q(x_t | x_{t-1})$ gradually adds noise.
-* **Reverse Process:** $p_\theta(x_{t-1} | x_t)$ learns to remove noise at each step.
-
----
-layout: two-cols-header
 ---
 
 # Diffusion Model Training
 
-In practice, we generate noisy images with varying noise levels $\epsilon$ and train an U-Net Encoder-Decoder model $\epsilon_\theta(x_t, t)$ to predict the noise injected at step $t$.
+In practice, we generate images with various degrees of additional noise and train the encoder-decoder model to predict the noise from the image such that we can reconstruct the original image by removing the noise.
 
-::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/diffusion_training.png" caption="Diffusion model training: predicting added noise at timestep t." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/diffusion_training.png" caption="Diffusion model training." />
 
-::right::
-* **Objective:** Minimize $\|\epsilon - \epsilon_\theta(x_t, t)\|^2$.
-* **Robustness:** Enables stable training without mode collapse.
-
----
-layout: two-cols-header
 ---
 
 # Diffusion Model Inference
 
-At inference, we start from pure Gaussian noise $x_T \sim \mathcal{N}(0, I)$ and iteratively apply the trained model over $T$ steps to reconstruct a clean image.
+At inference, we feed the network with noise and generate a slightly noisy image, which we feed back to the network. We repeat the $T$ steps process until we generate a fully detailed image.
 
-::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/diffusion_inference.png" caption="Iterative denoising loop during diffusion inference." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/diffusion_inference.png" caption="Diffusion model inference." />
 
-::right::
-* Replaces single-step generation with a controllable step-by-step Markov chain.
-
----
-layout: two-cols-header
 ---
 
 # Text Conditioning in Diffusion
 
-To guide generation with text, we feed the UNet with a text prompt embedding $c = \tau_\theta(\text{prompt})$ computed via CLIP or T5 text encoders.
+To guide the process, we can feed the network with a text prompt embedded together with the image from the previous step. We can also select the images to choose the extent to which we want to fit the text description.
 
-::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/text_conditioning_diffusion.png" caption="Text-conditioned diffusion architecture with cross-attention layers." />
-
-::right::
-* **Cross-Attention:** Injects text prompt embeddings directly into UNet spatial feature maps.
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/text_conditioning_diffusion.png" caption="Diffusion model inference." />
 
 ---
 layout: three-cols-header
@@ -336,7 +292,7 @@ layout: four-cols-header
 
 # DALL-E 2 Architecture
 
-DALL-E 2 <Cite id="ramesh2022hierarchical" /> pairs a prior network (mapping text to CLIP image embeddings) with a diffusion decoder producing high-resolution outputs.
+DALL-E 2 <Cite id="ramesh2022hierarchical" /> is a new AI system capable of creating realistic images and artworks from a natural language description. OpenAI develops the model, and it is an iteration of the first version of the model. More recently, Google has also proposed an algorithm for generating realistic images <Cite id="saharia2022photorealistic" />.
 
 ::first::
 <FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/dalle2_car.png" caption="One of my favorite @OpenAI #dalle images today: 'car dragon, digital art'" />
@@ -351,32 +307,20 @@ DALL-E 2 <Cite id="ramesh2022hierarchical" /> pairs a prior network (mapping tex
 <FigureCard :clickAnimate="true" align="stretch" label="Figure 4." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/dalle2_fox.png" caption="A painting of a fox sitting in a field at sunrise in the style of Claude Monet." />
 
 ---
-layout: two-cols-header
----
 
 # Classifier-Free Guidance & CLIP Ranking
 
-We adjust text prompt influence via Classifier-Free Guidance scale $w$ and rank output candidates using CLIP text-image cosine similarity. <Cite id="radford2021learning" />
+We can adjust the impact of the text input by generating multiple images at each time. We then rank the images using the model **CLIP** <Cite id="radford2021learning" /> from OpenAI and select the one that matches the text input best (or not) to guide the generation process.
 
-::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/cfg_clip_ranking.png" caption="Guiding diffusion generation with CLIP cross-modal scoring." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/cfg_clip_ranking.png" caption="Diffusion model inference by guiding the process." />
 
-::right::
-* Higher guidance weights align images strongly with prompts at the cost of diversity.
-
----
-layout: two-cols-header
 ---
 
 # Latent Diffusion Models (LDM)
 
-To reduce high computational cost, Latent Diffusion <Cite id="rombach2022high" /> performs the noising/denoising process inside a lower-dimensional latent space compressed by a VQ-GAN autoencoder.
+Finally, generating full-resolution images can be computationally expensive. It is possible to embed the images within a latent space <Cite id="rombach2022high" /> and perform the process here to reduce the hardware requirement.
 
-::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/latent_diffusion_ldm.png" caption="Forward and backward diffusion operating inside latent space." />
-
-::right::
-* Reduces memory and compute overhead by a factor of 4x to 8x while preserving perceptual quality.
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/latent_diffusion_ldm.png" caption="Illustration of the forward and backward diffusion process in latent space." />
 
 ---
 layout: section
@@ -391,14 +335,13 @@ layout: two-cols-header
 
 # Open-Source Libraries & Implementations
 
-* **Stability AI:** Open weights for Stable Diffusion models. <Cite url="https://stability.ai/" />
-* **Hugging Face `diffusers`:** Standard Python ecosystem library for inference and training. <Cite url="https://github.com/huggingface/diffusers" />
+Multiple libraries implement diffusion models in open-source settings, including **Stability AI** <Cite url="https://stability.ai/" /> and **Hugging Face** <Cite url="https://github.com/huggingface/diffusers" />.
 
 ::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/stability_ai_models.png" caption="Stability.ai open model ecosystem." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/stability_ai_models.png" caption="stability.ai" />
 
 ::right::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/huggingface_diffusers_lib.png" caption="Hugging Face Diffusers framework." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="https://eu2.contabostorage.com/50a79b48f5614eafbf203076456b1b28:simoulin.io/assets/huggingface_diffusers_lib.png" caption="Hugging Face" />
 
 ---
 
@@ -414,13 +357,13 @@ layout: two-cols-header
 
 # Adaptation of GPT-fr for Image Generation
 
-Research on adapting **GPT-fr** for French text-to-image generation using VQ-GAN discrete image tokens <Cite id="esser2021taming, https://huggingface.co/asi/igpt-fr-cased-base" />.
+My model generates images out of text input in French. Research on adapting **GPT-fr** for French text-to-image generation using VQ-GAN discrete image tokens <Cite id="esser2021taming, https://huggingface.co/asi/igpt-fr-cased-base" />.
 
 ::left::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="/gpt-fr-image-training.svg" caption="Training configuration coupling VQ-GAN discrete tokens with GPT-fr." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 1." src="/gpt-fr-image-training.svg" caption="Training configuration" />
 
 ::right::
-<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="/gpt-fr-image-inference.svg" caption="Inference configuration generating images from French text prompts." />
+<FigureCard :clickAnimate="true" align="stretch" label="Figure 2." src="/gpt-fr-image-inference.svg" caption="Inference configuration" />
 
 ---
 

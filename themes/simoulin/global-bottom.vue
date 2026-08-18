@@ -31,6 +31,7 @@ const sectionNumberString = computed(() => {
 })
 
 const badgeRef = ref<HTMLElement | null>(null)
+const footerContainerRef = ref<HTMLElement | null>(null)
 
 watch([sectionNumberString, hasSectionNumber], async () => {
   await nextTick()
@@ -48,6 +49,19 @@ const citations = computed(() => {
   const slideNo = currentPage.value
   return citationsState.entries[String(slideNo)] || []
 })
+
+watch([currentPage, citations], async () => {
+  await nextTick()
+  if (typeof document !== 'undefined') {
+    if (footerContainerRef.value && !isCover.value) {
+      const footerH = footerContainerRef.value.offsetHeight
+      const bottomPadding = 20 + footerH + 18
+      document.documentElement.style.setProperty('--slide-bottom-padding', `${bottomPadding}px`)
+    } else {
+      document.documentElement.style.setProperty('--slide-bottom-padding', '3.5rem')
+    }
+  }
+}, { immediate: true, flush: 'post' })
 
 function getParts(id: string) {
   return resolveCitationParts(id)
@@ -73,7 +87,7 @@ const resolveIcon = (iconPath: string) => {
     </div>
   </div>
 
-  <div v-if="!isCover" class="abs-bl bottom-5 left-[2.2rem] z-50 flex flex-col items-start pointer-events-none">
+  <div ref="footerContainerRef" v-if="!isCover" class="abs-bl bottom-5 left-[2.2rem] z-50 flex flex-col items-start pointer-events-none">
     <footer v-if="citations.length" class="text-[8px] font-normal mb-1.5 max-w-[850px] relative pointer-events-auto flex flex-col gap-0.5 pl-4">
       <!-- Paper Icon matching exact 8px citation font height -->
       <img :src="resolveIcon('/essay.svg')" class="absolute top-[2px] left-0 w-[8px] h-[8px] object-contain" />

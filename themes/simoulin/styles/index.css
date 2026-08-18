@@ -17,7 +17,7 @@ body,
     color: #000000 !important;
     font-size: 1rem !important;
     text-align: left;
-    padding: 1.8rem 2.2rem 6.2rem 2.2rem !important;
+    padding: 1.8rem 2.2rem var(--slide-bottom-padding, 4.0rem) 2.2rem !important;
     font-weight: 500;
     background-color: #FFFFFF !important;
     width: 100% !important;
@@ -29,6 +29,16 @@ body,
     user-select: text !important;
     -webkit-user-select: text !important;
     box-sizing: border-box !important;
+}
+
+.slidev-layout.two-cols-header .figure-card,
+.slidev-layout.three-cols-header .figure-card,
+.slidev-layout.four-cols-header .figure-card {
+    margin-top: 0 !important;
+}
+
+.slidev-layout.default .figure-card {
+    margin-top: 0.75rem !important;
 }
 
 h1,

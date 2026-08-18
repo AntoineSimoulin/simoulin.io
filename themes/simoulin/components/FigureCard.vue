@@ -82,7 +82,7 @@ const computedSrc = computed(() => {
     v-if="clickAnimate"
     v-click
     ref="cardRef"
-    class="bg-white rounded-2xl border-2 border-black shadow-[3.5px_3.5px_0px_#000] flex flex-col overflow-hidden min-h-0 w-full"
+    class="figure-card bg-white rounded-2xl border-2 border-black shadow-[3.5px_3.5px_0px_#000] flex flex-col overflow-hidden min-h-0 w-full"
     :class="[isStretch ? 'h-full flex-1' : '']"
   >
     <figure class="flex-1 flex flex-col overflow-hidden h-full">
@@ -103,7 +103,7 @@ const computedSrc = computed(() => {
   <div
     v-else
     ref="cardRef"
-    class="bg-white rounded-2xl border-2 border-black shadow-[3.5px_3.5px_0px_#000] flex flex-col overflow-hidden min-h-0 w-full"
+    class="figure-card bg-white rounded-2xl border-2 border-black shadow-[3.5px_3.5px_0px_#000] flex flex-col overflow-hidden min-h-0 w-full"
     :class="[isStretch ? 'h-full flex-1' : '']"
   >
     <figure class="flex-1 flex flex-col overflow-hidden h-full">
